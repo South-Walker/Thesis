@@ -1,4 +1,5 @@
 import numpy as np
+import math
 import re
 import os
 
@@ -74,9 +75,8 @@ def std(descriptor):
         for i in len(descriptor):
             descriptor[i][j] = (descriptor[i][j] - min)/d
 
-def readDataFile(list,path):
+def readDataFile(path,list):
     file = open(path,"r")
-    count = 0;
     for line in file:
         nowline = line.strip().split(',')
         temp = []
@@ -94,45 +94,57 @@ def readDataFile(list,path):
                     nowfloat = 0.0
                 temp.append(nowfloat)
         list.append(temp)
-        count += 1
-    return count
-
-def fillDataSet(projectDir):
-    allfile = os.listdir(projectDir)
-    for file in allfile:
-        nowfile = os.path.join(projectDir,file)
-        if re.search("nontox",file):
-            value = 0
-        else:
-            value = 1
-        if re.search("train",file):
-            count = readDataFile(trainDataSet,nowfile)
-            for i in range(count):
-                trainDataLabel.append([value,1-value])
-        else:
-            count = readDataFile(testDataSet,nowfile)
-            for i in range(count):
-                testDataLabel.append([value,1-value])
 
 def getDataSet(projectDir):
     trainPosition = 0
     testPosition = 0
     datas = [[],[],[],[],[],[],[],[]]
     """
-    nontox:1    train:4    descriptor:4 
+    nontox:1    train:2    descriptor:4 
     tox:   0    test :0    fpname    :0
     """
     allfile = os.listdir(projectDir)
     for file in allfile:
-
+        nowfile = os.path.join(projectDir,file)
+        index = 0
+        if re.search("nontox",file):
+            index += 1
+        if re.search("train",file):
+            index += 2
+        if re.search("Descriptor",file):
+            index += 4
+        readDataFile(nowfile,datas[index])
+        #####请好好的把这八个文件分类！！
+        #是fpname
+        if not index & 4 == 0:
+            hastox = 1 - (index & 1)
+            #是test
+            if not index & 2 == 0:
+                testDataSet.extend(datas[index])
+                for i in range(len(datas[index])):
+                    testDataLabel.append([hastox,1-hastox])
+            #是train
+            else:
+                trainDataSet.extent(datas[index])
+                for i in range(len(datas[index])):
+                    trainDataLabel.append([hastox,1-hastox])
+        #是descriptor
+        else:
+            #是test
+            if not index & 2 == 0:
+                testDescriptorSet.extend(datas[index])
+            #是train
+            else:
+                trainDescriptorSet.extend(datas[index])
 
 
     randomData(trainDataSet,trainDescriptorSet,trainDataLabel)
     randomData(testDataSet,testDescriptorSet,testDataLabel)
+    std(trainDescriptorSet)
+    std(testDescriptorSet)
 
 def main():
-    projectDir = r'C:\Users\lenovo\Desktop\毕业论文\result\fps\projects\project0-1\FP'
-    getDataSet(projectDir)
+    return 0
 
 if __name__ == '__main__':
     main()

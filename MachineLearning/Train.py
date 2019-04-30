@@ -1,13 +1,17 @@
 import tensorflow as tf
 import GetDataSet
+import Inference
 
 result = []
-projectDir = r'C:\Users\lenovo\Desktop\毕业论文\result\fps\projects\project0-0\MACCSFP' 
+projectDir = r'C:\Users\lenovo\Desktop\毕业论文\result\des\projects\project0-0\FP' 
 GetDataSet.getDataSet(projectDir)
 
-inputNode = len(GetDataSet.trainDataSet[0])
-outputNode = 2
-layer1Node = 100
+def train(x1s,x2s,labels):
+    x1 = tf.placeholder(tf.float32,[None,Inference.input1Node],name='x1-input')
+    x2 = tf.placeholder(tf.float32,[None,Inference.input2Node],name='x2-input')
+    label = tf.placeholder(tf.float32,[None,Inference.outputNode],name='label-input')
+
+
 
 global_step = tf.Variable(0,False)
 keeprate = tf.placeholder(tf.float32)
@@ -30,33 +34,35 @@ y = tf.nn.relu(tf.matmul(layer1_drop,w2)
 cross_entropy = tf.nn.sparse_softmax_cross_entropy_with_logits(
     logits=y,labels=tf.argmax(label,1))
 cross_entropy_mean = tf.reduce_mean(cross_entropy)
-regularizer = tf.contrib.layers.l2_regularizer(0.003)
+regularizer = tf.contrib.layers.l2_regularizer(0.08)
 regularization = regularizer(w1) + regularizer(w2)
 
 
 loss = cross_entropy_mean + regularization
-#train_step = tf.train.GradientDescentOptimizer(learning_rate).minimize(loss,global_step)
-train_step = tf.train.AdamOptimizer().minimize(loss,global_step)
+train_step = tf.train.GradientDescentOptimizer(learning_rate).minimize(loss,global_step)
+#train_step = tf.train.AdamOptimizer().minimize(loss,global_step)
 
 correct_prediction = tf.equal(tf.argmax(y,1),tf.argmax(label,1))
 accuracy = tf.reduce_mean(tf.cast(correct_prediction,tf.float32))
+auc_value,auc_op = tf.metrics.auc(tf.argmax(label,1),tf.argmax(y,1))
 
 with tf.Session() as sess:
     tf.global_variables_initializer().run()
-
+    tf.local_variables_initializer().run()
     for i in range(5000):
-        xs,labels = GetDataSet.getNextBatch()
+        xs,labels,_ = GetDataSet.getNextBatch()
         sess.run(train_step,
                  feed_dict={x:xs,label:labels,keeprate:1})
         if i % 200 == 0:
-            xs,labels = GetDataSet.getNextBatch(True,False)
+            xs,labels,_ = GetDataSet.getNextBatch(True,False)
             a,b = sess.run([accuracy,loss],feed_dict={x:xs,label:labels,keeprate:1})
             print("train:%g\ntrainloss:%g" %(a,b))
-            xs,labels = GetDataSet.getNextBatch(False,False)
-            a,b = sess.run([accuracy,loss],feed_dict={x:xs,label:labels,keeprate:1})
+            xs,labels,_ = GetDataSet.getNextBatch(False,False)
+            a,b,c = sess.run([accuracy,loss,auc_op],feed_dict={x:xs,label:labels,keeprate:1})
             print("test:%g\ntestloss:%g" %(a,b))
+            print("auc:%g" %(sess.run(auc_value,feed_dict={x:xs,label:labels,keeprate:1})))
         if i > 4000 and i  % 10 == 0:
-            xs,labels = GetDataSet.getNextBatch(False,False)
+            xs,labels,_ = GetDataSet.getNextBatch(False,False)
             result.append(sess.run(accuracy,feed_dict={x:xs,label:labels,keeprate:1}))
             
 with open(r'C:\Users\lenovo\Desktop\毕业论文\result\output.txt',"w") as f:
