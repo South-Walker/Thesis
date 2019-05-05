@@ -74,6 +74,8 @@ def std(descriptor):
         d = max - min
         for i in range(len(descriptor)):
             descriptor[i][j] = (descriptor[i][j] - min)/d if d != 0 else 0.00001
+            if descriptor[i][j] != descriptor[i][j]:
+                descriptor[i][j] = 0.00001
 
 def readDataFile(path,list):
     file = open(path,"r")
@@ -89,8 +91,6 @@ def readDataFile(path,list):
                 try:
                     nowfloat = float(nowline[i])
                 except:
-                    nowfloat = 0.0
-                if nowfloat != nowfloat:
                     nowfloat = 0.0
                 temp.append(nowfloat)
         list.append(temp)
@@ -142,6 +142,15 @@ def getDataSet(projectDir):
     std(trainDescriptorSet)
     std(testDescriptorSet)
 
+def save(list,path):
+    file = open(path,"w")
+    for i in range(len(list)):
+        for j in range(len(list[i])):
+            file.write(str(list[i][j]))
+            if j != len(list[i])-1:
+                file.write(',')
+        file.write('\n')
+    
 def main():
     return 0
 

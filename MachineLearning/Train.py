@@ -48,5 +48,5 @@ def train():
             f.write(str(result[i]))
             f.write("\n")
 
-
+GetDataSet.save(GetDataSet.trainDescriptorSet,"C:\\Users\\lenovo\\Desktop\\test.txt")
 train()
