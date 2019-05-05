@@ -5,7 +5,6 @@ input2Node = 729
 outputNode = 2
 layer1Node = 200
 regularizerRate = 0.1
-keepRate = 0.8
 
 def getWeightVariable(shape):
     weights = tf.get_variable(
@@ -23,7 +22,7 @@ def inference(inputTensor1,inputTensor2):
                                  initializer=tf.constant_initializer(0.0))
         layer1 = tf.concat(
             [tf.nn.relu(tf.matmul(inputTensor1,weights) + biases) , inputTensor2],1)
-    layer1_drop = tf.nn.dropout(layer1,keepRate)
+    layer1_drop = tf.nn.dropout(layer1,1)
     with tf.variable_scope('layer2'):
         weights = getWeightVariable([layer1Node + input2Node,outputNode])
         biases = tf.get_variable("biases",[outputNode],

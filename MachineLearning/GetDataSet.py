@@ -12,7 +12,7 @@ testDataLabel = []
 trainDataPosition = 0
 testDataPosition = 0
 
-def getNextBatch(isTrain=True,usingBatch=True,Batch=200):
+def getNextBatch(isTrain=True,usingBatch=True,Batch=100):
     global trainDataPosition
     global testDataPosition
     if not usingBatch:
@@ -63,17 +63,17 @@ def randomData(DataSet,Descriptor,Label):
     np.random.shuffle(Label)
 
 def std(descriptor):
-    for j in len(descriptor[0]):
+    for j in range(len(descriptor[0])):
         max = -999999999.0
         min = 999999999.0
-        for i in len(descriptor):
+        for i in range(len(descriptor)):
             if descriptor[i][j] > max:
                 max = descriptor[i][j]
             if descriptor[i][j] < min:
                 min = descriptor[i][j]
-        d = max + 1 if max == min else max - min
-        for i in len(descriptor):
-            descriptor[i][j] = (descriptor[i][j] - min)/d
+        d = max - min
+        for i in range(len(descriptor)):
+            descriptor[i][j] = (descriptor[i][j] - min)/d if d != 0 else 0.00001
 
 def readDataFile(path,list):
     file = open(path,"r")
@@ -90,7 +90,7 @@ def readDataFile(path,list):
                     nowfloat = float(nowline[i])
                 except:
                     nowfloat = 0.0
-                if math.isnan(nowfloat):
+                if nowfloat != nowfloat:
                     nowfloat = 0.0
                 temp.append(nowfloat)
         list.append(temp)
@@ -115,29 +115,28 @@ def getDataSet(projectDir):
             index += 4
         readDataFile(nowfile,datas[index])
         #####请好好的把这八个文件分类！！
+    for index in range(len(datas)):
         #是fpname
-        if not index & 4 == 0:
+        if index & 4 == 0:
             hastox = 1 - (index & 1)
             #是test
-            if not index & 2 == 0:
+            if index & 2 == 0:
                 testDataSet.extend(datas[index])
                 for i in range(len(datas[index])):
                     testDataLabel.append([hastox,1-hastox])
             #是train
             else:
-                trainDataSet.extent(datas[index])
+                trainDataSet.extend(datas[index])
                 for i in range(len(datas[index])):
                     trainDataLabel.append([hastox,1-hastox])
         #是descriptor
         else:
             #是test
-            if not index & 2 == 0:
+            if index & 2 == 0:
                 testDescriptorSet.extend(datas[index])
             #是train
             else:
                 trainDescriptorSet.extend(datas[index])
-
-
     randomData(trainDataSet,trainDescriptorSet,trainDataLabel)
     randomData(testDataSet,testDescriptorSet,testDataLabel)
     std(trainDescriptorSet)
