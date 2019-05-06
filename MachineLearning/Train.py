@@ -6,8 +6,8 @@ result = []
 projectDir = r'C:\Users\lenovo\Desktop\毕业论文\result\des\projects\project0-0\FP' 
 GetDataSet.getDataSet(projectDir)
 
-LearningRateBase = 0.8
-LearningRateDecay = 0.96
+LearningRateBase = 0.9
+LearningRateDecay = 0.99
 
 def train():
     x1 = tf.placeholder(tf.float32,[None,Inference.input1Node],name='x1-input')
@@ -19,7 +19,10 @@ def train():
     cross_entropy_mean = tf.reduce_mean(cross_entropy)
     loss = cross_entropy_mean + tf.add_n(tf.get_collection('losses'))
     learning_rate = tf.train.exponential_decay(LearningRateBase,global_step,30,LearningRateDecay)
-    train_step = tf.train.GradientDescentOptimizer(learning_rate).minimize(loss,global_step)
+
+    train_step = tf.train.AdamOptimizer().minimize(loss,global_step)
+
+#    train_step = tf.train.GradientDescentOptimizer(learning_rate).minimize(loss,global_step)
     correct_prediction = tf.equal(tf.argmax(y,1),tf.argmax(label,1))
     accuracy = tf.reduce_mean(tf.cast(correct_prediction,tf.float32))
     auc_value,auc_op = tf.metrics.auc(tf.argmax(label,1),tf.argmax(y,1))
@@ -48,5 +51,4 @@ def train():
             f.write(str(result[i]))
             f.write("\n")
 
-GetDataSet.save(GetDataSet.trainDescriptorSet,"C:\\Users\\lenovo\\Desktop\\test.txt")
 train()

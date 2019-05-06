@@ -3,6 +3,9 @@ import math
 import re
 import os
 
+trainName = []
+testName = []
+
 trainDataSet = []
 trainDescriptorSet = []
 trainDataLabel = []
@@ -54,13 +57,15 @@ def cmp(a,b):
             return False
     return True
 
-def randomData(DataSet,Descriptor,Label):
+def randomData(DataSet,Descriptor,Label,Name):
     state = np.random.get_state()
     np.random.shuffle(DataSet)
     np.random.set_state(state)
     np.random.shuffle(Descriptor)
     np.random.set_state(state)
     np.random.shuffle(Label)
+    np.random.set_state(state)
+    np.random.shuffle(Name)
 
 def std(descriptor):
     for j in range(len(descriptor[0])):
@@ -77,11 +82,13 @@ def std(descriptor):
             if descriptor[i][j] != descriptor[i][j]:
                 descriptor[i][j] = 0.00001
 
-def readDataFile(path,list):
+def readDataFile(path,list,namelist):
     file = open(path,"r")
     for line in file:
         nowline = line.strip().split(',')
         temp = []
+        #第一个是名字
+        namelist.append(nowline[0])
         for i in range(1,len(nowline)):
             if nowline[i] == '0':
                 temp.append(0.0)
@@ -99,6 +106,7 @@ def getDataSet(projectDir):
     trainPosition = 0
     testPosition = 0
     datas = [[],[],[],[],[],[],[],[]]
+    names = [[],[],[],[],[],[],[],[]]
     """
     nontox:1    train:2    descriptor:4 
     tox:   0    test :0    fpname    :0
@@ -113,7 +121,7 @@ def getDataSet(projectDir):
             index += 2
         if re.search("Descriptor",file):
             index += 4
-        readDataFile(nowfile,datas[index])
+        readDataFile(nowfile,datas[index],names[index])
         #####请好好的把这八个文件分类！！
     for index in range(len(datas)):
         #是fpname
@@ -124,11 +132,13 @@ def getDataSet(projectDir):
                 testDataSet.extend(datas[index])
                 for i in range(len(datas[index])):
                     testDataLabel.append([hastox,1-hastox])
+                testName.extend(names[index])
             #是train
             else:
                 trainDataSet.extend(datas[index])
                 for i in range(len(datas[index])):
                     trainDataLabel.append([hastox,1-hastox])
+                trainName.extend(names[index])
         #是descriptor
         else:
             #是test
@@ -137,8 +147,8 @@ def getDataSet(projectDir):
             #是train
             else:
                 trainDescriptorSet.extend(datas[index])
-    randomData(trainDataSet,trainDescriptorSet,trainDataLabel)
-    randomData(testDataSet,testDescriptorSet,testDataLabel)
+    randomData(trainDataSet,trainDescriptorSet,trainDataLabel,trainName)
+    randomData(testDataSet,testDescriptorSet,testDataLabel,testName)
     std(trainDescriptorSet)
     std(testDescriptorSet)
 
