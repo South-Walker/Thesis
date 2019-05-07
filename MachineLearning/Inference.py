@@ -6,7 +6,7 @@ outputNode = 2
 layer1Node = 200
 layer2Node = 300
 regularizerRate = 0.05
-
+#xiao
 def getWeightVariable(shape):
     weights = tf.get_variable(
         "weights",shape,
