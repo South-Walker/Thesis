@@ -152,13 +152,18 @@ def getDataSet(projectDir):
     std(trainDescriptorSet)
     std(testDescriptorSet)
 
-def save(list,path):
+def save(list,path,dimension=2):
+    if dimension!=1 and dimension!=2:
+        raise RuntimeError()
     file = open(path,"w")
     for i in range(len(list)):
-        for j in range(len(list[i])):
-            file.write(str(list[i][j]))
-            if j != len(list[i])-1:
-                file.write(',')
+        if dimension == 2:
+            for j in range(len(list[i])):
+                file.write(str(list[i][j]))
+                if j != len(list[i])-1:
+                    file.write(',')
+        else:
+            file.write(str(list[i]))
         file.write('\n')
     
 def main():

@@ -213,8 +213,8 @@ namespace div
         }
         static void Main(string[] args)
         {
-            div("fakernontox",1);
-            div("fakertox0", 1);
+            div("fakernontox");
+            div("fakertox0");
         }
     }
 }
