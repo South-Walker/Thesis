@@ -1,0 +1,867 @@
+
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<Link Rel=stylesheet type=text/css HREF="../includes/style.css">
+<TITLE></TITLE>
+
+<script language=javascript>
+	function OpenDetail(h,casno,srn)
+	{
+		//var Querystring="LibIRDisp.asp?"
+		//window.open("drawIrofstr.html","QuyIRAppletDisplayWindow","resizeable=yes,status=no,toolbar=no");
+		//window.location="../tox/tox_detail.asp?CmpSeq="+h
+		window.location="tox_detail2.asp?CmpSeq="+h+"&casno="+casno+"&srn="+srn
+	}
+	
+	function ScrollPage(pageno)
+	{
+		document.formPage.pageno.value =pageno
+		document.formPage.submit();
+	}
+	window.setTimeout 
+</script>
+
+</HEAD>
+<BODY background="../Images/chemback_s.jpg">
+<P><font size=2>当前位置:</font><font size=2 color=red>物质毒性数据库->检索结果页面</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<A href="Tox_eff_query2.asp">根据毒性作用分类检索</A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<A href="tox_query.asp">化合物检索</A></font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<A href="javascript:history.go(-1)">返回上一页</A></font>
+<hr color=navy size=1>
+<div align=center>
+您检索的是:<font color=violet>  生殖毒性: 对新生儿的影响——断奶或哺乳期指数(如。每个活产儿,在断奶第四天)</font><br>
+	<form name=frmQuery action="Tox_eff_result2.asp" method=post>
+	根据毒性作用的测试对象对结果进行筛选:
+	<select size="1" name="SpeciesObs">
+	
+
+		<option value="Amphibian - frog">Amphibian - frog</option>
+
+		<option value="Amphibian - frog Embryo">Amphibian - frog Embryo</option>
+
+		<option value="Amphibian - frog Fibroblast">Amphibian - frog Fibroblast</option>
+
+		<option value="Amphibian - toad">Amphibian - toad</option>
+
+		<option value="Bacteria - Bacillus subtilis">Bacteria - Bacillus subtilis</option>
+
+		<option value="Bacteria - Escherichia coli">Bacteria - Escherichia coli</option>
+
+		<option value="Bacteria - Haemophilus influenzae">Bacteria - Haemophilus influenzae</option>
+
+		<option value="Bacteria - Klebsiella pneumoniae">Bacteria - Klebsiella pneumoniae</option>
+
+		<option value="Bacteria - Salmonella typhimurium">Bacteria - Salmonella typhimurium</option>
+
+		<option value="Bacteria - Serratia marcescens">Bacteria - Serratia marcescens</option>
+
+		<option value="Bird - chicken">Bird - chicken</option>
+
+		<option value="Bird - chicken Cells - not otherwise specified">Bird - chicken Cells - not otherwise specified</option>
+
+		<option value="Bird - chicken Embryo">Bird - chicken Embryo</option>
+
+		<option value="Bird - chicken Fibroblast">Bird - chicken Fibroblast</option>
+
+		<option value="Bird - chicken Leukocyte">Bird - chicken Leukocyte</option>
+
+		<option value="Bird - chicken Liver">Bird - chicken Liver</option>
+
+		<option value="Bird - domestic">Bird - domestic</option>
+
+		<option value="Bird - domestic Cells - not otherwise specified">Bird - domestic Cells - not otherwise specified</option>
+
+		<option value="Bird - domestic Kidney">Bird - domestic Kidney</option>
+
+		<option value="Bird - domestic Leukocyte">Bird - domestic Leukocyte</option>
+
+		<option value="Bird - domestic Liver">Bird - domestic Liver</option>
+
+		<option value="Bird - duck">Bird - duck</option>
+
+		<option value="Bird - duck Lymphocyte">Bird - duck Lymphocyte</option>
+
+		<option value="Bird - pigeon">Bird - pigeon</option>
+
+		<option value="Bird - quail">Bird - quail</option>
+
+		<option value="Bird - quail Embryo">Bird - quail Embryo</option>
+
+		<option value="Bird - quail Liver">Bird - quail Liver</option>
+
+		<option value="Bird - turkey">Bird - turkey</option>
+
+		<option value="Bird - wild bird species">Bird - wild bird species</option>
+
+		<option value="Bird - wild bird species Leukocyte">Bird - wild bird species Leukocyte</option>
+
+		<option value="Bird - wild bird species Lymphocyte">Bird - wild bird species Lymphocyte</option>
+
+		<option value="Fish - not otherwise specified">Fish - not otherwise specified</option>
+
+		<option value="Fish - not otherwise specified Bacteria - Escheric">Fish - not otherwise specified Bacteria - Escheric</option>
+
+		<option value="Fish - not otherwise specified Bacteria - Salmonel">Fish - not otherwise specified Bacteria - Salmonel</option>
+
+		<option value="Fish - not otherwise specified Cells - not otherwi">Fish - not otherwise specified Cells - not otherwi</option>
+
+		<option value="Fish - not otherwise specified Embryo">Fish - not otherwise specified Embryo</option>
+
+		<option value="Fish - not otherwise specified Fibroblast">Fish - not otherwise specified Fibroblast</option>
+
+		<option value="Fish - not otherwise specified Leukocyte">Fish - not otherwise specified Leukocyte</option>
+
+		<option value="Fish - not otherwise specified Liver">Fish - not otherwise specified Liver</option>
+
+		<option value="Fish - not otherwise specified Lymphocyte">Fish - not otherwise specified Lymphocyte</option>
+
+		<option value="Fish - not otherwise specified Ovary">Fish - not otherwise specified Ovary</option>
+
+		<option value="Fish - not otherwise specified Sperm">Fish - not otherwise specified Sperm</option>
+
+		<option value="Fish - not otherwise specified Testis">Fish - not otherwise specified Testis</option>
+
+		<option value="Fish - salmon">Fish - salmon</option>
+
+		<option value="Fish - salmon Cells - not otherwise specified">Fish - salmon Cells - not otherwise specified</option>
+
+		<option value="Fish - salmon Sperm">Fish - salmon Sperm</option>
+
+		<option value="Fish - salmon Testis">Fish - salmon Testis</option>
+
+		<option value="Human">Human</option>
+
+		<option value="Human - child">Human - child</option>
+
+		<option value="Human - infant">Human - infant</option>
+
+		<option value="Human - man">Human - man</option>
+
+		<option value="Human - man Lymphocyte">Human - man Lymphocyte</option>
+
+		<option value="Human - woman">Human - woman</option>
+
+		<option value="Human Ascites tumor">Human Ascites tumor</option>
+
+		<option value="Human Bacteria - Salmonella typhimurium">Human Bacteria - Salmonella typhimurium</option>
+
+		<option value="Human Bone marrow">Human Bone marrow</option>
+
+		<option value="Human Cells - not otherwise specified">Human Cells - not otherwise specified</option>
+
+		<option value="Human Embryo">Human Embryo</option>
+
+		<option value="Human Fibroblast">Human Fibroblast</option>
+
+		<option value="Human HeLa cell">Human HeLa cell</option>
+
+		<option value="Human Kidney">Human Kidney</option>
+
+		<option value="Human Leukocyte">Human Leukocyte</option>
+
+		<option value="Human Liver">Human Liver</option>
+
+		<option value="Human Lung">Human Lung</option>
+
+		<option value="Human Lymphocyte">Human Lymphocyte</option>
+
+		<option value="Human Mammary gland">Human Mammary gland</option>
+
+		<option value="Human Ovary">Human Ovary</option>
+
+		<option value="Human Sperm">Human Sperm</option>
+
+		<option value="Human Testis">Human Testis</option>
+
+		<option value="Human Yeast - Saccharomyces cerevisiae">Human Yeast - Saccharomyces cerevisiae</option>
+
+		<option value="Insect - Drosophila melanogaster">Insect - Drosophila melanogaster</option>
+
+		<option value="Insect - Drosophila melanogaster Cells - not other">Insect - Drosophila melanogaster Cells - not other</option>
+
+		<option value="Insect - Drosophila melanogaster Embryo">Insect - Drosophila melanogaster Embryo</option>
+
+		<option value="Insect - Drosophila melanogaster Ovary">Insect - Drosophila melanogaster Ovary</option>
+
+		<option value="Insect - grasshopper">Insect - grasshopper</option>
+
+		<option value="Insect - grasshopper Cells - not otherwise specifi">Insect - grasshopper Cells - not otherwise specifi</option>
+
+		<option value="Insect - grasshopper Embryo">Insect - grasshopper Embryo</option>
+
+		<option value="Insect - not otherwise specified">Insect - not otherwise specified</option>
+
+		<option value="Insect - not otherwise specified Cells - not other">Insect - not otherwise specified Cells - not other</option>
+
+		<option value="Insect - not otherwise specified Embryo">Insect - not otherwise specified Embryo</option>
+
+		<option value="Insect - not otherwise specified Ovary">Insect - not otherwise specified Ovary</option>
+
+		<option value="Insect - silkworm">Insect - silkworm</option>
+
+		<option value="Insect - silkworm Cells - not otherwise specified">Insect - silkworm Cells - not otherwise specified</option>
+
+		<option value="Mammal - cat">Mammal - cat</option>
+
+		<option value="Mammal - cat Bone marrow">Mammal - cat Bone marrow</option>
+
+		<option value="Mammal - cattle">Mammal - cattle</option>
+
+		<option value="Mammal - cattle Bacteria - Salmonella typhimurium">Mammal - cattle Bacteria - Salmonella typhimurium</option>
+
+		<option value="Mammal - cattle Cells - not otherwise specified">Mammal - cattle Cells - not otherwise specified</option>
+
+		<option value="Mammal - cattle Fibroblast">Mammal - cattle Fibroblast</option>
+
+		<option value="Mammal - cattle Kidney">Mammal - cattle Kidney</option>
+
+		<option value="Mammal - cattle Liver">Mammal - cattle Liver</option>
+
+		<option value="Mammal - cattle Lymphocyte">Mammal - cattle Lymphocyte</option>
+
+		<option value="Mammal - cattle Sperm">Mammal - cattle Sperm</option>
+
+		<option value="Mammal - dog">Mammal - dog</option>
+
+		<option value="Mammal - dog Bacteria - Salmonella typhimurium">Mammal - dog Bacteria - Salmonella typhimurium</option>
+
+		<option value="Mammal - dog Cells - not otherwise specified">Mammal - dog Cells - not otherwise specified</option>
+
+		<option value="Mammal - dog Kidney">Mammal - dog Kidney</option>
+
+		<option value="Mammal - dog Lung">Mammal - dog Lung</option>
+
+		<option value="Mammal - dog Lymphocyte">Mammal - dog Lymphocyte</option>
+
+		<option value="Mammal - domestic">Mammal - domestic</option>
+
+		<option value="Mammal - domestic Cells - not otherwise specified">Mammal - domestic Cells - not otherwise specified</option>
+
+		<option value="Mammal - domestic Kidney">Mammal - domestic Kidney</option>
+
+		<option value="Mammal - domestic Leukocyte">Mammal - domestic Leukocyte</option>
+
+		<option value="Mammal - domestic Lymphocyte">Mammal - domestic Lymphocyte</option>
+
+		<option value="Mammal - domestic Mammary gland">Mammal - domestic Mammary gland</option>
+
+		<option value="Mammal - horse, donkey">Mammal - horse, donkey</option>
+
+		<option value="Mammal - pig">Mammal - pig</option>
+
+		<option value="Mammal - pig Cells - not otherwise specified">Mammal - pig Cells - not otherwise specified</option>
+
+		<option value="Mammal - pig Kidney">Mammal - pig Kidney</option>
+
+		<option value="Mammal - pig Leukocyte">Mammal - pig Leukocyte</option>
+
+		<option value="Mammal - pig Lymphocyte">Mammal - pig Lymphocyte</option>
+
+		<option value="Mammal - species unspecified">Mammal - species unspecified</option>
+
+		<option value="Mammal - species unspecified Ascites tumor">Mammal - species unspecified Ascites tumor</option>
+
+		<option value="Mammal - species unspecified Bacteria - Escherichi">Mammal - species unspecified Bacteria - Escherichi</option>
+
+		<option value="Mammal - species unspecified Bacteria - Salmonella">Mammal - species unspecified Bacteria - Salmonella</option>
+
+		<option value="Mammal - species unspecified Bone marrow">Mammal - species unspecified Bone marrow</option>
+
+		<option value="Mammal - species unspecified Cells - not otherwise">Mammal - species unspecified Cells - not otherwise</option>
+
+		<option value="Mammal - species unspecified Fibroblast">Mammal - species unspecified Fibroblast</option>
+
+		<option value="Mammal - species unspecified Kidney">Mammal - species unspecified Kidney</option>
+
+		<option value="Mammal - species unspecified Leukocyte">Mammal - species unspecified Leukocyte</option>
+
+		<option value="Mammal - species unspecified Liver">Mammal - species unspecified Liver</option>
+
+		<option value="Mammal - species unspecified Lung">Mammal - species unspecified Lung</option>
+
+		<option value="Mammal - species unspecified Lymphocyte">Mammal - species unspecified Lymphocyte</option>
+
+		<option value="Mammal - species unspecified Sperm">Mammal - species unspecified Sperm</option>
+
+		<option value="Microorganism - not otherwise specified">Microorganism - not otherwise specified</option>
+
+		<option value="Mold - Aspergillus nidulans">Mold - Aspergillus nidulans</option>
+
+		<option value="Mold - Neurospora crassa">Mold - Neurospora crassa</option>
+
+		<option value="Non-mammalian species">Non-mammalian species</option>
+
+		<option value="Non-mammalian species Cells - not otherwise specif">Non-mammalian species Cells - not otherwise specif</option>
+
+		<option value="Non-mammalian species Embryo">Non-mammalian species Embryo</option>
+
+		<option value="Non-mammalian species Kidney">Non-mammalian species Kidney</option>
+
+		<option value="Non-mammalian species Liver">Non-mammalian species Liver</option>
+
+		<option value="Non-mammalian species Lung">Non-mammalian species Lung</option>
+
+		<option value="Non-mammalian species Lymphocyte">Non-mammalian species Lymphocyte</option>
+
+		<option value="Non-mammalian species Ovary">Non-mammalian species Ovary</option>
+
+		<option value="Non-mammalian species Sperm">Non-mammalian species Sperm</option>
+
+		<option value="Non-mammalian species Testis">Non-mammalian species Testis</option>
+
+		<option value="Primate - monkey">Primate - monkey</option>
+
+		<option value="Primate - monkey Bacteria - Escherichia coli">Primate - monkey Bacteria - Escherichia coli</option>
+
+		<option value="Primate - monkey Bacteria - Salmonella typhimurium">Primate - monkey Bacteria - Salmonella typhimurium</option>
+
+		<option value="Primate - monkey Cells - not otherwise specified">Primate - monkey Cells - not otherwise specified</option>
+
+		<option value="Primate - monkey Kidney">Primate - monkey Kidney</option>
+
+		<option value="Primate - monkey Leukocyte">Primate - monkey Leukocyte</option>
+
+		<option value="Primate - monkey Liver">Primate - monkey Liver</option>
+
+		<option value="Primate - monkey Lung">Primate - monkey Lung</option>
+
+		<option value="Primate - monkey Lymphocyte">Primate - monkey Lymphocyte</option>
+
+		<option value="Protozoa - Chlamydomonas reinhardi">Protozoa - Chlamydomonas reinhardi</option>
+
+		<option value="Protozoa - Euglena gracilis">Protozoa - Euglena gracilis</option>
+
+		<option value="Rodent - gerbil">Rodent - gerbil</option>
+
+		<option value="Rodent - guinea pig">Rodent - guinea pig</option>
+
+		<option value="Rodent - guinea pig Bacteria - Salmonella typhimur">Rodent - guinea pig Bacteria - Salmonella typhimur</option>
+
+		<option value="Rodent - guinea pig Bone marrow">Rodent - guinea pig Bone marrow</option>
+
+		<option value="Rodent - guinea pig Cells - not otherwise specifie">Rodent - guinea pig Cells - not otherwise specifie</option>
+
+		<option value="Rodent - guinea pig Kidney">Rodent - guinea pig Kidney</option>
+
+		<option value="Rodent - guinea pig Liver">Rodent - guinea pig Liver</option>
+
+		<option value="Rodent - guinea pig Lung">Rodent - guinea pig Lung</option>
+
+		<option value="Rodent - guinea pig Lymphocyte">Rodent - guinea pig Lymphocyte</option>
+
+		<option value="Rodent - hamster">Rodent - hamster</option>
+
+		<option value="Rodent - hamster Bacteria - Salmonella typhimurium">Rodent - hamster Bacteria - Salmonella typhimurium</option>
+
+		<option value="Rodent - hamster Cells - not otherwise specified">Rodent - hamster Cells - not otherwise specified</option>
+
+		<option value="Rodent - hamster Embryo">Rodent - hamster Embryo</option>
+
+		<option value="Rodent - hamster Fibroblast">Rodent - hamster Fibroblast</option>
+
+		<option value="Rodent - hamster HeLa cell">Rodent - hamster HeLa cell</option>
+
+		<option value="Rodent - hamster Kidney">Rodent - hamster Kidney</option>
+
+		<option value="Rodent - hamster Leukocyte">Rodent - hamster Leukocyte</option>
+
+		<option value="Rodent - hamster Liver">Rodent - hamster Liver</option>
+
+		<option value="Rodent - hamster Lung">Rodent - hamster Lung</option>
+
+		<option value="Rodent - hamster Lymphocyte">Rodent - hamster Lymphocyte</option>
+
+		<option value="Rodent - hamster Ovary">Rodent - hamster Ovary</option>
+
+		<option value="Rodent - mouse">Rodent - mouse</option>
+
+		<option value="Rodent - mouse Ascites tumor">Rodent - mouse Ascites tumor</option>
+
+		<option value="Rodent - mouse Bacteria - Bacillus subtilis">Rodent - mouse Bacteria - Bacillus subtilis</option>
+
+		<option value="Rodent - mouse Bacteria - Escherichia coli">Rodent - mouse Bacteria - Escherichia coli</option>
+
+		<option value="Rodent - mouse Bacteria - Salmonella typhimurium">Rodent - mouse Bacteria - Salmonella typhimurium</option>
+
+		<option value="Rodent - mouse Bacteria - Serratia marcescens">Rodent - mouse Bacteria - Serratia marcescens</option>
+
+		<option value="Rodent - mouse Bone marrow">Rodent - mouse Bone marrow</option>
+
+		<option value="Rodent - mouse Cells - not otherwise specified">Rodent - mouse Cells - not otherwise specified</option>
+
+		<option value="Rodent - mouse Embryo">Rodent - mouse Embryo</option>
+
+		<option value="Rodent - mouse Fibroblast">Rodent - mouse Fibroblast</option>
+
+		<option value="Rodent - mouse HeLa cell">Rodent - mouse HeLa cell</option>
+
+		<option value="Rodent - mouse Human">Rodent - mouse Human</option>
+
+		<option value="Rodent - mouse Insect - Drosophila melanogaster">Rodent - mouse Insect - Drosophila melanogaster</option>
+
+		<option value="Rodent - mouse Kidney">Rodent - mouse Kidney</option>
+
+		<option value="Rodent - mouse Leukocyte">Rodent - mouse Leukocyte</option>
+
+		<option value="Rodent - mouse Liver">Rodent - mouse Liver</option>
+
+		<option value="Rodent - mouse Lung">Rodent - mouse Lung</option>
+
+		<option value="Rodent - mouse Lymphocyte">Rodent - mouse Lymphocyte</option>
+
+		<option value="Rodent - mouse Mammary gland">Rodent - mouse Mammary gland</option>
+
+		<option value="Rodent - mouse Microorganism - not otherwise speci">Rodent - mouse Microorganism - not otherwise speci</option>
+
+		<option value="Rodent - mouse Mold - Neurospora crassa">Rodent - mouse Mold - Neurospora crassa</option>
+
+		<option value="Rodent - mouse Ovary">Rodent - mouse Ovary</option>
+
+		<option value="Rodent - mouse Sperm">Rodent - mouse Sperm</option>
+
+		<option value="Rodent - mouse Testis">Rodent - mouse Testis</option>
+
+		<option value="Rodent - mouse Yeast - Saccharomyces cerevisiae">Rodent - mouse Yeast - Saccharomyces cerevisiae</option>
+
+		<option value="Rodent - mouse Yeast - Schizosaccharomyces pombe">Rodent - mouse Yeast - Schizosaccharomyces pombe</option>
+
+		<option value="Rodent - rabbit">Rodent - rabbit</option>
+
+		<option value="Rodent - rabbit Bone marrow">Rodent - rabbit Bone marrow</option>
+
+		<option value="Rodent - rabbit Cells - not otherwise specified">Rodent - rabbit Cells - not otherwise specified</option>
+
+		<option value="Rodent - rabbit Kidney">Rodent - rabbit Kidney</option>
+
+		<option value="Rodent - rabbit Leukocyte">Rodent - rabbit Leukocyte</option>
+
+		<option value="Rodent - rabbit Liver">Rodent - rabbit Liver</option>
+
+		<option value="Rodent - rabbit Lung">Rodent - rabbit Lung</option>
+
+		<option value="Rodent - rabbit Lymphocyte">Rodent - rabbit Lymphocyte</option>
+
+		<option value="Rodent - rat">Rodent - rat</option>
+
+		<option value="Rodent - rat Ascites tumor">Rodent - rat Ascites tumor</option>
+
+		<option value="Rodent - rat Bacteria - Bacillus subtilis">Rodent - rat Bacteria - Bacillus subtilis</option>
+
+		<option value="Rodent - rat Bacteria - Escherichia coli">Rodent - rat Bacteria - Escherichia coli</option>
+
+		<option value="Rodent - rat Bacteria - Salmonella typhimurium">Rodent - rat Bacteria - Salmonella typhimurium</option>
+
+		<option value="Rodent - rat Bone marrow">Rodent - rat Bone marrow</option>
+
+		<option value="Rodent - rat Cells - not otherwise specified">Rodent - rat Cells - not otherwise specified</option>
+
+		<option value="Rodent - rat Embryo">Rodent - rat Embryo</option>
+
+		<option value="Rodent - rat Fibroblast">Rodent - rat Fibroblast</option>
+
+		<option value="Rodent - rat HeLa cell">Rodent - rat HeLa cell</option>
+
+		<option value="Rodent - rat Kidney">Rodent - rat Kidney</option>
+
+		<option value="Rodent - rat Leukocyte">Rodent - rat Leukocyte</option>
+
+		<option value="Rodent - rat Liver">Rodent - rat Liver</option>
+
+		<option value="Rodent - rat Lung">Rodent - rat Lung</option>
+
+		<option value="Rodent - rat Lymphocyte">Rodent - rat Lymphocyte</option>
+
+		<option value="Rodent - rat Mammary gland">Rodent - rat Mammary gland</option>
+
+		<option value="Rodent - rat Mold - Neurospora crassa">Rodent - rat Mold - Neurospora crassa</option>
+
+		<option value="Rodent - rat Ovary">Rodent - rat Ovary</option>
+
+		<option value="Rodent - rat Sperm">Rodent - rat Sperm</option>
+
+		<option value="Rodent - rat Testis">Rodent - rat Testis</option>
+
+		<option value="Rodent - rat Yeast - Saccharomyces cerevisiae">Rodent - rat Yeast - Saccharomyces cerevisiae</option>
+
+		<option value="Rodent - squirrel">Rodent - squirrel</option>
+
+		<option value="Yeast - Saccharomyces cerevisiae">Yeast - Saccharomyces cerevisiae</option>
+
+		<option value="Yeast - Schizosaccharomyces pombe">Yeast - Schizosaccharomyces pombe</option>
+
+	</select>
+	<input type="hidden" name="toxeff" value="生殖毒性">
+	<input type="hidden" name="LX" value="对新生儿的影响——断奶或哺乳期指数(如。每个活产儿,在断奶第四天)">
+	<input type=submit value="确定" id=submit1 name=submit1>
+	</form>
+
+
+	<TABLE class=newform bordercolor="#BFBDDF" border="1" cellspacing=1 width=880 align=center>  
+  	<TR  align=center bgcolor=LightSkyBlue>
+   	<TD width=40>序号</TD>
+    	<TD width=440>Compound Name</TD>
+    	<TD width=80>CAS RN</TD>
+    	<TD width=200>结构</TD>
+     	<TD width=120>毒性作用分类</TD>
+   	</TR>
+
+		<tr height=40px>
+		<td bgcolor=#edf0f5 align=center width=60px>21</td>
+		<TD title="查看物质的毒性数据"><!--<A onclick="OpenDetail(20842,64622453,16299853)" href="#" >-->
+		<A href="tox_detail2.asp?CmpSeq=20842&casno=64622453&srn=16299853">
+		Benzeneacetic acid, alpha-methyl-4-(2-methylpropyl)-, 2-pyridinylmethyl ester</A></TD>		
+		<TD>64622-45-3</TD>
+		<TD  align=center >
+		
+			
+			<APPLET code=mol.class id=Applet2 name=mol style='HEIGHT:180px; WIDTH: 200px' VIEWASTEXT>
+				<PARAM NAME='font' VALUE='Arial'>
+				<PARAM NAME='moldata' VALUE='"DI0401016f001600e600b50000000100fd00c200000002011400b5000000030114009a0000000400fd008d0000000500e6009a0000000600b800b50000000700cf00c20000000800a200c20000000900b8009a0000000a012b008d0000000b0142009a0000000c014200b50000000d0158008d0000000e00cf00dc0000000f00a2008d00000010008b009a000000110074008d00000012005d009a00000013005d00b500000014007400c200000015008b00b500000016
+DI0402024b001600e200ae000000000001000100f900bb0000000000010002011000ae000000000001000301100093000000000001000400f90086000000000001000500e20093000000000001000600b400ae000000000001000700cb00bb0000000000010008009e00bb000000000001000900b40093000000000001000a01270086000000000001000b013e0093000000000001000c013e00ae000000000001000d01540086000000000001000e00cb00d5000000000001000f009e00860000000000010010008700930000000000010011007000860000000000010012005900930000000000010013005900ae0000000000010014007000bb0000000000010015008700ae0000000000010016C!C!C!C!C!C!C!C!O!O!C!C!C!C!C!C!C!C!C!C!C!N!
+DI040302df001e00e600b500fd00c20002001700fd00c2011400b50002001800fd00bb010e00b200020018011400b50114009a000200190114009a00fd008d0002001a010e009d00fd00940002001a00fd008d00e6009a0002001b00e600b500e6009a0002001c00eb00b100eb009e0002001c00b800b500cf00c20002001d00b900b700a300c40002001e00b700b300a100c00002001e00b800b500b8009a0002001f00e600b500cf00c200020020012b008d0142009a000200210142009a014200b5000200220142009a0158008d000200230114009a012b008d0002002400cf00c200cf00dc00020025008b009a0074008d000200260074008d005d009a00020027007400940063009d00020027005d009a005d00b500020028005d00b5007400c200020029006300b2007400bb00020029007400c2008b00b50002002a008b009a008b00b50002002b0086009e008600b10002002b00a2008d008b009a0002002c00b8009a00a2008d0002002d
+DI0406001b0002010000000101
+DI0407022b002d01000103000101000103000201000103000301000103000401000103000501000103000601000103000701000103000801000103000901000103000a01000103000b01000103000c01000103000d01000103000e01000103000f01000103001001000103001101000103001201000103001301000103001401000103001501000103001601000104000101000104000401000104000501000104000601000104000801000104000201000104000901000104000a01000104000b01000104000301000104000e01000104000f01000104001001000104000701000104000c01000104001201000104001401000104001501000104001601000104001701000104001301000104001101000104000d
+DI050100220001000f1:ANSI_VAR_FONT
+DI050200230002ffffffff01ffff000001
+DI0503001900010000000000
+
+"'>
+				<PARAM NAME='fontcolor' VALUE='000000'>
+				<PARAM NAME='ratio' VALUE='1'>
+				<PARAM NAME='fontsize' VALUE='14'>
+				<PARAM NAME='forecolor' VALUE='000000'>
+				<PARAM NAME='backcolor' VALUE='ffffff'>
+				<PARAM NAME='DisplayMode' VALUE='2'>
+				</APPLET>
+			
+		
+		</td>
+		<TD align=center><a href=Tox_Effect.asp?cmpseq=20842 target=_blank>除致死量外无其他报道;肺部、胸部或者呼吸毒性;内分泌毒性;生殖毒性;胃肠道毒性;行为改变;血液毒性;营养和代谢系统毒性</a></TD>
+		</tr>		
+
+		<tr height=40px>
+		<td bgcolor=#edf0f5 align=center width=60px>22</td>
+		<TD title="查看物质的毒性数据"><!--<A onclick="OpenDetail(22055,14611520,148063623)" href="#" >-->
+		<A href="tox_detail2.asp?CmpSeq=22055&casno=14611520&srn=148063623">
+		Benzeneethanamine, N,alpha-dimethyl-N-2-propynyl-, hydrochloride, (R)-</A></TD>		
+		<TD>14611-52-0</TD>
+		<TD  align=center >
+		
+			
+			<APPLET code=mol.class id=Applet2 name=mol style='HEIGHT:180px; WIDTH: 200px' VIEWASTEXT>
+				<PARAM NAME='font' VALUE='Arial'>
+				<PARAM NAME='moldata' VALUE='"DI040100ff000f011100bf0000000100f300cf00000002012f00cf000000030110009d0000000400d500be00000005014d00c000000006012f008d0000000700b700ce0000000800d5009c00000009014d009e0000000a009900bd0000000b00b700ef0000000c007b00cd0000000d005d00dd0000000e00cd011a0000000f
+DI04020196000f010d00b8000000000001000100ef00c80000000000010002012b00c80000000000010003010c0096000000000001000400d100b70000000000010005014900b90000000000010006012b0086000000000001000700b300c7000000000001000800d10095000000000001000901490097000000000001000a009500b6000000000001000b00b300e8000000000001000c007700c6000000000001000d005900d6000000000001000e00c90113000000000001000fC!C!C!C!C!C!C!N!C!C!C!C!C!C!Cl!
+DI040301bf0012011100bf00f300cf00020010011100bf012f00cf00020011011100bf0110009d00020012011800ba011700a20002001200f300cf00d500be00020013012f00cf014d00c000020014013100c7014500bc000200140110009d012f008d0002001500d500be00b700ce00020016014d00c0014d009e0002001800b700ce009900bd0002001900b700ce00b700ef0002001a009900bd007b00cd0002001b007b00cd005d00dd0002001c007d00d1005f00e10002001c007900c9005b00d90002001c012f008d014d009e0002001d01310096014500a10002001d
+DI0404003b000100d500be,00d1009e,00d9009e:10001:20002:30017
+DI0406001b0002010001000101
+DI0407016b001d01000103000101000103000201000103000301000103000401000103000501000103000601000103000701000103000801000103000901000103000a01000103000b01000103000c01000103000d01000103000e01000203000f01000104000101000104000201000104000301000104000401000104000501000104000601000104000701000104000801000104000901000104000b01000104000c01000104000d01000104000e01000104000a
+DI050100280001000f1:ANSI_VAR_FONT01070d
+DI050200190001ffffffff01
+DI0503001900010000000000
+
+"'>
+				<PARAM NAME='fontcolor' VALUE='000000'>
+				<PARAM NAME='ratio' VALUE='1'>
+				<PARAM NAME='fontsize' VALUE='14'>
+				<PARAM NAME='forecolor' VALUE='000000'>
+				<PARAM NAME='backcolor' VALUE='ffffff'>
+				<PARAM NAME='DisplayMode' VALUE='2'>
+				</APPLET>
+			
+		
+		</td>
+		<TD align=center><a href=Tox_Effect.asp?cmpseq=22055 target=_blank>除致死量外无其他报道;生殖毒性</a></TD>
+		</tr>		
+
+		<tr height=40px>
+		<td bgcolor=#edf0f5 align=center width=60px>23</td>
+		<TD title="查看物质的毒性数据"><!--<A onclick="OpenDetail(22070,135014878,41170066)" href="#" >-->
+		<A href="tox_detail2.asp?CmpSeq=22070&casno=135014878&srn=41170066">
+		Benzeneethanamine, 4-ethoxy-alpha-methyl-, hydrochloride</A></TD>		
+		<TD>135014-87-8</TD>
+		<TD  align=center >
+		
+			
+			<APPLET code=mol.class id=Applet2 name=mol style='HEIGHT:180px; WIDTH: 200px' VIEWASTEXT>
+				<PARAM NAME='font' VALUE='Arial'>
+				<PARAM NAME='moldata' VALUE='"DI040100ff000f00b800b50000000100cf00c20000000200e600b50000000300e6009a0000000400cf008d0000000500b8009a00000006008b00b50000000700a200c200000008008b009a00000009007400c20000000a00fd008d0000000b0114009a0000000c012b008d0000000d0074008d0000000e005d009a0000000f
+DI04020196000f00b400ae000000000001000100cb00bb000000000001000200e200ae000000000001000300e20093000000000001000400cb0086000000000001000500b400930000000000010006008700ae0000000000010007009e00bb0000000000010008008700930000000000010009007000bb000000000001000a00f90086000000000001000b01100093000000000001000c01270086000000000001000d00700086000000000001000e00590093000000000001000fC!C!C!C!C!C!C!C!N!C!O!C!C!H!Cl!
+DI040301a7001100b800b500cf00c20002001000cf00c200e600b50002001100cf00bb00e000b20002001100e600b500e6009a0002001200e6009a00cf008d0002001300e0009d00cf00940002001300cf008d00b8009a0002001400b800b500b8009a0002001500bd00b100bd009e00020015008b00b500a200c200020016008b00b5008b009a0002001700b800b500a200c200020018008b00b5007400c2000200190114009a012b008d0002001a00fd008d0114009a0002001b00e6009a00fd008d0002001c0074008d005d009a0002000e
+DI0406001b0002010000000101
+DI0407015f001c01000103000101000103000201000103000301000103000401000103000501000103000601000103000701000103000801000103000901000103000a01000103000b01000103000c01000103000d0100020c000e01000203000e01000104000101000104000401000104000501000104000601000104000801000104000201000104000901000104000a01000104000301000104000b01000104000d01000104000c010001040007
+DI050100220001000f1:ANSI_VAR_FONT
+DI050200230002ffffffff01ffff000001
+DI0503001900010000000000
+
+"'>
+				<PARAM NAME='fontcolor' VALUE='000000'>
+				<PARAM NAME='ratio' VALUE='1'>
+				<PARAM NAME='fontsize' VALUE='14'>
+				<PARAM NAME='forecolor' VALUE='000000'>
+				<PARAM NAME='backcolor' VALUE='ffffff'>
+				<PARAM NAME='DisplayMode' VALUE='2'>
+				</APPLET>
+			
+		
+		</td>
+		<TD align=center><a href=Tox_Effect.asp?cmpseq=22070 target=_blank>生殖毒性</a></TD>
+		</tr>		
+
+		<tr height=40px>
+		<td bgcolor=#edf0f5 align=center width=60px>24</td>
+		<TD title="查看物质的毒性数据"><!--<A onclick="OpenDetail(22108,0,0)" href="#" >-->
+		<A href="tox_detail2.asp?CmpSeq=22108&casno=0&srn=0">
+		Benzeneethanamine, alpha-methyl-4-propoxy-, hydrochloride</A></TD>		
+		<TD>N/A</TD>
+		<TD  align=center >
+		暂无结构
+		</td>
+		<TD align=center><a href=Tox_Effect.asp?cmpseq=22108 target=_blank>生殖毒性</a></TD>
+		</tr>		
+
+		<tr height=40px>
+		<td bgcolor=#edf0f5 align=center width=60px>25</td>
+		<TD title="查看物质的毒性数据"><!--<A onclick="OpenDetail(22266,118741,21321)" href="#" >-->
+		<A href="tox_detail2.asp?CmpSeq=22266&casno=118741&srn=21321">
+		Benzene, hexachloro-</A></TD>		
+		<TD>118-74-1</TD>
+		<TD  align=center >
+		
+			
+			<APPLET code=mol.class id=Applet2 name=mol style='HEIGHT:180px; WIDTH: 200px' VIEWASTEXT>
+				<PARAM NAME='font' VALUE='Arial'>
+				<PARAM NAME='moldata' VALUE='"DI040100cf000c00ac00bb00000001009f00a400000002008500a400000003007700bb00000004008500d200000005009f00d20000000600c700bb0000000700ac008d000000080077008d00000009005d00bb0000000a007700e80000000b00ac00e80000000c
+DI0402014d000c00a800b40000000000010001009b009d00000000000100020081009d0000000000010003007300b40000000000010004008100cb0000000000010005009b00cb000000000001000600c300b4000000000001000700a800860000000000010008007300860000000000010009005900b4000000000001000a007300e1000000000001000b00a800e1000000000001000cC!C!C!C!C!C!Cl!Cl!Cl!Cl!Cl!Cl!
+DI04030177000f00ac00bb009f00a40002000d009f00a4008500a40002000e009b00a9008900a90002000e008500a4007700bb0002000f007700bb008500d200020010007e00bb008800cc00020010008500d2009f00d20002001100ac00bb009f00d20002001200a500bb009c00cc0002001200ac00bb00c700bb00020013009f00a400ac008d00020014008500a40077008d00020015007700bb005d00bb00020016008500d2007700e800020017009f00d200ac00e800020018
+DI0406001b0002010000000101
+DI0407012f001801000103000101000103000201000103000301000103000401000103000501000103000601000103000701000103000801000103000901000103000a01000103000b01000103000c01000104000101000104000401000104000601000104000801000104000a01000104000201000104000301000104000501000104000701000104000901000104000b01000104000c
+DI050100220001000f1:ANSI_VAR_FONT
+DI050200230002ffffffff01ffff000001
+DI0503001900010000000000
+
+"'>
+				<PARAM NAME='fontcolor' VALUE='000000'>
+				<PARAM NAME='ratio' VALUE='1'>
+				<PARAM NAME='fontsize' VALUE='14'>
+				<PARAM NAME='forecolor' VALUE='000000'>
+				<PARAM NAME='backcolor' VALUE='ffffff'>
+				<PARAM NAME='DisplayMode' VALUE='2'>
+				</APPLET>
+			
+		
+		</td>
+		<TD align=center><a href=Tox_Effect.asp?cmpseq=22266 target=_blank>除致死量外无其他报道;肝毒性;慢性病相关毒性;免疫系统毒性;内分泌毒性;肾、输尿管和膀胱毒性;生化毒性;生殖毒性;胃肠道毒性;行为改变;血液毒性;营养和代谢系统毒性;致癌性</a></TD>
+		</tr>		
+
+		<tr height=40px>
+		<td bgcolor=#edf0f5 align=center width=60px>26</td>
+		<TD title="查看物质的毒性数据"><!--<A onclick="OpenDetail(23054,155919,51087)" href="#" >-->
+		<A href="tox_detail2.asp?CmpSeq=23054&casno=155919&srn=51087">
+		Benzenesulfonamide, 4-amino-N-(4,6-dimethoxy-2-pyrimidinyl)-</A></TD>		
+		<TD>155-91-9</TD>
+		<TD  align=center >
+		
+			
+			<APPLET code=mol.class id=Applet2 name=mol style='HEIGHT:180px; WIDTH: 200px' VIEWASTEXT>
+				<PARAM NAME='font' VALUE='Arial'>
+				<PARAM NAME='moldata' VALUE='"DI0401015f001500e100e80000000100fb00e800000002010900ff0000000300fb01160000000400e101160000000500d400ff0000000600d400d20000000700bd00df0000000800eb00c40000000900c700bb0000000a00ac00bb0000000b009f00a40000000c008500a40000000d007700bb0000000e008500d20000000f009f00d200000010007700e800000011005d00e8000000120077008d00000013005d008d000000140109012d00000015
+DI04020231001500dd00e1000000000001000100f700e10000000000010002010500f8000000000001000300f7010f000000000001000400dd010f000000000001000500d000f8000000000001000600d000cb000000000001000700b900d8000000000001000800e700bd000000000001000900c300b4000000000001000a00a800b4000000000001000b009b009d000000000001000c0081009d000000000001000d007300b4000000000001000e008100cb000000000001000f009b00cb0000000000010010007300e10000000000010011005900e10000000000010012007300860000000000010013005900860000000000010014010501260000000000010015C!C!C!C!C!C!S!O!O!N!C!N!C!C!C!N!O!C!O!C!N!
+DI040302df001e00e100e800fb00e80002001600fb00e8010900ff0002001700f800ee010200ff00020017010900ff00fb01160002001800fb011600e101160002001900f7011100e501110002001900e1011600d400ff0002001a00e100e800d400ff0002001b00e400ee00db00ff0002001b00d500d400be00e10002001c00d300d000bc00dd0002001c00d300d000ea00c20002001d00d500d400ec00c60002001d00d400d200c700bb0002001e00e100e800d400d20002001f00ac00bb009f00a400020020009f00a4008500a400020021009b00a9008900a900020021008500a4007700bb00020022007700bb008500d200020023007e00bb008800cc00020023008500d2009f00d20002002400ac00bb009f00d20002002500a500bb009c00cc00020025007700e8005d00e800020026008500d2007700e8000200270077008d005d008d00020028008500a40077008d0002002900c700bb00ac00bb0002002a00fb01160109012d0002002b
+DI0406001b0002010000000101
+DI04070213002b01000103000101000103000201000103000301000103000401000103000501000103000601000103000701000103000801000103000901000103000a01000103000b01000103000c01000103000d01000103000e01000103000f01000103001001000103001101000103001201000103001301000103001401000103001501000104000101000104000401000104000501000104000601000104000801000104000201000104000901000104000a01000104000b01000104000301000104000d01000104000f01000104001001000104001201000104001301000104000e01000104001501000104001401000104001601000104001101000104000c010001040007
+DI050100220001000f1:ANSI_VAR_FONT
+DI050200230002ffffffff01ffff000001
+DI0503001900010000000000
+
+"'>
+				<PARAM NAME='fontcolor' VALUE='000000'>
+				<PARAM NAME='ratio' VALUE='1'>
+				<PARAM NAME='fontsize' VALUE='14'>
+				<PARAM NAME='forecolor' VALUE='000000'>
+				<PARAM NAME='backcolor' VALUE='ffffff'>
+				<PARAM NAME='DisplayMode' VALUE='2'>
+				</APPLET>
+			
+		
+		</td>
+		<TD align=center><a href=Tox_Effect.asp?cmpseq=23054 target=_blank>肝毒性;慢性病相关毒性;生殖毒性;血液毒性</a></TD>
+		</tr>		
+
+		<tr height=40px>
+		<td bgcolor=#edf0f5 align=center width=60px>27</td>
+		<TD title="查看物质的毒性数据"><!--<A onclick="OpenDetail(23416,3459209,51087)" href="#" >-->
+		<A href="tox_detail2.asp?CmpSeq=23416&casno=3459209&srn=51087">
+		Benzenesulfonamide, N-(5-(2-methoxyethoxy)-2-pyrimidinyl)-, sodium salt</A></TD>		
+		<TD>3459-20-9</TD>
+		<TD  align=center >
+		
+			
+			<APPLET code=mol.class id=Applet2 name=mol style='HEIGHT:180px; WIDTH: 200px' VIEWASTEXT>
+				<PARAM NAME='font' VALUE='Arial'>
+				<PARAM NAME='moldata' VALUE='"DI0401015f001500e100e80000000100fb00e800000002010900ff0000000300fb01160000000400e101160000000500d400ff0000000600d400d20000000700bd00df0000000800eb00c40000000900c700bb0000000a00ac00bb0000000b009f00a40000000c008500a40000000d007700bb0000000e008500d20000000f009f00d200000010007700e800000011005d00e8000000120077008d00000013005d008d000000140109012d00000015
+DI04020231001500dd00e1000000000001000100f700e10000000000010002010500f8000000000001000300f7010f000000000001000400dd010f000000000001000500d000f8000000000001000600d000cb000000000001000700b900d8000000000001000800e700bd000000000001000900c300b4000000000001000a00a800b4000000000001000b009b009d000000000001000c0081009d000000000001000d007300b4000000000001000e008100cb000000000001000f009b00cb0000000000010010007300e10000000000010011005900e10000000000010012007300860000000000010013005900860000000000010014010501260000000000010015C!C!C!C!C!C!S!O!O!N!C!N!C!C!C!N!O!C!O!C!N!
+DI040302df001e00e100e800fb00e80002001600fb00e8010900ff0002001700f800ee010200ff00020017010900ff00fb01160002001800fb011600e101160002001900f7011100e501110002001900e1011600d400ff0002001a00e100e800d400ff0002001b00e400ee00db00ff0002001b00d500d400be00e10002001c00d300d000bc00dd0002001c00d300d000ea00c20002001d00d500d400ec00c60002001d00d400d200c700bb0002001e00e100e800d400d20002001f00ac00bb009f00a400020020009f00a4008500a400020021009b00a9008900a900020021008500a4007700bb00020022007700bb008500d200020023007e00bb008800cc00020023008500d2009f00d20002002400ac00bb009f00d20002002500a500bb009c00cc00020025007700e8005d00e800020026008500d2007700e8000200270077008d005d008d00020028008500a40077008d0002002900c700bb00ac00bb0002002a00fb01160109012d0002002b
+DI0406001b0002010000000101
+DI04070213002b01000103000101000103000201000103000301000103000401000103000501000103000601000103000701000103000801000103000901000103000a01000103000b01000103000c01000103000d01000103000e01000103000f01000103001001000103001101000103001201000103001301000103001401000103001501000104000101000104000401000104000501000104000601000104000801000104000201000104000901000104000a01000104000b01000104000301000104000d01000104000f01000104001001000104001201000104001301000104000e01000104001501000104001401000104001601000104001101000104000c010001040007
+DI050100220001000f1:ANSI_VAR_FONT
+DI050200230002ffffffff01ffff000001
+DI0503001900010000000000
+
+"'>
+				<PARAM NAME='fontcolor' VALUE='000000'>
+				<PARAM NAME='ratio' VALUE='1'>
+				<PARAM NAME='fontsize' VALUE='14'>
+				<PARAM NAME='forecolor' VALUE='000000'>
+				<PARAM NAME='backcolor' VALUE='ffffff'>
+				<PARAM NAME='DisplayMode' VALUE='2'>
+				</APPLET>
+			
+		
+		</td>
+		<TD align=center><a href=Tox_Effect.asp?cmpseq=23416 target=_blank>除致死量外无其他报道;慢性病相关毒性;内分泌毒性;生殖毒性;行为改变;营养和代谢系统毒性</a></TD>
+		</tr>		
+
+		<tr height=40px>
+		<td bgcolor=#edf0f5 align=center width=60px>28</td>
+		<TD title="查看物质的毒性数据"><!--<A onclick="OpenDetail(24484,17804352,1001242)" href="#" >-->
+		<A href="tox_detail2.asp?CmpSeq=24484&casno=17804352&srn=1001242">
+		2-Benzimidazolecarbamic acid, 1-(butylcarbamoyl)-, methyl ester</A></TD>		
+		<TD>17804-35-2</TD>
+		<TD  align=center >
+		
+			
+			<APPLET code=mol.class id=Applet2 name=mol style='HEIGHT:180px; WIDTH: 200px' VIEWASTEXT>
+				<PARAM NAME='font' VALUE='Arial'>
+				<PARAM NAME='moldata' VALUE='"DI0401015f0015010100bf0000000100e600bf00000002010e00a800000003010e00d50000000400d900d50000000500e400ee0000000600d000ff0000000700b900f20000000800bf00d80000000900d0011a0000000a00b901270000000b00a2011a0000000c00a200ff0000000d00ad00c50000000e009300ca0000000f00b500ac0000001000a3009900000011008900a0000000120076008d00000013005d009400000014010100ec00000015
+DI04020231001500fd00b8000000000001000100e200b80000000000010002010a00a10000000000010003010a00ce000000000001000400d500ce000000000001000500e000e7000000000001000600cc00f8000000000001000700b500eb000000000001000800bb00d1000000000001000900cc0113000000000001000a00b50120000000000001000b009e0113000000000001000c009e00f8000000000001000d00a900be000000000001000e008f00c3000000000001000f00b100a50000000000010010009f009200000000000100110085009900000000000100120072008600000000000100130059008d000000000001001400fd00e50000000000010015C!N!O!O!C!N!C!C!N!C!C!C!C!C!O!N!C!C!C!C!C!
+DI040302af001c010100bf00e600bf0002001600ff00be010c00a700020017010300c0011000a900020017010100bf010e00d50002001800d900d500e400ee0002001900d600db00dd00ec0002001900e400ee00d000ff0002001a00d000ff00b900f20002001b00b900f200bf00d80002001c00d900d500bf00d80002001d00d0011a00b901270002001e00b9012700a2011a0002001f00b9012000a801170002001f00a2011a00a200ff0002002000b900f200a200ff0002002100b900f900a801020002002100d000ff00d0011a0002002200cb010300cb01160002002200ad00c7009300cc0002002300ad00c3009300c80002002300a30099008900a000020024008900a00076008d000200250076008d005d00940002002600b500ac00a300990002002700ad00c500b500ac0002002800bf00d800ad00c50002002900e600bf00d900d50002002a010e00d5010100ec0002002b
+DI0406001b0002010000000101
+DI04070213002b01000103000101000103000201000103000301000103000401000103000501000103000601000103000701000103000801000103000901000103000a01000103000b01000103000c01000103000d01000103000e01000103000f01000103001001000103001101000103001201000103001301000103001401000103001501000104000101000104000201000104000301000104000601000104000801000104000901000104000b01000104000701000104000e01000104000f01000104001001000104000c01000104000a01000104001101000104001401000104001501000104001601000104001301000104001201000104000d010001040004010001040005
+DI050100220001000f1:ANSI_VAR_FONT
+DI050200230002ffffffff01ffff000001
+DI0503001900010000000000
+
+"'>
+				<PARAM NAME='fontcolor' VALUE='000000'>
+				<PARAM NAME='ratio' VALUE='1'>
+				<PARAM NAME='fontsize' VALUE='14'>
+				<PARAM NAME='forecolor' VALUE='000000'>
+				<PARAM NAME='backcolor' VALUE='ffffff'>
+				<PARAM NAME='DisplayMode' VALUE='2'>
+				</APPLET>
+			
+		
+		</td>
+		<TD align=center><a href=Tox_Effect.asp?cmpseq=24484 target=_blank>除致死量外无其他报道;大脑毒性;肝毒性;免疫系统毒性;内分泌毒性;生化毒性;生殖毒性;嗅觉毒性;血液毒性;营养和代谢系统毒性</a></TD>
+		</tr>		
+
+		<tr height=40px>
+		<td bgcolor=#edf0f5 align=center width=60px>29</td>
+		<TD title="查看物质的毒性数据"><!--<A onclick="OpenDetail(25089,57808669,60696119)" href="#" >-->
+		<A href="tox_detail2.asp?CmpSeq=25089&casno=57808669&srn=60696119">
+		2H-Benzimidazol-2-one, 1,3-dihydro-5-chloro-1-(1-(3-(2,3-dihydro-2-oxo-1H-benzimidazol- 1-yl)propyl)-4-piperidinyl)-</A></TD>		
+		<TD>57808-66-9</TD>
+		<TD  align=center >
+		
+			
+			<APPLET code=mol.class id=Applet2 name=mol style='HEIGHT:180px; WIDTH: 200px' VIEWASTEXT>
+				<PARAM NAME='font' VALUE='Arial'>
+				<PARAM NAME='moldata' VALUE='"DI040101ef001e00aa00de00000001009000dc00000002008a00c20000000300a100b50000000400b400c600000005007400b5000000060074009a00000007008a008d0000000800a1009a0000000900b700f50000000a010100b60000000b00f000a20000000c00d600a80000000d00ce00c10000000e00e000d40000000f00f900cf00000010011b00b000000011012c00c400000012014600bd00000013017200cc00000014017e00e300000015016b00f600000016015400ea00000017015800d000000018016d0110000000190157011f0000001a014001130000001b013e00f80000001c017e00b40000001d005d008d0000001e
+DI0402031c001e00a600d70000000000010001008c00d50000000000010002008600bb0000000000010003009d00ae000000000001000400b000bf0000000000010005007000ae0000000000010006007000930000000000010007008600860000000000010008009d0093000000000001000900b300ee000000000001000a00fd00af000000000001000b00ec009b000000000001000c00d200a1000000000001000d00ca00ba000000000001000e00dc00cd000000000001000f00f500c80000000000010010011700a90000000000010011012800bd0000000000010012014200b60000000000010013016e00c50000000000010014017a00dc0000000000010015016700ef0000000000010016015000e30000000000010017015400c9000000000001001801690109000000000001001901530118000000000001001a013c010c000000000001001b013a00f1000000000001001c017a00ad000000000001001d00590086000000000001001eC!N!C!C!N!C!C!C!C!O!N!C!C!C!C!C!C!C!C!C!N!C!C!N!C!C!C!C!O!Cl!
+DI040303ff002a00aa00de009000dc0002001f009000dc008a00c200020020008a00c200a100b50002002100a100b500b400c60002002200aa00de00b400c600020023007400b50074009a000200240074009a008a008d00020025007a009c008a009300020025008a008d00a1009a0002002600a100b500a1009a00020027009c00b1009c009e00020027008a00c2007400b500020028008a00bc007a00b30002002800ac00dd00b900f40002002900a800df00b500f600020029010100b600f000a20002002a00f000a200d600a80002002b00d600a800ce00c10002002c00ce00c100e000d40002002d00e000d400f900cf0002002e010100b600f900cf0002002f011b00b0012c00c400020030012c00c4014600bd00020031017200cc017e00e300020032017e00e3016b00f600020033016b00f6015400ea00020034015400ea015800d000020035017200cc015800d000020036016d01100157011f000200370157011f014001130002003801560118014501100002003801400113013e00f800020039015400ea013e00f80002003a015400f0014400fa0002003a016b00f6016d01100002003b016600fa0168010c0002003b017000cb017c00b30002003c017400cd018000b50002003c014600bd015800d00002003d010100b6011b00b00002003e00b400c600ce00c10002003f0074009a005d008d00020040
+DI0406001b0002010000000101
+DI0407030f004001000103000101000103000201000103000301000103000401000103000501000103000601000103000701000103000801000103000901000103000a01000103000b01000103000c01000103000d01000103000e01000103000f01000103001001000103001101000103001201000103001301000103001401000103001501000103001601000103001701000103001801000103001901000103001a01000103001b01000103001c01000103001d01000103001e01000104000101000104000401000104000501000104000701000104000201000104000a01000104000b01000104000d01000104000801000104000601000104000301000104000e01000104001101000104001201000104001301000104001401000104000f01000104001501000104001601000104001801000104001b01000104001c01000104001e01000104001901000104002001000104002101000104002201000104001f01000104001d01000104001a01000104001701000104001001000104000901000104000c
+DI050100220001000f1:ANSI_VAR_FONT
+DI050200230002ffffffff01ffff000001
+DI0503001900010000000000
+
+"'>
+				<PARAM NAME='fontcolor' VALUE='000000'>
+				<PARAM NAME='ratio' VALUE='1'>
+				<PARAM NAME='fontsize' VALUE='14'>
+				<PARAM NAME='forecolor' VALUE='000000'>
+				<PARAM NAME='backcolor' VALUE='ffffff'>
+				<PARAM NAME='DisplayMode' VALUE='2'>
+				</APPLET>
+			
+		
+		</td>
+		<TD align=center><a href=Tox_Effect.asp?cmpseq=25089 target=_blank>除致死量外无其他报道;肺部、胸部或者呼吸毒性;慢性病相关毒性;内分泌毒性;皮肤和附件毒性;肾、输尿管和膀胱毒性;生殖毒性;胃肠道毒性;心脏毒性;行为改变;血液毒性;眼毒性;营养和代谢系统毒性</a></TD>
+		</tr>		
+
+		<tr height=40px>
+		<td bgcolor=#edf0f5 align=center width=60px>30</td>
+		<TD title="查看物质的毒性数据"><!--<A onclick="OpenDetail(25364,81072,59254655)" href="#" >-->
+		<A href="tox_detail2.asp?CmpSeq=25364&casno=81072&srn=59254655">
+		1,2-Benzisothiazolin-3-one, 1,1-dioxide</A></TD>		
+		<TD>81-07-2</TD>
+		<TD  align=center >
+		
+			
+			<APPLET code=mol.class id=Applet2 name=mol style='HEIGHT:180px; WIDTH: 200px' VIEWASTEXT>
+				<PARAM NAME='font' VALUE='Arial'>
+				<PARAM NAME='moldata' VALUE='"DI040100df000d008700a500000001007700ba00000002008700d00000000300a000c80000000400b700d50000000500ce00c80000000600ce00ad0000000700b700a00000000800a000ad00000009007f00e90000000a005d00ba0000000b0092008d0000000c007000980000000d
+DI04020161000d0083009e0000000000010001007300b30000000000010002008300c90000000000010003009c00c1000000000001000400b300ce000000000001000500ca00c1000000000001000600ca00a6000000000001000700b300990000000000010008009c00a60000000000010009007b00e2000000000001000a005900b3000000000001000b008e0086000000000001000c006c0091000000000001000dS!N!C!C!C!C!C!C!C!O!H!O!O!
+DI040301ef0014008700a5007700ba0002000e007700ba008700d00002000f008700d000a000c80002001000a000c800b700d50002001100b700d500ce00c80002001200b700ce00c800c50002001200ce00c800ce00ad0002001300ce00ad00b700a00002001400c800b000b700a70002001400b700a000a000ad00020015008700a500a000ad0002001600a000c800a000ad0002001700a500c400a500b100020017008900d1008100ea00020018008500cf007d00e800020018007700ba005d00ba0002000b008500a40090008c00020019008900a60094008e00020019008600a7006f009a0002001a008800a3007100960002001a
+DI0406001b0002010000000101
+DI04070147001a01000103000101000103000201000103000301000103000401000103000501000103000601000103000701000103000801000103000901000103000a0100010c000201000103000b01000103000c01000104000101000104000501000104000601000104000801000104000a01000104000b01000104000c01000104000d010001040002010001040009010001040007010001040003010001040004
+DI050100220001000f1:ANSI_VAR_FONT
+DI050200230002ffffffff01ffff000001
+DI0503001900010000000000
+
+"'>
+				<PARAM NAME='fontcolor' VALUE='000000'>
+				<PARAM NAME='ratio' VALUE='1'>
+				<PARAM NAME='fontsize' VALUE='14'>
+				<PARAM NAME='forecolor' VALUE='000000'>
+				<PARAM NAME='backcolor' VALUE='ffffff'>
+				<PARAM NAME='DisplayMode' VALUE='2'>
+				</APPLET>
+			
+		
+		</td>
+		<TD align=center><a href=Tox_Effect.asp?cmpseq=25364 target=_blank>除致死量外无其他报道;肝毒性;慢性病相关毒性;内分泌毒性;皮肤和附件毒性;肾、输尿管和膀胱毒性;生殖毒性;血液毒性;致癌性</a></TD>
+		</tr>		
+
+</table>
+
+
+<form name="formPage" method="post" action="Tox_eff_result2.asp">
+<input type="hidden" name="toxeff" value="生殖毒性">
+<input type="hidden" name="LX" value="对新生儿的影响——断奶或哺乳期指数(如。每个活产儿,在断奶第四天)">
+<input type="hidden" name="SpeciesObs" value="">
+<input type="hidden" name="page" value="">
+<input type="hidden" name="Flag">
+<!--Form method=Post action="list_all.asp"  name=formPage id=formPage LANGUAGE=javascript onsubmit="return formPage_onsubmit()"-->
+<INPUT TYPE="HIDDEN" NAME="pageno" VALUE="">
+<!--
+<INPUT TYPE="HIDDEN" NAME="text6" VALUE="">
+<INPUT TYPE="HIDDEN" NAME="select6" VALUE="">
+<INPUT TYPE="HIDDEN" NAME="queryMethod" VALUE="">
+-->
+<TABLE Align=center border=0>
+<TR>
+
+		<td>
+			<a href="#" onclick="ScrollPage(1)">第一页</a>
+		</td>
+		<td>
+			<a href=# onclick="ScrollPage('2')">上一页</a>
+		</td>
+
+		<td>
+			<a href=# onclick="ScrollPage('4')">下一页</a></td>
+		<td>
+			<a href=# onclick="ScrollPage('34')">最后一页</a>
+		</td>
+
+<td>当前页码:3/34，10条纪录/页</td>
+</TR>
+</TABLE>
+
+</FORM>

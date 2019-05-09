@@ -1,0 +1,946 @@
+<script language=javascript>
+	function Find_Error(F_database,F_table,F_recID)
+	{
+		var href;
+		//cmpno=1;
+		href="../main/Submit_F_Error.asp?F_database="+F_database+"&F_table="+F_table+"&F_recID="+F_recID;
+		//window.alert("hello!");
+		//window.open(href,'3dShow');//,'scrollbars=yes,resizable=yes,top=50,left=100,width=620,height=350');
+		//window.parent.frames("main").
+		//var winname='user'+F_recID
+		window.open(href,'','scrollbars=yes,resizable=yes,top=50,left=100,width=620,height=350');
+		//window.location=href;
+		//window.open(href,'我要纠错','target=_blank')
+		
+	}
+</script>
+
+
+<HTML>
+<HEAD>
+<META NAME="GENERATOR" Content="Microsoft FrontPage 4.0">
+<TITLE>化学结构数据库</TITLE>
+<link href="../css/css.css" rel="stylesheet" type="text/css">
+<Link Rel=stylesheet type=text/css HREF="../includes/style.css">
+<Link Rel=stylesheet type=text/css HREF="../includes/result_design.css">
+
+</HEAD>
+<BODY background="../Images/chemback_s.jpg" bgproperties="fixed" >
+当前位置:<font color=red >化学综合数据库-&gt;化合物属性</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<A href="javascript:history.go(-1)">返回上页</A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <A href="str_query_multi.asp">结构检索</A>      
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <A href="str_pro_query.asp">化合物检索</A>     
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<A onclick=Find_Error("化合物结构数据库","str_compound",0) href="#" >我要纠错</A>
+
+
+<hr width="100%" size=1>
+<table class=table2 cellspacing=6>
+
+<tr>
+<td width=100 align=right valign=top>
+<b>SRN号<b>
+</td>
+<td class=content_project3>
+793486
+</td>
+</tr>
+
+<tr>
+<td width=100 align=right valign=top>
+<b>英文名称<b>
+</td>
+<td class=content_project3>
+methyl 5-butyl-1H-benzo[d]imidazol-2-ylcarbamate
+</td>
+</tr>
+
+
+<tr>
+<td width=100 align=right valign=top>
+<b>中文名称<b>
+</td>
+<td class=content_project3>
+甲基 5-丁基-1H-苯并[d]咪唑-2-基氨基甲酸酯
+</td>
+</tr>
+
+<tr>
+<td width=100 align=right valign=top>
+<b>CAS号<b>
+</td>
+<td class=content_project3>
+14255-87-9(仅供参考)
+</td>
+</tr>
+
+<tr>
+<td width=100 align=right valign=top>
+<b>分子式<b>
+</td>
+<td class=content_project3>
+C13H17N3O2(仅供参考)
+</td>
+</tr>
+
+<tr>
+<td width=100 align=right valign=top>
+<b>规范SMILES<b>
+</td>
+<td class=content_project3>
+CCCCc1ccc2c(c1)nc([nH]2)NC(=O)OC	
+</td>
+</tr>
+
+<tr>
+<td width=100 align=right valign=top>
+<b>物质结构<b>
+</td>
+<td class=content_project3>
+
+
+
+    
+
+<script  type="text/javascript">
+
+
+//绘制虚线
+//传入参数：上下文，起点，终点，虚线间隔
+function drawDashedLine(context,x1,y1,x2,y2,dashLength){
+        //运用三元表达式实现默认参数
+        dashLength = dashLength===undefined ? 5 : dashLength;
+        //水平长度
+        var deltaX = x2 - x1;
+        //垂直长度
+        var deltaY = y2 - y1;
+        //虚线数量
+        var numDashed = Math.floor(
+            Math.sqrt(deltaX*deltaX+deltaY*deltaY)/dashLength
+        );
+        //开始绘制
+        context.beginPath();
+        for(var i=0; i<numDashed;i++){
+            //这种写法太强大了
+            //(deltaX/numDashed)是指虚线的长度
+            context[i%2===0 ? "moveTo":"lineTo"](x1+(deltaX/numDashed)*i,y1+(deltaY/numDashed)*i);
+            }
+        //要记得描线啊
+        context.stroke();
+        //结束绘制
+        context.closePath();
+}
+
+//画一个化合物结构
+//传入参数：上下文，401,402,403,404,407，Ncharstr,图形位移X,图形位移Y,图形缩放比例
+//function drawstructure(ctx,str401,str402,str403,str404,str407,Nstr,Offset_X,Offset_Y,gratio){
+ 
+    
+//}
+</script>
+
+<script  type="text/javascript">
+function makedot(x,y)
+	{  //画点函数  
+	document.write("<div style='height:1px;position:absolute;left:"+x+"px;top:"+y+"px;width:1px;background:#f50;overflow:auto'></div>")  
+	}  
+function circle(x,y,r)
+	{  //(x,y)圆心，r半径  
+	var dotx,doty,radio;  
+	var Pi=Math.PI;  
+	makedot(x,y);  
+	for(var i=0;i<360;i+=0.5)
+	    	{  
+		radio=i*Pi/180;  
+		dotx=r*Math.cos(radio)+x;  
+		doty=r*Math.sin(radio)+y  
+		makedot(dotx,doty);  
+		}  
+	}
+</script>
+
+
+<script  type="text/javascript">
+//=========================增加图像保存按钮=========================
+//by daijf 20161219
+function bindButtonEvent(element, type, handler)  
+            {  
+                   if(element.addEventListener) {  
+                      element.addEventListener(type, handler, false);  
+                   } else {  
+                      element.attachEvent('on'+type, handler);  
+                   }  
+            } 
+             
+function saveImageInfo()   
+            {  
+                var mycanvas = document.getElementById("canvas1");  
+                var imageData    = mycanvas.toDataURL("image/png");  
+                var w=window.open('about:blank','image from canvas');  
+                w.document.write("<img src='"+imageData+"' alt='from canvas'/>");  
+                
+                document.getElementById('myimage').src = imageData;
+		alert(imageData);
+		var data=imageData.substr(22);  
+		alert(data);
+		
+		$.post('base64code.asp',{ 'data' : data},function(data)
+		{alert(data);} );
+            }            
+function saveAsLocalImage () {  
+                var myCanvas = document.getElementById("canvas1");  
+                // here is the most important part because if you dont replace you will get a DOM 18 exception.  
+                 var image = myCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream;Content-Disposition: attachment;filename=struct.png");  
+                //var image = myCanvas.toDataURL("image/png").replace("image/png", "image/octet-stream");   
+                window.location.href=image; // it will save locally  
+            } 
+
+</script><style type="text/css">
+.tip {
+width:200px;
+border:1px solid #ddd;
+padding:1px;
+background:#f1f1f1;
+color:#666;
+}
+
+#canvas1{
+    
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 1);
+    margin: 1px 1px;
+}
+#canvas2{
+    
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 1);
+    margin: 1px 1px;
+}
+
+
+</style>
+<script language="javascript" type="text/javascript" src="../flot2/excanvas.min.js"></script>
+
+<div align=left>
+
+<!--<div id="test" style="width:1000px;height:600px;background:#ccc;" onmousemove="test(event);"></div>-->
+<!--<div id="demo3333" style="width:400px;height:250px;padding:1px 0px;background-color:#fff;line-height:2em;text-align:left;">-->
+	<canvas id="canvas1" ></canvas>
+	
+	<script  type="text/javascript">	//circle(50,50,10);  
+	</script>
+		<br>
+<!--<button id="downloadImageBtn">保存图像</button> 
+//由于页面显示调整，删除 保存图像 按钮  by daijf 20181108
+ -->
+
+</div>
+
+
+
+<script type="text/javascript">  
+window.onload = function(){  
+    var canvas = document.getElementById("canvas1");  
+    //canvas.width=600;
+    //canvas.height=200;
+    canvas.width=420;
+    canvas.height=200;
+    var ctx = canvas.getContext("2d");  
+    //var canvas_x=600,canvas_y=200;
+    var canvas_x=420,canvas_y=200;
+    var sufang=1;
+    //document.write(sufang + "<br>");
+    
+    //设置canvas背景图片，这样下载后的图像就不是黑色底图了。
+    var pic = new Image();  
+         pic.src ="../Images/chemback_s.jpg"  
+         ctx.drawImage(pic,0, 0, 420,200);  
+         
+    //ctx.beginPath();
+    //ctx.moveTo(0, 20);  
+    //ctx.lineTo(200, 20);
+    //ctx.closePath();
+    //ctx.strokeStyle = "rgb(0,0,0)";
+    ctx.lineWidth = 1;
+    //ctx.arc(100,150,25,Math.PI/6,5*Math.PI/6,false);
+   // ctx.stroke();
+
+   
+    
+   ctx.font="11px Arial";
+    var tstr='135/147/0/0/1/1/;112/134/0/0/1/2/;89/147/0/0/1/3/;89/174/0/0/1/4/;112/187/0/0/1/5/;135/174/0/0/1/6/;';
+    //window.alert(tstr);
+    //ctx.fillStyle="blue";	//文字用fillStyle和fillText
+    //ctx.fillText(tstr,1,150);
+    //ctx.stroke();
+    
+    var str401='287/94/0/1/;273/117/0/2/;273/71/0/3/;313/94/0/4/;247/117/0/5/;231/138/0/6/;206/130/0/7/;206/104/0/8/;231/95/0/9/;183/143/0/10/;161/130/0/11/;161/104/0/12/;183/90/0/13/;138/143/0/14/;115/130/0/15/;115/104/0/16/;92/90/0/17/;326/117/0/18/;';
+    var str402='283/87/0/0/1/1/;269/110/0/0/1/2/;269/64/0/0/1/3/;309/87/0/0/1/4/;243/110/0/0/1/5/;227/131/0/0/1/6/;202/123/0/0/1/7/;202/97/0/0/1/8/;227/88/0/0/1/9/;179/136/0/0/1/10/;157/123/0/0/1/11/;157/97/0/0/1/12/;179/83/0/0/1/13/;134/136/0/0/1/14/;111/123/0/0/1/15/;111/97/0/0/1/16/;88/83/0/0/1/17/;322/110/0/0/1/18/;';
+    var str403='287/94/273/117/2/19/;285/95/271/72/2/20/;289/93/275/70/2/20/;287/94/313/94/2/21/;247/117/231/138/2/22/;241/117/229/132/2/22/;231/138/206/130/2/23/;206/130/206/104/2/24/;206/104/231/95/2/25/;247/117/231/95/2/26/;183/143/161/130/2/27/;161/130/161/104/2/28/;166/126/166/108/2/28/;161/104/183/90/2/29/;206/104/183/90/2/30/;200/107/183/97/2/30/;206/130/183/143/2/31/;200/127/183/136/2/31/;138/143/115/130/2/32/;115/130/115/104/2/33/;115/104/92/90/2/34/;161/130/138/143/2/35/;273/117/247/117/2/36/;313/94/326/117/2/37/;';
+    var str404='';
+    var str406='1/0/0/;0/1/1/;';
+    var str407='1/1/3/1/;1/1/3/2/;1/1/3/3/;1/1/3/4/;1/1/3/5/;1/1/3/6/;1/1/3/7/;1/1/3/8/;1/1/3/9/;1/1/3/10/;1/1/3/11/;1/1/3/12/;1/1/3/13/;1/1/3/14/;1/1/3/15/;1/1/3/16/;1/1/3/17/;1/1/3/18/;1/1/4/1/;1/1/4/2/;1/1/4/3/;1/1/4/6/;1/1/4/8/;1/1/4/9/;1/1/4/11/;1/1/4/7/;1/1/4/13/;1/1/4/14/;1/1/4/16/;1/1/4/12/;1/1/4/10/;1/1/4/17/;1/1/4/18/;1/1/4/19/;1/1/4/15/;1/1/4/4/;1/1/4/5/;';
+    var str502='ffffffff/1/;ffff0000/1/;';
+    var str503='0/0/0/0/0/;';
+    var str601='';
+    var Nstr='C/N/O/O/C/N/C/C/N/C/C/C/C/C/C/C/C/C/';
+    var shuziMode='0';
+    
+    
+    var Narray = [],
+	arrayDI401 = [],
+	arrayDI402 = [];
+	arrayDI404 = [];
+    var array401 = [],DI401 = [],
+    	array402 = [],
+    	array403 = [],
+    	array502 = [],
+    	array503 = [],
+    	array406 = [],
+    	array407 = [],
+    	array601 = []
+    	;
+    
+    
+    var arrayDI401 = str401.split(';');
+    var Narray = Nstr.split('/');
+    //document.write(Strarray.length + "<br>");
+    var t1,t2,x1,y1;
+    var nd1,nd2;
+    var minx = 0, maxx=0, miny=0, maxy = 0;
+    
+    //------------------------------------------------------------
+    //var fntdx=ctx.measureText('text');    
+    //ctx.fillStyle="red";
+    for (var k=0 ; k<arrayDI401.length-1; k++)
+    {
+	var temp=arrayDI401[k];
+	var temparr=temp.split('/');	//将数据再次拆开,拆出结点坐标存入DI401，以供后面矫正图形
+	t1=parseFloat(temparr[0]) ;
+	t2=parseFloat(temparr[1]) ;
+	nd1=parseFloat(temparr[2]) ;
+	nd2=parseFloat(temparr[3]) ;
+	x1=parseInt(t1)+0.5 ;
+    	y1=parseInt(t2) +0.5;	
+	//ctx.fillText(Narray[k],x1-5,y1-5);
+	//将数据冲入数组sin
+	//sin.push([t1,-0.01]); 
+	//var strxy=x1.toString() &"/" &y1.toString();
+	//array401.push(strxy);
+	array401.push([x1,y1,nd1,nd2]); 
+	//document.write("x1:" + x1 + ",y1:" + y1 + ";<br>");
+	//document.write(t1);
+	//sin.push(null); 
+	if (k==0) 
+	{
+		minx=parseInt(t1);
+		maxx=parseInt(t1);
+		miny=parseInt(t2);
+		maxy=parseInt(t2);
+	}
+	//document.write("x1:" + x1 + ",y1:" + y1 + ";t1:" + t1 + ",t2:" + t2 +";<br>");
+	if (minx>t1)
+		minx = parseInt(t1) - 1;
+	if (maxx<t1)
+		maxx = parseInt(t1) + 1;
+	if (miny>t2)
+		miny = parseInt(t2) - 1;
+	if (maxy<t2)
+		maxy = parseInt(t2) + 1;
+	//if (j==0) then
+	//	ctx.moveTo(t1, t2);  
+	//else
+	//	ctx.lineTo(t1, t2);
+    } 
+    
+    //------------------------------------------------------------    
+    //document.write("minx:" + minx + ",miny:" + miny + ";maxx:" + maxx + ",maxy:" + maxy +";<br>");
+    //minx:92,miny:140;maxx:139,maxy:195;
+    //图形居中，由于这个坐标和canvas的坐标不一致，故需要对照调整
+    //canvas实际坐标只有【300,150】，
+    //如果被设置成【600，300】后，数据导入后会放大1倍显示，因此在图形居中的过程中要考虑画布的放大效应
+    //计算居中需要的偏移值
+    var midx = (minx + maxx) / 2;
+    var midy = (miny + maxy) / 2;
+    //var offsetx = midx -canvas_x/2;
+    //var offsety = midy - canvas_y/2;
+    var offsetx = 0;
+    var offsety = 0;
+    //-----------------------------------------
+    //从503中截取出色彩
+    array503=str503.split(';');
+    
+    //-----------------------------------------
+    //从406中截取出线段类型和色彩型号
+    array406=str406.split(';');
+    for (var f=0; f<array406.length-1;f++)
+    {
+    	//document.write ("array406[f]:" + array406[f] +  ";<br>");
+    }
+    //
+    //--------------------------------------------------
+    //先画出图形
+    //-------------------------------------------------
+    //document.write("midx:" + midx + ",midy:" + midy + ";offsetx:" + offsetx + ",offsety:" + offsety +";<br>");
+    //midx:115.5,midy:167.5;offsetx:40.5,offsety:17.5;
+    var arrayDI403 = str403.split(';');
+    var lenar3=arrayDI403.length;
+    //document.write("arrayDI403.length:" + arrayDI403.length +  ";<br>");
+    //ctx.beginPath();  
+    var lxcrd=[],
+	lycrd=[],
+	elxcrd=[],
+	elycrd=[],
+	specfeat3=[],
+	RefItem3=[];
+    for (var f=0; f<arrayDI403.length-1;f++)
+    {
+    	var temp403=arrayDI403[f];
+	var temparr=temp403.split('/');	//将数据再次拆开,拆出线段坐标，准备画线
+	lxcrd[f]=parseInt(temparr[0]) ;
+	lycrd[f]=parseInt(temparr[1]) ;
+	elxcrd[f]=parseInt(temparr[2]) ;
+	elycrd[f]=parseInt(temparr[3]) ;
+	specfeat3[f]=parseInt(temparr[4]) ;
+	RefItem3[f] =parseInt(temparr[5]) ;
+	var x1=lxcrd[f] - offsetx;
+    	var y1=lycrd[f] - offsety;
+    	var x2=elxcrd[f] - offsetx;
+    	var y2=elycrd[f] - offsety;
+    	//从503中取出显示属性
+    	var disp=array406[ specfeat3[f]-1 ];
+    	//分析显示属性
+    	//document.write ("specfeat3[f]:" + specfeat3[f] +  ";<br>");
+    	//document.write ("disp:" + disp +  ";<br>");
+    	var dsparr=disp.split('/');	//  0/1/2/;
+    	var xianduan=dsparr[1];		//  ffff0000/1/;
+    	var colo;			//  255/0/0/0/0/;
+    	if (dsparr[2]>1)
+    		colo="red";
+    	else
+    		colo="black";
+    	if (xianduan<2)
+    	{	//画实线
+		ctx.beginPath();
+		ctx.moveTo(x1, y1);  
+		ctx.lineTo(x2, y2);
+		ctx.closePath(); 
+		ctx.strokeStyle=colo;
+		ctx.stroke();
+		//ctx.fillText(x1,x1,y1+widtey+3.5);
+		//ctx.fill();
+	}
+	else
+	{
+		//画虚线
+		//var img = new Image();   
+		//var img = document.createElement('img');
+        	//img.src = "dash.JPG";   
+        	//img.onload = loaded(); 
+        	//var pattern = ctx.createPattern(img, "repeat");   
+		
+		//ctx.beginPath();
+		//ctx.moveTo(x1, y1);  
+		//ctx.lineTo(x2, y2);
+		//ctx.strokeStyle=pattern;
+		//ctx.closePath(); 
+		//ctx.strokeStyle="#ff0000";
+		//ctx.stroke();
+		//document.write("x1:" + x1 + ",y1:" + y1 + ";x2:" + x2 + ",y2:" + y2 +";specfeat3:" + specfeat3[f]+"; " + f +"<br>");
+		ctx.strokeStyle=colo;
+		drawDashedLine(ctx,x1,y1,x2,y2);
+	}
+	
+    }
+    //ctx.closePath(); 
+    ctx.strokeStyle = "black";
+    ctx.font="normal 100 11px Arial";
+    ctx.lineWidth = 1;
+    ctx.stroke();
+
+   //------------------------------------------------------------------------
+   //strDI404内容非空则表示有楔形键
+   //str404:146/173,162/142,154/139,1/2/16;185/196,201/217,196/220,1/2/18;
+   var arrayDI404 = str404.split(';');
+   var pxcrd=[],pycrd=[],temp4a=[],temp4c=[];
+   for (var p=0; p<arrayDI404.length-1; p++)
+   {
+   	var temp404=arrayDI404[p];
+   	var temp4a=temp404.split(',');
+   	ctx.beginPath();   	    	
+   	ctx.fillStyle = "black";
+   	for (var p4=0; p4<temp4a.length; p4++)
+   	{ 
+   	    if (p4==temp4a.length-1)
+   	    {
+   		var temp4fill=temp4a[p4];		//前面的是坐标,最后一个是显示参数  	   		
+   	    }	
+   	    else
+   	    {   	    	
+   	    	var temp4crd = temp4a[p4];
+   	    	var temp4c=temp4crd.split('/');
+   	    	var x2=temp4c[0];
+   	    	var y2=temp4c[1];
+   	    	x2=x2 -  offsetx;
+   	    	y2=y2 - offsety;
+   	    	if (p4==0)
+   	    		ctx.moveTo(x2, y2);
+   	    	else
+   	    		ctx.lineTo(x2, y2);		
+   	    }
+   	}
+   	ctx.closePath(); 
+	ctx.fill();
+   }
+   
+   //---------------------------------------------------------
+   //从601中读取结点顺序号，用于原子序号显示
+   array601=str601.split('/');
+    
+    //------------------------------------------------------------
+    //开始找到字符串坐标，并存入DI402
+    var arrayDI402 = str402.split(';');
+    //document.write(Strarray.length + "<br>");    
+    //var fntdx=ctx.measureText('text');    
+    //ctx.fillStyle="red";   
+    var lenar2=arrayDI402.length; 
+    ctx.fillStyle = "white";    
+    ctx.lineWidth = 1;
+    
+    var sxcrd=[],
+	sycrd=[],
+	esxcrd=[],
+	esycrd=[],
+	specfeat2=[];
+    for (var k=0 ; k<arrayDI402.length-1; k++)
+    {
+	var temp402=arrayDI402[k];
+	var temparr=temp402.split('/');	//将数据再次拆开,拆出字符串坐标，准备填充
+	sxcrd[k]=parseInt(temparr[0]) ;
+	sycrd[k]=parseInt(temparr[1]) ;
+	esxcrd[k]=parseInt(temparr[2]) ;
+	esycrd[k]=parseInt(temparr[3]) ;
+	specfeat2[k]=parseInt(temparr[4]) ;
+    	if ((esxcrd[k]==0) && (esycrd[k]==0) )
+    	{
+    		var widtex=ctx.measureText(Narray[k]).width;
+    		var widtey=5;
+    		var text_offsetx=widtex/2;
+    		var text_offsety=widtex/2;
+    	}
+    	else
+    	{
+    		var widtex=esxcrd[k]-sxcrd[k];
+    		var widtey=esycrd[k]-sycrd[k];
+    		var text_offsetx=widtex/2;
+    		var text_offsety=widtey/2;
+    	}
+ 	var sxcrd1=sxcrd[k] - offsetx;
+    	var sycrd1=sycrd[k] - offsety;
+    	
+    	//从503中取出显示属性
+    	var disp=array406[ specfeat2[k]-1 ];
+    	//分析显示属性    	
+    	//document.write ("disp:" + disp +  ";<br>");
+    	var dsparr=disp.split('/');	//  0/1/2/;
+    	var xianduan=dsparr[1];		//  ffff0000/1/;
+    	var colo2;			//  255/0/0/0/0/;
+    	if (dsparr[2]>1)
+    		colo2="red";
+    	else
+    		colo2="black";
+   	//------------------------------------------------------------
+   	//在图形上挖出结点空间
+   	//画上文本，字符串
+   	//document.write("x1:" + sxcrd1 + ",y1:" + sycrd1 + ";text_offsetx:" + text_offsetx + ",text_offsety:" + text_offsety +";<br>");
+    	//document.write("Nodestr:" + Narray[k] + ";<br>");
+    	var NodeNos;    	
+    	//document.write("Narray[k]:" + Narray[k] + ";<br>");
+    	if (shuziMode !='1') 
+    	{	
+	    	if (Narray[k]!='C' ) 
+	    	{
+	    		ctx.beginPath();  
+	    		ctx.fillStyle = "white";
+	    		if (Narray[k]=='+' ||Narray[k]=='-')
+				ctx.fillRect(sxcrd1-2,sycrd1-2,widtex+2,widtey+4);
+			else
+				ctx.fillRect(sxcrd1-2,sycrd1-2,widtex+2,widtey+8);
+			ctx.closePath(); 
+	    		ctx.fill();
+			ctx.fillStyle = colo2;
+			if (sufang>0.8)
+				ctx.font="11px Arial";
+			else
+				ctx.font="9px Arial";
+			if (Narray[k] == '+' || Narray[k] == '—>') 
+				ctx.font="14px Arial";
+			ctx.fillText(Narray[k],sxcrd1-1,sycrd1+widtey+4.5);
+			//ctx.fillText(sycrd[k],sxcrd1,sycrd1+widtey+2.5);
+			ctx.fill();
+		}
+	}
+	else
+	{
+		if (str601 != '')
+			NodeNos = array601[k];
+		else
+			NodeNos = array401[k];
+	
+    		ctx.beginPath();  
+    		ctx.fillStyle = "white";
+		ctx.fillRect(sxcrd1-2,sycrd1-2,widtex+2,widtey+8);
+		ctx.closePath(); 
+    		ctx.fill();
+		ctx.fillStyle = colo2;
+		if (sufang>0.8)
+			ctx.font="11px Arial";
+		else
+			ctx.font="9px Arial";
+		if (NodeNos == '+' || NodeNos == '—>') 
+			ctx.font="14px Arial";
+		ctx.fillText(NodeNos,sxcrd1-1,sycrd1+widtey+4.5);
+		//ctx.fillText(sycrd[k],sxcrd1,sycrd1+widtey+2.5);
+		ctx.fill();
+	}
+    }
+    
+ 
+}
+
+//var saveButton = document.getElementById("saveImageBtn");  
+//            bindButtonEvent(saveButton, "click", saveImageInfo);   
+//由于页面显示调整，删除dlButton按钮  by daijf 20181108
+//var dlButton = document.getElementById("downloadImageBtn");  
+//            bindButtonEvent(dlButton, "click", saveAsLocalImage);  
+</script>  
+
+
+
+    
+</td>
+</tr>
+
+	
+	<tr>
+	<td width=100 align=right valign=top>
+	<b>类药性预测<b>
+	</td>
+	<td class=content_project3>
+	
+	<table class=newform bordercolor="#BFBDDF" border="1" cellspacing=1 width="580"  align=left>
+	<tr>
+	<td  width=160>氢给体数</td><td  width=130>2&nbsp; </td>
+	<td  width=160>氢受体数</td><td  width=130>5&nbsp; </td>
+	</tr>
+	<tr>
+	<td>可旋转键数</td><td>4&nbsp; </td>
+	<td>极性表面面积</td><td>
+	67.01&nbsp; </td>
+	</tr>
+	<tr>
+	<td colspan=2>化合物透过表层细胞的表观渗透系数</td><td colspan=2>
+	-8.05&nbsp; </td>
+	</tr>
+	<tr>
+	<td colspan=2>有效透性系数</td><td colspan=2>
+	-3.84&nbsp; </td>
+	</tr>
+	<tr>
+	<td colspan=2>血脑屏障穿透能力</td><td colspan=2>
+	-6.88&nbsp; </td>
+	</tr>
+	</tr>
+	</table>
+	
+	</td>
+	</tr>
+
+<tr>
+<td width=100 align=right valign=top>
+<b>结构与鉴定<b>
+</td>
+<td class=content_project3>
+	<table class=table2>
+	
+	<tr>
+	<td width=100>	
+	<A onclick="Display_3d( 793486)" href="#" >三维结构</A></td>
+	
+	<!--<input type=button name="STR_ThreeShow" onclick="Display_3d(0)" style="WIDTH: 69px; HEIGHT: 25px" size=90 value=三维结构>-->  
+		
+	<td width=100>	
+	<A href="str_phychem.asp?srn=793486" >其他理化性质</A></td>
+	
+	<!--<input type=button name="STR_ThreeShow" onclick="Display_3d(0)" style="WIDTH: 69px; HEIGHT: 25px" size=90 value=三维结构>-->  
+		
+	<td width=100>	
+	<A href="../PhyChem_Const/PhyChem_detail.asp?srn=793486" >物性计算数据</A></td>
+	
+	<!--<input type=button name="STR_IRS" onclick="IRS_Display(0)" style="WIDTH: 77px; HEIGHT: 25px" size=102 value=红外光谱>--> 
+	
+	
+	<!--<input type=button name="MSS" onclick="" style="WIDTH: 72px; HEIGHT: 25px" size=95 value="质  谱">-->  
+	    
+	
+	
+	<td width=100>
+	
+	<a href="../nmr/NMR_str_result.asp?Page=0&result=793486">核磁谱图</a>	
+	
+	</td>
+	</tr>
+	</table>
+</td>
+</tr>  
+<tr>
+<td width=100 align=right valign=top>
+<b>文献信息<b>
+</td>
+<td class=content_project3>
+	<table class=table2>
+	<tr>
+	
+	<!--<input type=button name="STR_Literature" onclick="Literature_Display(0)" style="WIDTH: 72px; HEIGHT: 25px" size=95 value=相关文献>--> 
+	 
+	
+	<td width=100>
+	<A onclick="CCI_Display( 14255879)" href="#" >英文文献</A></td>
+	
+	<!--<input type=button name="STR_IRS" onclick="IRS_Display(0)" style="WIDTH: 77px; HEIGHT: 25px" size=102 value=红外光谱>--> 
+	
+	
+	<td width=100>
+	<A onclick="PAT_Display( 14255879,793486)" href="#" >化学专利</A></td>
+	
+	</td></tr>
+
+	<!--<input type=button name="MSS" onclick="" style="WIDTH: 72px; HEIGHT: 25px" size=95 value="质  谱">-->  
+	</td>
+	</tr>
+	</table>
+</td>
+</tr>  
+<tr>
+<td width=100 align=right valign=top>
+<b>反应与试剂<b>
+</td>
+<td class=content_project3>
+<table class=table2 >
+	<tr>
+	
+	<!--<input type=button name="CRC" onclick="CRC_Display(0)" style="WIDTH: 88px; HEIGHT: 25px" size=116 value="相关化学反应">-->  
+	     
+	 
+	
+	</tr>
+	</table>
+</td>
+</tr>  
+<tr>
+<td width=100 align=right valign=top>
+<b>生物生态活性<b>
+</td>
+<td class=content_project3>
+<table class=table2 >
+	<tr>
+	
+	
+	<td width=150>
+	<a href="../biochem/biochem_detail.asp?srn=793486">生物活性与靶点</a><font color=red>new!</font></td>
+	
+	<td width=150>
+	<a href="../bioactivity/result_details.asp?brn=751212" >环境化学与生态活性</a></td>
+	
+	</tr>
+	</table>
+</td>
+</tr>  
+
+<tr>
+<td width=100 align=right valign=top>
+<b>安全与环保<b>
+</td>
+<td class=content_project3>
+<table class=table2>
+	<tr>
+	
+	<td width=100>
+	<A onclick="TOX_Display( 14255879,793486)" href="#" >物质毒性</A></td>
+	
+	<td width=100>
+	 <a href="../msds/msds_result.asp?srn=793486">MSDS说明书</a></td>
+		
+	
+	
+	</tr>
+	</table>
+</td>
+</tr>  
+<tr>
+<td width=100 align=right valign=top>
+<b>天然来源<b>
+</td>
+<td class=content_project3>
+<table class=table2 >
+	<tr>
+	
+	<td width=100>
+	<a href="../searchem/detailinfo_cas.asp?cas=14255879&chemid=8121">药物与天然产物</a></td>
+		
+	</tr>
+	</table>
+</td>
+</tr>  
+<tr>
+<td width=100 align=right valign=top>
+<b>共享数据<b>
+</td>
+<td class=content_project3>
+<table class=table2>
+	<tr>
+	
+	<td width=100>
+	<a href="http://www.chemdb.csdb.cn/services/service.aspx?verb=uigetrecord&uri=cn.csdb.enginchem.all_thermochemistry/cas:14255879;inchi:;srn:;&userid">热化学性质</a>
+	
+	
+	<td width=100>
+	<a href="http://www.chemdb.csdb.cn/services/service.aspx?verb=uigetrecord&uri=cn.csdb.enginchem.phase_transition/cas:14255879;inchi:;srn:;&userid">相变数据</a>
+	
+	<!--<input type=button name="MSS" onclick="" style="WIDTH: 72px; HEIGHT: 25px" size=95 value="质  谱">-->  
+	    
+	    
+	
+	<td width=100>
+	<a href="http://www.appchem.csdb.cn/services/Service.jsp?verb=uiGetRecord&uri=appchem.csdb.cn.bioact/cas:14255879;&uid=luxu@ciac.jl.cn">物质活性</a>
+	
+	</td>
+	<!--增加了nist和pubchem的外部链接-->
+	<td width=100>
+	<a href="http://webbook.nist.gov/cgi/cbook.cgi?ID=C14255879" target="_blank" title="查看NIST的物质信息">NIST</a><font color=red>new!</font>
+	</td>
+	<td width=100>
+	<a href="http://www.ncbi.nlm.nih.gov/pccompound?term=methyl 5-butyl-1H-benzo[d]imidazol-2-ylcarbamate" target="_blank" title="查看PUBchem的物质信息">PUBchem</a><font color=red>new!</font>
+	</td>
+	</tr>
+	</table>
+</td>
+</tr>  
+</table>
+
+</BODY>
+
+
+<script language=javascript>
+	function OpenIRDraw()
+	{
+		//var Querystring="LibIRDisp.asp?"
+		window.open("drawIrofstr.html","QuyIRAppletDisplayWindow","resizeable=yes,status=no,toolbar=no");
+	}
+	 function IRS_Display(h,cmpno,srn)//,BaseDef,LimitDef) 
+	{
+		var href;
+		var BaseDef='90';
+		var LimitDef='85';
+		//h='70139.1';
+		
+		href="../IRS/IRS_cas.asp?casno="+h+"&cmpno="+cmpno+"&srn="+srn;
+		window.location=href;
+		//window.open(href,'ResultIRDisplayWindow','status=yes,menubar=yes,scrollbars=yes,resizable=yes,top=50,left=50,width=750,height=380');
+	 }
+	function Display_3d(srn)
+	{
+		var href;
+		//cmpno=1;
+		href="STR_3d_Display.asp?srn="+srn;
+		//window.alert("hello!");
+		//window.open(href,'3dShow');//,'scrollbars=yes,resizable=yes,top=50,left=100,width=620,height=350');
+		//window.parent.frames("main").
+		var winname='3d'+srn
+		window.open(href,winname,'scrollbars=yes,resizable=yes,top=50,left=100,width=620,height=350');
+		//window.location=href;
+		//window.open(href,'三维结构','target=_blank')
+		
+	}
+	function Literature_Display(casno,srn)
+	{
+		var href;
+		//cmpno=1;
+		href="../cbd/STR_cas_Document.asp?casno="+casno+"&srn="+srn;
+		//window.alert("hello!");
+		//window.open(href,'3dShow');//,'scrollbars=yes,resizable=yes,top=50,left=100,width=620,height=350');
+		//window.parent.frames("main").
+		//window.open(href,'Display3dWindows','scrollbars=yes,resizable=yes,top=50,left=100,width=620,height=350');
+		window.location=href;
+		
+	}
+	function CRC_Display(cmpno,srn)
+	{
+		var href;
+		//cmpno=1;
+		href="../str/STR_CRC.asp?cmpid="+cmpno+"&srn="+srn;
+		//window.alert("hello!");
+		//window.open(href,'3dShow');//,'scrollbars=yes,resizable=yes,top=50,left=100,width=620,height=350');
+		//window.parent.frames("main").
+		//window.open(href,'Display3dWindows','scrollbars=yes,resizable=yes,top=50,left=100,width=620,height=350');
+		window.location=href;
+		
+	}
+	function MSS_Display(casno,cmpno,srn)
+	{
+		var href;
+		href="../mss/mss_cas.asp?casno="+casno+"&cmpno="+cmpno+"&srn="+srn;
+		window.location=href;
+		
+	}
+	
+	function PAT_Display(casno,srn)
+	{
+		var href;
+		href="../patent/STR_cas_Pat.asp?casno="+casno+"&srn="+srn;
+		window.location=href;
+		
+	}
+	function CCI_Display(casno)
+	{
+		var href;
+		href="../cbd/STR_cas_CCI.asp?casno="+casno;
+		window.location=href;
+		
+	}
+	function INF_Display(casno)
+	{
+		var href;
+		href="../info_ana/info_cas.asp?casno="+casno;
+		window.location=href;
+		
+	}
+	function TCM_Display(casno,cmpno)
+	{
+		var href;
+		href="../TCM_Multi/r_Comp_Tcd.asp?casno="+casno+"&cmpno="+cmpno;
+		window.location=href;
+		
+	}
+	function TOX_Display(casno,srn)
+	{
+		var href;
+		href="../TOX_Multi/Tox_result.asp?casno="+casno+"&srn="+srn;
+		window.location=href;
+		
+	}
+	function JXHG_Display(casno,cmpno,srn)
+	{
+		var href;
+		href="../JXHG_Multi/JXHG_result.asp?casno="+casno+"&cmpno="+cmpno+"&srn="+srn;
+		window.location=href;
+		
+	}
+</script>
+
+<br>
+
+</HTML>
+ 

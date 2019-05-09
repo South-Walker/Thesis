@@ -1,0 +1,892 @@
+
+<HTML>
+<HEAD>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<Link Rel=stylesheet type=text/css HREF="../includes/style.css">
+<TITLE></TITLE>
+
+<script language=javascript>
+	function OpenDetail(h,casno,srn)
+	{
+		//var Querystring="LibIRDisp.asp?"
+		//window.open("drawIrofstr.html","QuyIRAppletDisplayWindow","resizeable=yes,status=no,toolbar=no");
+		//window.location="../tox/tox_detail.asp?CmpSeq="+h
+		window.location="tox_detail2.asp?CmpSeq="+h+"&casno="+casno+"&srn="+srn
+	}
+	
+	function ScrollPage(pageno)
+	{
+		document.formPage.pageno.value =pageno
+		document.formPage.submit();
+	}
+	window.setTimeout 
+</script>
+
+</HEAD>
+<BODY background="../Images/chemback_s.jpg">
+<P><font size=2>当前位置:</font><font size=2 color=red>物质毒性数据库->检索结果页面</font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<A href="Tox_eff_query2.asp">根据毒性作用分类检索</A>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<A href="tox_query.asp">化合物检索</A></font>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<A href="javascript:history.go(-1)">返回上一页</A></font>
+<hr color=navy size=1>
+<div align=center>
+您检索的是:<font color=violet>  生殖毒性: 对新生儿的影响——断奶或哺乳期指数(如。每个活产儿,在断奶第四天)</font><br>
+	<form name=frmQuery action="Tox_eff_result2.asp" method=post>
+	根据毒性作用的测试对象对结果进行筛选:
+	<select size="1" name="SpeciesObs">
+	
+
+		<option value="Amphibian - frog">Amphibian - frog</option>
+
+		<option value="Amphibian - frog Embryo">Amphibian - frog Embryo</option>
+
+		<option value="Amphibian - frog Fibroblast">Amphibian - frog Fibroblast</option>
+
+		<option value="Amphibian - toad">Amphibian - toad</option>
+
+		<option value="Bacteria - Bacillus subtilis">Bacteria - Bacillus subtilis</option>
+
+		<option value="Bacteria - Escherichia coli">Bacteria - Escherichia coli</option>
+
+		<option value="Bacteria - Haemophilus influenzae">Bacteria - Haemophilus influenzae</option>
+
+		<option value="Bacteria - Klebsiella pneumoniae">Bacteria - Klebsiella pneumoniae</option>
+
+		<option value="Bacteria - Salmonella typhimurium">Bacteria - Salmonella typhimurium</option>
+
+		<option value="Bacteria - Serratia marcescens">Bacteria - Serratia marcescens</option>
+
+		<option value="Bird - chicken">Bird - chicken</option>
+
+		<option value="Bird - chicken Cells - not otherwise specified">Bird - chicken Cells - not otherwise specified</option>
+
+		<option value="Bird - chicken Embryo">Bird - chicken Embryo</option>
+
+		<option value="Bird - chicken Fibroblast">Bird - chicken Fibroblast</option>
+
+		<option value="Bird - chicken Leukocyte">Bird - chicken Leukocyte</option>
+
+		<option value="Bird - chicken Liver">Bird - chicken Liver</option>
+
+		<option value="Bird - domestic">Bird - domestic</option>
+
+		<option value="Bird - domestic Cells - not otherwise specified">Bird - domestic Cells - not otherwise specified</option>
+
+		<option value="Bird - domestic Kidney">Bird - domestic Kidney</option>
+
+		<option value="Bird - domestic Leukocyte">Bird - domestic Leukocyte</option>
+
+		<option value="Bird - domestic Liver">Bird - domestic Liver</option>
+
+		<option value="Bird - duck">Bird - duck</option>
+
+		<option value="Bird - duck Lymphocyte">Bird - duck Lymphocyte</option>
+
+		<option value="Bird - pigeon">Bird - pigeon</option>
+
+		<option value="Bird - quail">Bird - quail</option>
+
+		<option value="Bird - quail Embryo">Bird - quail Embryo</option>
+
+		<option value="Bird - quail Liver">Bird - quail Liver</option>
+
+		<option value="Bird - turkey">Bird - turkey</option>
+
+		<option value="Bird - wild bird species">Bird - wild bird species</option>
+
+		<option value="Bird - wild bird species Leukocyte">Bird - wild bird species Leukocyte</option>
+
+		<option value="Bird - wild bird species Lymphocyte">Bird - wild bird species Lymphocyte</option>
+
+		<option value="Fish - not otherwise specified">Fish - not otherwise specified</option>
+
+		<option value="Fish - not otherwise specified Bacteria - Escheric">Fish - not otherwise specified Bacteria - Escheric</option>
+
+		<option value="Fish - not otherwise specified Bacteria - Salmonel">Fish - not otherwise specified Bacteria - Salmonel</option>
+
+		<option value="Fish - not otherwise specified Cells - not otherwi">Fish - not otherwise specified Cells - not otherwi</option>
+
+		<option value="Fish - not otherwise specified Embryo">Fish - not otherwise specified Embryo</option>
+
+		<option value="Fish - not otherwise specified Fibroblast">Fish - not otherwise specified Fibroblast</option>
+
+		<option value="Fish - not otherwise specified Leukocyte">Fish - not otherwise specified Leukocyte</option>
+
+		<option value="Fish - not otherwise specified Liver">Fish - not otherwise specified Liver</option>
+
+		<option value="Fish - not otherwise specified Lymphocyte">Fish - not otherwise specified Lymphocyte</option>
+
+		<option value="Fish - not otherwise specified Ovary">Fish - not otherwise specified Ovary</option>
+
+		<option value="Fish - not otherwise specified Sperm">Fish - not otherwise specified Sperm</option>
+
+		<option value="Fish - not otherwise specified Testis">Fish - not otherwise specified Testis</option>
+
+		<option value="Fish - salmon">Fish - salmon</option>
+
+		<option value="Fish - salmon Cells - not otherwise specified">Fish - salmon Cells - not otherwise specified</option>
+
+		<option value="Fish - salmon Sperm">Fish - salmon Sperm</option>
+
+		<option value="Fish - salmon Testis">Fish - salmon Testis</option>
+
+		<option value="Human">Human</option>
+
+		<option value="Human - child">Human - child</option>
+
+		<option value="Human - infant">Human - infant</option>
+
+		<option value="Human - man">Human - man</option>
+
+		<option value="Human - man Lymphocyte">Human - man Lymphocyte</option>
+
+		<option value="Human - woman">Human - woman</option>
+
+		<option value="Human Ascites tumor">Human Ascites tumor</option>
+
+		<option value="Human Bacteria - Salmonella typhimurium">Human Bacteria - Salmonella typhimurium</option>
+
+		<option value="Human Bone marrow">Human Bone marrow</option>
+
+		<option value="Human Cells - not otherwise specified">Human Cells - not otherwise specified</option>
+
+		<option value="Human Embryo">Human Embryo</option>
+
+		<option value="Human Fibroblast">Human Fibroblast</option>
+
+		<option value="Human HeLa cell">Human HeLa cell</option>
+
+		<option value="Human Kidney">Human Kidney</option>
+
+		<option value="Human Leukocyte">Human Leukocyte</option>
+
+		<option value="Human Liver">Human Liver</option>
+
+		<option value="Human Lung">Human Lung</option>
+
+		<option value="Human Lymphocyte">Human Lymphocyte</option>
+
+		<option value="Human Mammary gland">Human Mammary gland</option>
+
+		<option value="Human Ovary">Human Ovary</option>
+
+		<option value="Human Sperm">Human Sperm</option>
+
+		<option value="Human Testis">Human Testis</option>
+
+		<option value="Human Yeast - Saccharomyces cerevisiae">Human Yeast - Saccharomyces cerevisiae</option>
+
+		<option value="Insect - Drosophila melanogaster">Insect - Drosophila melanogaster</option>
+
+		<option value="Insect - Drosophila melanogaster Cells - not other">Insect - Drosophila melanogaster Cells - not other</option>
+
+		<option value="Insect - Drosophila melanogaster Embryo">Insect - Drosophila melanogaster Embryo</option>
+
+		<option value="Insect - Drosophila melanogaster Ovary">Insect - Drosophila melanogaster Ovary</option>
+
+		<option value="Insect - grasshopper">Insect - grasshopper</option>
+
+		<option value="Insect - grasshopper Cells - not otherwise specifi">Insect - grasshopper Cells - not otherwise specifi</option>
+
+		<option value="Insect - grasshopper Embryo">Insect - grasshopper Embryo</option>
+
+		<option value="Insect - not otherwise specified">Insect - not otherwise specified</option>
+
+		<option value="Insect - not otherwise specified Cells - not other">Insect - not otherwise specified Cells - not other</option>
+
+		<option value="Insect - not otherwise specified Embryo">Insect - not otherwise specified Embryo</option>
+
+		<option value="Insect - not otherwise specified Ovary">Insect - not otherwise specified Ovary</option>
+
+		<option value="Insect - silkworm">Insect - silkworm</option>
+
+		<option value="Insect - silkworm Cells - not otherwise specified">Insect - silkworm Cells - not otherwise specified</option>
+
+		<option value="Mammal - cat">Mammal - cat</option>
+
+		<option value="Mammal - cat Bone marrow">Mammal - cat Bone marrow</option>
+
+		<option value="Mammal - cattle">Mammal - cattle</option>
+
+		<option value="Mammal - cattle Bacteria - Salmonella typhimurium">Mammal - cattle Bacteria - Salmonella typhimurium</option>
+
+		<option value="Mammal - cattle Cells - not otherwise specified">Mammal - cattle Cells - not otherwise specified</option>
+
+		<option value="Mammal - cattle Fibroblast">Mammal - cattle Fibroblast</option>
+
+		<option value="Mammal - cattle Kidney">Mammal - cattle Kidney</option>
+
+		<option value="Mammal - cattle Liver">Mammal - cattle Liver</option>
+
+		<option value="Mammal - cattle Lymphocyte">Mammal - cattle Lymphocyte</option>
+
+		<option value="Mammal - cattle Sperm">Mammal - cattle Sperm</option>
+
+		<option value="Mammal - dog">Mammal - dog</option>
+
+		<option value="Mammal - dog Bacteria - Salmonella typhimurium">Mammal - dog Bacteria - Salmonella typhimurium</option>
+
+		<option value="Mammal - dog Cells - not otherwise specified">Mammal - dog Cells - not otherwise specified</option>
+
+		<option value="Mammal - dog Kidney">Mammal - dog Kidney</option>
+
+		<option value="Mammal - dog Lung">Mammal - dog Lung</option>
+
+		<option value="Mammal - dog Lymphocyte">Mammal - dog Lymphocyte</option>
+
+		<option value="Mammal - domestic">Mammal - domestic</option>
+
+		<option value="Mammal - domestic Cells - not otherwise specified">Mammal - domestic Cells - not otherwise specified</option>
+
+		<option value="Mammal - domestic Kidney">Mammal - domestic Kidney</option>
+
+		<option value="Mammal - domestic Leukocyte">Mammal - domestic Leukocyte</option>
+
+		<option value="Mammal - domestic Lymphocyte">Mammal - domestic Lymphocyte</option>
+
+		<option value="Mammal - domestic Mammary gland">Mammal - domestic Mammary gland</option>
+
+		<option value="Mammal - horse, donkey">Mammal - horse, donkey</option>
+
+		<option value="Mammal - pig">Mammal - pig</option>
+
+		<option value="Mammal - pig Cells - not otherwise specified">Mammal - pig Cells - not otherwise specified</option>
+
+		<option value="Mammal - pig Kidney">Mammal - pig Kidney</option>
+
+		<option value="Mammal - pig Leukocyte">Mammal - pig Leukocyte</option>
+
+		<option value="Mammal - pig Lymphocyte">Mammal - pig Lymphocyte</option>
+
+		<option value="Mammal - species unspecified">Mammal - species unspecified</option>
+
+		<option value="Mammal - species unspecified Ascites tumor">Mammal - species unspecified Ascites tumor</option>
+
+		<option value="Mammal - species unspecified Bacteria - Escherichi">Mammal - species unspecified Bacteria - Escherichi</option>
+
+		<option value="Mammal - species unspecified Bacteria - Salmonella">Mammal - species unspecified Bacteria - Salmonella</option>
+
+		<option value="Mammal - species unspecified Bone marrow">Mammal - species unspecified Bone marrow</option>
+
+		<option value="Mammal - species unspecified Cells - not otherwise">Mammal - species unspecified Cells - not otherwise</option>
+
+		<option value="Mammal - species unspecified Fibroblast">Mammal - species unspecified Fibroblast</option>
+
+		<option value="Mammal - species unspecified Kidney">Mammal - species unspecified Kidney</option>
+
+		<option value="Mammal - species unspecified Leukocyte">Mammal - species unspecified Leukocyte</option>
+
+		<option value="Mammal - species unspecified Liver">Mammal - species unspecified Liver</option>
+
+		<option value="Mammal - species unspecified Lung">Mammal - species unspecified Lung</option>
+
+		<option value="Mammal - species unspecified Lymphocyte">Mammal - species unspecified Lymphocyte</option>
+
+		<option value="Mammal - species unspecified Sperm">Mammal - species unspecified Sperm</option>
+
+		<option value="Microorganism - not otherwise specified">Microorganism - not otherwise specified</option>
+
+		<option value="Mold - Aspergillus nidulans">Mold - Aspergillus nidulans</option>
+
+		<option value="Mold - Neurospora crassa">Mold - Neurospora crassa</option>
+
+		<option value="Non-mammalian species">Non-mammalian species</option>
+
+		<option value="Non-mammalian species Cells - not otherwise specif">Non-mammalian species Cells - not otherwise specif</option>
+
+		<option value="Non-mammalian species Embryo">Non-mammalian species Embryo</option>
+
+		<option value="Non-mammalian species Kidney">Non-mammalian species Kidney</option>
+
+		<option value="Non-mammalian species Liver">Non-mammalian species Liver</option>
+
+		<option value="Non-mammalian species Lung">Non-mammalian species Lung</option>
+
+		<option value="Non-mammalian species Lymphocyte">Non-mammalian species Lymphocyte</option>
+
+		<option value="Non-mammalian species Ovary">Non-mammalian species Ovary</option>
+
+		<option value="Non-mammalian species Sperm">Non-mammalian species Sperm</option>
+
+		<option value="Non-mammalian species Testis">Non-mammalian species Testis</option>
+
+		<option value="Primate - monkey">Primate - monkey</option>
+
+		<option value="Primate - monkey Bacteria - Escherichia coli">Primate - monkey Bacteria - Escherichia coli</option>
+
+		<option value="Primate - monkey Bacteria - Salmonella typhimurium">Primate - monkey Bacteria - Salmonella typhimurium</option>
+
+		<option value="Primate - monkey Cells - not otherwise specified">Primate - monkey Cells - not otherwise specified</option>
+
+		<option value="Primate - monkey Kidney">Primate - monkey Kidney</option>
+
+		<option value="Primate - monkey Leukocyte">Primate - monkey Leukocyte</option>
+
+		<option value="Primate - monkey Liver">Primate - monkey Liver</option>
+
+		<option value="Primate - monkey Lung">Primate - monkey Lung</option>
+
+		<option value="Primate - monkey Lymphocyte">Primate - monkey Lymphocyte</option>
+
+		<option value="Protozoa - Chlamydomonas reinhardi">Protozoa - Chlamydomonas reinhardi</option>
+
+		<option value="Protozoa - Euglena gracilis">Protozoa - Euglena gracilis</option>
+
+		<option value="Rodent - gerbil">Rodent - gerbil</option>
+
+		<option value="Rodent - guinea pig">Rodent - guinea pig</option>
+
+		<option value="Rodent - guinea pig Bacteria - Salmonella typhimur">Rodent - guinea pig Bacteria - Salmonella typhimur</option>
+
+		<option value="Rodent - guinea pig Bone marrow">Rodent - guinea pig Bone marrow</option>
+
+		<option value="Rodent - guinea pig Cells - not otherwise specifie">Rodent - guinea pig Cells - not otherwise specifie</option>
+
+		<option value="Rodent - guinea pig Kidney">Rodent - guinea pig Kidney</option>
+
+		<option value="Rodent - guinea pig Liver">Rodent - guinea pig Liver</option>
+
+		<option value="Rodent - guinea pig Lung">Rodent - guinea pig Lung</option>
+
+		<option value="Rodent - guinea pig Lymphocyte">Rodent - guinea pig Lymphocyte</option>
+
+		<option value="Rodent - hamster">Rodent - hamster</option>
+
+		<option value="Rodent - hamster Bacteria - Salmonella typhimurium">Rodent - hamster Bacteria - Salmonella typhimurium</option>
+
+		<option value="Rodent - hamster Cells - not otherwise specified">Rodent - hamster Cells - not otherwise specified</option>
+
+		<option value="Rodent - hamster Embryo">Rodent - hamster Embryo</option>
+
+		<option value="Rodent - hamster Fibroblast">Rodent - hamster Fibroblast</option>
+
+		<option value="Rodent - hamster HeLa cell">Rodent - hamster HeLa cell</option>
+
+		<option value="Rodent - hamster Kidney">Rodent - hamster Kidney</option>
+
+		<option value="Rodent - hamster Leukocyte">Rodent - hamster Leukocyte</option>
+
+		<option value="Rodent - hamster Liver">Rodent - hamster Liver</option>
+
+		<option value="Rodent - hamster Lung">Rodent - hamster Lung</option>
+
+		<option value="Rodent - hamster Lymphocyte">Rodent - hamster Lymphocyte</option>
+
+		<option value="Rodent - hamster Ovary">Rodent - hamster Ovary</option>
+
+		<option value="Rodent - mouse">Rodent - mouse</option>
+
+		<option value="Rodent - mouse Ascites tumor">Rodent - mouse Ascites tumor</option>
+
+		<option value="Rodent - mouse Bacteria - Bacillus subtilis">Rodent - mouse Bacteria - Bacillus subtilis</option>
+
+		<option value="Rodent - mouse Bacteria - Escherichia coli">Rodent - mouse Bacteria - Escherichia coli</option>
+
+		<option value="Rodent - mouse Bacteria - Salmonella typhimurium">Rodent - mouse Bacteria - Salmonella typhimurium</option>
+
+		<option value="Rodent - mouse Bacteria - Serratia marcescens">Rodent - mouse Bacteria - Serratia marcescens</option>
+
+		<option value="Rodent - mouse Bone marrow">Rodent - mouse Bone marrow</option>
+
+		<option value="Rodent - mouse Cells - not otherwise specified">Rodent - mouse Cells - not otherwise specified</option>
+
+		<option value="Rodent - mouse Embryo">Rodent - mouse Embryo</option>
+
+		<option value="Rodent - mouse Fibroblast">Rodent - mouse Fibroblast</option>
+
+		<option value="Rodent - mouse HeLa cell">Rodent - mouse HeLa cell</option>
+
+		<option value="Rodent - mouse Human">Rodent - mouse Human</option>
+
+		<option value="Rodent - mouse Insect - Drosophila melanogaster">Rodent - mouse Insect - Drosophila melanogaster</option>
+
+		<option value="Rodent - mouse Kidney">Rodent - mouse Kidney</option>
+
+		<option value="Rodent - mouse Leukocyte">Rodent - mouse Leukocyte</option>
+
+		<option value="Rodent - mouse Liver">Rodent - mouse Liver</option>
+
+		<option value="Rodent - mouse Lung">Rodent - mouse Lung</option>
+
+		<option value="Rodent - mouse Lymphocyte">Rodent - mouse Lymphocyte</option>
+
+		<option value="Rodent - mouse Mammary gland">Rodent - mouse Mammary gland</option>
+
+		<option value="Rodent - mouse Microorganism - not otherwise speci">Rodent - mouse Microorganism - not otherwise speci</option>
+
+		<option value="Rodent - mouse Mold - Neurospora crassa">Rodent - mouse Mold - Neurospora crassa</option>
+
+		<option value="Rodent - mouse Ovary">Rodent - mouse Ovary</option>
+
+		<option value="Rodent - mouse Sperm">Rodent - mouse Sperm</option>
+
+		<option value="Rodent - mouse Testis">Rodent - mouse Testis</option>
+
+		<option value="Rodent - mouse Yeast - Saccharomyces cerevisiae">Rodent - mouse Yeast - Saccharomyces cerevisiae</option>
+
+		<option value="Rodent - mouse Yeast - Schizosaccharomyces pombe">Rodent - mouse Yeast - Schizosaccharomyces pombe</option>
+
+		<option value="Rodent - rabbit">Rodent - rabbit</option>
+
+		<option value="Rodent - rabbit Bone marrow">Rodent - rabbit Bone marrow</option>
+
+		<option value="Rodent - rabbit Cells - not otherwise specified">Rodent - rabbit Cells - not otherwise specified</option>
+
+		<option value="Rodent - rabbit Kidney">Rodent - rabbit Kidney</option>
+
+		<option value="Rodent - rabbit Leukocyte">Rodent - rabbit Leukocyte</option>
+
+		<option value="Rodent - rabbit Liver">Rodent - rabbit Liver</option>
+
+		<option value="Rodent - rabbit Lung">Rodent - rabbit Lung</option>
+
+		<option value="Rodent - rabbit Lymphocyte">Rodent - rabbit Lymphocyte</option>
+
+		<option value="Rodent - rat">Rodent - rat</option>
+
+		<option value="Rodent - rat Ascites tumor">Rodent - rat Ascites tumor</option>
+
+		<option value="Rodent - rat Bacteria - Bacillus subtilis">Rodent - rat Bacteria - Bacillus subtilis</option>
+
+		<option value="Rodent - rat Bacteria - Escherichia coli">Rodent - rat Bacteria - Escherichia coli</option>
+
+		<option value="Rodent - rat Bacteria - Salmonella typhimurium">Rodent - rat Bacteria - Salmonella typhimurium</option>
+
+		<option value="Rodent - rat Bone marrow">Rodent - rat Bone marrow</option>
+
+		<option value="Rodent - rat Cells - not otherwise specified">Rodent - rat Cells - not otherwise specified</option>
+
+		<option value="Rodent - rat Embryo">Rodent - rat Embryo</option>
+
+		<option value="Rodent - rat Fibroblast">Rodent - rat Fibroblast</option>
+
+		<option value="Rodent - rat HeLa cell">Rodent - rat HeLa cell</option>
+
+		<option value="Rodent - rat Kidney">Rodent - rat Kidney</option>
+
+		<option value="Rodent - rat Leukocyte">Rodent - rat Leukocyte</option>
+
+		<option value="Rodent - rat Liver">Rodent - rat Liver</option>
+
+		<option value="Rodent - rat Lung">Rodent - rat Lung</option>
+
+		<option value="Rodent - rat Lymphocyte">Rodent - rat Lymphocyte</option>
+
+		<option value="Rodent - rat Mammary gland">Rodent - rat Mammary gland</option>
+
+		<option value="Rodent - rat Mold - Neurospora crassa">Rodent - rat Mold - Neurospora crassa</option>
+
+		<option value="Rodent - rat Ovary">Rodent - rat Ovary</option>
+
+		<option value="Rodent - rat Sperm">Rodent - rat Sperm</option>
+
+		<option value="Rodent - rat Testis">Rodent - rat Testis</option>
+
+		<option value="Rodent - rat Yeast - Saccharomyces cerevisiae">Rodent - rat Yeast - Saccharomyces cerevisiae</option>
+
+		<option value="Rodent - squirrel">Rodent - squirrel</option>
+
+		<option value="Yeast - Saccharomyces cerevisiae">Yeast - Saccharomyces cerevisiae</option>
+
+		<option value="Yeast - Schizosaccharomyces pombe">Yeast - Schizosaccharomyces pombe</option>
+
+	</select>
+	<input type="hidden" name="toxeff" value="生殖毒性">
+	<input type="hidden" name="LX" value="对新生儿的影响——断奶或哺乳期指数(如。每个活产儿,在断奶第四天)">
+	<input type=submit value="确定" id=submit1 name=submit1>
+	</form>
+
+
+	<TABLE class=newform bordercolor="#BFBDDF" border="1" cellspacing=1 width=880 align=center>  
+  	<TR  align=center bgcolor=LightSkyBlue>
+   	<TD width=40>序号</TD>
+    	<TD width=440>Compound Name</TD>
+    	<TD width=80>CAS RN</TD>
+    	<TD width=200>结构</TD>
+     	<TD width=120>毒性作用分类</TD>
+   	</TR>
+
+		<tr height=40px>
+		<td bgcolor=#edf0f5 align=center width=60px>51</td>
+		<TD title="查看物质的毒性数据"><!--<A onclick="OpenDetail(35110,4880824,446118)" href="#" >-->
+		<A href="tox_detail2.asp?CmpSeq=35110&casno=4880824&srn=446118">
+		13a-alpha-Berbine, 2,3,9,10-tetramethoxy-, hydrochloride</A></TD>		
+		<TD>4880-82-4</TD>
+		<TD  align=center >
+		
+			
+			<APPLET code=mol.class id=Applet2 name=mol style='HEIGHT:180px; WIDTH: 200px' VIEWASTEXT>
+				<PARAM NAME='font' VALUE='Arial'>
+				<PARAM NAME='moldata' VALUE='"DI040101df001d012200d200000001012f00e800000002012200ff00000003010800ff0000000400fb00e80000000500e000e80000000600d300d20000000700e000bb0000000800fb00bb00000009010800d20000000a014900e80000000b015700d20000000c014900bb0000000d012f00bb0000000e00d300a40000000f00b900a40000001000ac00bb0000001100b900d200000012009200bb00000013008400a40000001400ac00e800000015009200e800000016017100d200000017017e00e800000018015700a400000019017100a40000001a011500bb0000001b006a00a40000001c005d008d0000001d
+DI04020302001d011e00cb0000000000010001012b00e10000000000010002011e00f80000000000010003010400f8000000000001000400f700e1000000000001000500dc00e1000000000001000600cf00cb000000000001000700dc00b4000000000001000800f700b40000000000010009010400cb000000000001000a014500e1000000000001000b015300cb000000000001000c014500b4000000000001000d012b00b4000000000001000e00cf009d000000000001000f00b5009d000000000001001000a800b4000000000001001100b500cb0000000000010012008e00b400000000000100130080009d000000000001001400a800e10000000000010015008e00e10000000000010016016d00cb0000000000010017017a00e100000000000100180153009d0000000000010019016d009d000000000001001a011100b4000000000001001b0066009d000000000001001c00590086000000000001001dC!C!C!C!N!C!C!C!C!C!C!C!C!C!C!C!C!C!O!C!O!C!O!C!O!C!H!H!Cl!
+DI0403036f0024012200d2012f00e80002001e012f00e8012200ff0002001f012200ff010800ff00020020010800ff00fb00e80002002100fb00e800e000e80002002200e000e800d300d20002002300d300d200e000bb0002002400e000bb00fb00bb0002002500fb00bb010800d20002002600fb00e8010800d200020027012200d2010800d200020028014900e8015700d200020029015700d2014900bb0002002a015000d2014600c10002002a014900bb012f00bb0002002b012200d2012f00bb0002002c012900d2013200c10002002c012f00e8014900e80002002d013300e3014500e30002002d00d300a400b900a40002002e00b900a400ac00bb0002002f00bc00aa00b300bb0002002f00ac00bb00b900d20002003000d300d200b900d20002003100cf00cd00bd00cd0002003100e000bb00d300a40002003200d900bb00d000aa00020032009200bb008400a40002003300ac00bb009200bb0002003400ac00e8009200e80002003500b900d200ac00e800020036017100d2017e00e800020037015700d2017100d200020038015700a4017100a400020039014900bb015700a40002003a006a00a4005d008d0002001c
+DI0404003b0001010800d2,011700bc,011200b9:10001:20002:3001b
+DI0406001b0002010000000101
+DI040702c7003a01000103000101000103000201000103000301000103000401000103000501000103000601000103000701000103000801000103000901000103000a01000103000b01000103000c01000103000d01000103000e01000103000f01000103001001000103001101000103001201000103001301000103001401000103001501000103001601000103001701000103001801000103001901000103001a0100010b000a0100020c001b01000203001b01000104000101000104000401000104000601000104000701000104000801000104000a01000104000b01000104000d01000104000f01000104000901000104000201000104001001000104001101000104001301000104000301000104000501000104001501000104001601000104001701000104000c01000104000e01000104001a01000104001801000104001b01000104001901000104001c01000104001201000104001d010001040014
+DI050100220001000f1:ANSI_VAR_FONT
+DI050200230002ffffffff01ffff000001
+DI0503001900010000000000
+
+"'>
+				<PARAM NAME='fontcolor' VALUE='000000'>
+				<PARAM NAME='ratio' VALUE='1'>
+				<PARAM NAME='fontsize' VALUE='14'>
+				<PARAM NAME='forecolor' VALUE='000000'>
+				<PARAM NAME='backcolor' VALUE='ffffff'>
+				<PARAM NAME='DisplayMode' VALUE='2'>
+				</APPLET>
+			
+		
+		</td>
+		<TD align=center><a href=Tox_Effect.asp?cmpseq=35110 target=_blank>除致死量外无其他报道;肝毒性;生化毒性;生殖毒性;行为改变</a></TD>
+		</tr>		
+
+		<tr height=40px>
+		<td bgcolor=#edf0f5 align=center width=60px>52</td>
+		<TD title="查看物质的毒性数据"><!--<A onclick="OpenDetail(35223,13517492,481010)" href="#" >-->
+		<A href="tox_detail2.asp?CmpSeq=35223&casno=13517492&srn=481010">
+		Bibenzyl-4,4'-disulfonic acid, alpha,alpha'-diethyl-, dipotassium salt, meso-</A></TD>		
+		<TD>13517-49-2</TD>
+		<TD  align=center >
+		
+			
+			<APPLET code=mol.class id=Applet2 name=mol style='HEIGHT:180px; WIDTH: 200px' VIEWASTEXT>
+				<PARAM NAME='font' VALUE='Arial'>
+				<PARAM NAME='moldata' VALUE='"DI040101cf001c005d00e900000001011401530000000200e600b50000000300fd00c200000004011400b500000005012b00c20000000600e6009a0000000700fd008d0000000800a200dc0000000900b800e90000000a00cf00dc0000000b00cf00c20000000c00b800b50000000d00a200c20000000e008b00e90000000f0098010000000010007e00d300000011007400f70000001200fd0111000000130114010400000014011400e90000001500fd00dc0000001600e600e90000001700e601040000001800fd012b0000001900e3012b0000001a0117012b0000001b00fd01460000001c
+DI0402034f0020005900e20000000000010001006100dc00000000000100010110014c000000000001000201180146000000000001000200e200ae000000000001000300f900bb0000000000010004011000ae0000000000010005012700bb000000000001000600e20093000000000001000700f900860000000000010008009e00d5000000000001000900b400e2000000000001000a00cb00d5000000000001000b00cb00bb000000000001000c00b400ae000000000001000d009e00bb000000000001000e008700e2000000000001000f009400f90000000000010010007a00cc0000000000010011007000f00000000000010012007800ea000000000001001200f9010a0000000000010013011000fd0000000000010014011000e2000000000001001500f900d5000000000001001600e200e2000000000001001700e200fd000000000001001800f90124000000000001001900df0124000000000001001a01130124000000000001001b00f9013f000000000001001c01010139000000000001001cK!+!K!+!C!C!C!C!C!C!C!C!C!C!C!C!S!O!O!O!-!C!C!C!C!C!C!S!O!O!O!-!
+DI0403036f002400e600b500fd00c20002001d011400b5012b00c20002001e00fd00c2011400b50002001f00e6009a00fd008d0002002000a200dc00b800e90002002200b800e900cf00dc0002002300b800e200c900d90002002300cf00dc00cf00c20002002400cf00c200b800b50002002500c900c500b800bc0002002500b800b500a200c20002002600a200dc00a200c20002002700a700d800a700c600020027008d00e8009a00ff00020028008900ea0096010100020028008900ea007c00d400020029008d00e8008000d200020029008b00e9007400f70002002a00a200dc008b00e90002002b00e600b500cf00c20002002c00fd0111011401040002002d01140104011400e90002002e010f0100010f00ed0002002e011400e900fd00dc0002002f00fd00dc00e600e90002003000fd00e300ec00ec0002003000e600e900e601040002003100fd011100e601040002003200fd010a00ec01010002003200fd012d00e3012d0002003300fd012900e301290002003300fd0129011701290002003400fd012d0117012d0002003400fd012b00fd01460002003500fd011100fd012b0002003600fd00c200fd00dc00020037
+DI0404003b000100e600b5,00e2009c,00e9009c:10001:20002:30021
+DI0406001b0002010000000101
+DI040702a3003701000203001b01000303001c01000103000101000103000201000103000301000103000401000103000501000103000601000103000701000103000801000103000901000103000a01000103000b01000103000c01000103000d01000103000e01000103000f01000103001001000103001101000103001201000103001301000103001401000103001501000103001601000103001701000103001801000103001901000103001a01000104000101000104000601000104000401000104000701000104000201000104000801000104000b01000104000c01000104000d01000104000e01000104000901000104000f01000104001001000104001101000104000a01000104000301000104001201000104001501000104001601000104001701000104001801000104001301000104001901000104001a01000104001b010001040014010001040005
+DI050100220001000f1:ANSI_VAR_FONT
+DI050200230002ffffffff01ffff000001
+DI0503001900010000000000
+
+"'>
+				<PARAM NAME='fontcolor' VALUE='000000'>
+				<PARAM NAME='ratio' VALUE='1'>
+				<PARAM NAME='fontsize' VALUE='14'>
+				<PARAM NAME='forecolor' VALUE='000000'>
+				<PARAM NAME='backcolor' VALUE='ffffff'>
+				<PARAM NAME='DisplayMode' VALUE='2'>
+				</APPLET>
+			
+		
+		</td>
+		<TD align=center><a href=Tox_Effect.asp?cmpseq=35223 target=_blank>生殖毒性</a></TD>
+		</tr>		
+
+		<tr height=40px>
+		<td bgcolor=#edf0f5 align=center width=60px>53</td>
+		<TD title="查看物质的毒性数据"><!--<A onclick="OpenDetail(35826,36330855,60532886)" href="#" >-->
+		<A href="tox_detail2.asp?CmpSeq=35826&casno=36330855&srn=60532886">
+		(1,1'-Biphenyl)-4-butanoic acid, gamma-oxo-</A></TD>		
+		<TD>36330-85-5</TD>
+		<TD  align=center >
+		
+			
+			<APPLET code=mol.class id=Applet2 name=mol style='HEIGHT:180px; WIDTH: 200px' VIEWASTEXT>
+				<PARAM NAME='font' VALUE='Arial'>
+				<PARAM NAME='moldata' VALUE='"DI0401013f001300ac00a40000000100b900bb0000000200d400bb0000000300e100a40000000400d4008d0000000500b9008d00000006009200a4000000070085008d00000008006a008d00000009005d00a40000000a006a00bb0000000b008500bb0000000c013000d20000000d012300bb0000000e010900bb0000000f00fb00a400000010012300e800000011014b00d2000000120109008d00000013
+DI040201fd001300a8009d000000000001000100b500b4000000000001000200d000b4000000000001000300dd009d000000000001000400d00086000000000001000500b500860000000000010006008e009d00000000000100070081008600000000000100080066008600000000000100090059009d000000000001000a006600b4000000000001000b008100b4000000000001000c012c00cb000000000001000d011f00b4000000000001000e010500b4000000000001000f00f7009d0000000000010010011f00e10000000000010011014700cb0000000000010012010500860000000000010013C!C!C!C!C!C!C!C!C!C!C!C!C!C!C!C!O!O!O!
+DI040302af001c00ac00a400b900bb0002001400b900bb00d400bb0002001500bd00b600d000b60002001500d400bb00e100a40002001600e100a400d4008d0002001700da00a400d100930002001700d4008d00b9008d0002001800ac00a400b9008d0002001900b300a400bc009300020019009200a40085008d0002001a0085008d006a008d0002001b00810092006e00920002001b006a008d005d00a40002001c005d00a4006a00bb0002001d006400a4006d00b50002001d006a00bb008500bb0002001e009200a4008500bb0002001f008b00a4008200b50002001f00ac00a4009200a400020020013000d2012300bb00020021012300bb010900bb00020022010900bb00fb00a400020023013200d3012500e900020024012e00d1012100e700020024013000d2014b00d20002002500e100a400fb00a40002002600f900a30107008c0002002700fd00a5010b008e00020027
+DI0406001b0002010000000101
+DI040701e3002701000103000101000103000201000103000301000103000401000103000501000103000601000103000701000103000801000103000901000103000a01000103000b01000103000c01000103000d01000103000e01000103000f01000103001001000103001101000103001201000103001301000104000101000104000401000104000501000104000601000104000801000104000201000104000901000104000b01000104000c01000104000d01000104000e01000104000a01000104000301000104000f010001040012010001040013010001040010010001040011010001040007010001040014
+DI050100220001000f1:ANSI_VAR_FONT
+DI050200230002ffffffff01ffff000001
+DI0503001900010000000000
+
+"'>
+				<PARAM NAME='fontcolor' VALUE='000000'>
+				<PARAM NAME='ratio' VALUE='1'>
+				<PARAM NAME='fontsize' VALUE='14'>
+				<PARAM NAME='forecolor' VALUE='000000'>
+				<PARAM NAME='backcolor' VALUE='ffffff'>
+				<PARAM NAME='DisplayMode' VALUE='2'>
+				</APPLET>
+			
+		
+		</td>
+		<TD align=center><a href=Tox_Effect.asp?cmpseq=35826 target=_blank>除致死量外无其他报道;大脑毒性;肺部、胸部或者呼吸毒性;慢性病相关毒性;皮肤和附件毒性;生殖毒性;胃肠道毒性;行为改变;血液毒性;营养和代谢系统毒性</a></TD>
+		</tr>		
+
+		<tr height=40px>
+		<td bgcolor=#edf0f5 align=center width=60px>54</td>
+		<TD title="查看物质的毒性数据"><!--<A onclick="OpenDetail(36358,926932,124397)" href="#" >-->
+		<A href="tox_detail2.asp?CmpSeq=36358&casno=926932&srn=124397">
+		Biurea, 1-methyl-6-(1-methylallyl)-2,5-dithio-</A></TD>		
+		<TD>926-93-2</TD>
+		<TD  align=center >
+		
+			
+			<APPLET code=mol.class id=Applet2 name=mol style='HEIGHT:180px; WIDTH: 200px' VIEWASTEXT>
+				<PARAM NAME='font' VALUE='Arial'>
+				<PARAM NAME='moldata' VALUE='"DI040100df000d008500d200000001009200bb00000002006a00d200000003005d00e800000004005d00bb0000000500ac00bb0000000600b900a40000000700b900d200000008008500a4000000090092008d0000000a00ac008d0000000b006a00a40000000c006a00ff0000000d
+DI04020161000d008100cb0000000000010001008e00b40000000000010002006600cb0000000000010003005900e10000000000010004005900b4000000000001000500a800b4000000000001000600b5009d000000000001000700b500cb00000000000100080081009d0000000000010009008e0086000000000001000a00a80086000000000001000b0066009d000000000001000c006600f8000000000001000dN!N!C!N!S!C!N!S!C!C!C!C!C!
+DI04030177000f008500d2009200bb0002000e006a00d2005d00e80002000f006800d3005b00bc00020010006c00d1005f00ba00020010008500d2006a00d20002001100ac00bb00b900a40002001200ae00ba00bb00d10002001300aa00bc00b700d300020013009200bb00ac00bb00020014008500a40092008d000200150092008b00ac008b000200160092008f00ac008f00020016008500a4006a00a400020017009200bb008500a400020018005d00e8006a00ff00020019
+DI0406001b0002010000000101
+DI0407013b001901000103000101000103000201000103000301000103000401000103000501000103000601000103000701000103000801000103000901000103000a01000103000b01000103000c01000103000d01000104000101000104000501000104000601000104000201000104000801000104000901000104000301000104000a01000104000c01000104000b010001040004010001040007
+DI050100220001000f1:ANSI_VAR_FONT
+DI050200230002ffffffff01ffff000001
+DI0503001900010000000000
+
+"'>
+				<PARAM NAME='fontcolor' VALUE='000000'>
+				<PARAM NAME='ratio' VALUE='1'>
+				<PARAM NAME='fontsize' VALUE='14'>
+				<PARAM NAME='forecolor' VALUE='000000'>
+				<PARAM NAME='backcolor' VALUE='ffffff'>
+				<PARAM NAME='DisplayMode' VALUE='2'>
+				</APPLET>
+			
+		
+		</td>
+		<TD align=center><a href=Tox_Effect.asp?cmpseq=36358 target=_blank>除致死量外无其他报道;生殖毒性;胃肠道毒性</a></TD>
+		</tr>		
+
+		<tr height=40px>
+		<td bgcolor=#edf0f5 align=center width=60px>55</td>
+		<TD title="查看物质的毒性数据"><!--<A onclick="OpenDetail(36486,9041934,148103875)" href="#" >-->
+		<A href="tox_detail2.asp?CmpSeq=36486&casno=9041934&srn=148103875">
+		Bleomycin, sulfate</A></TD>		
+		<TD>9041-93-4</TD>
+		<TD  align=center >
+		
+			
+			<APPLET code=mol.class id=Applet2 name=mol style='HEIGHT:180px; WIDTH: 200px' VIEWASTEXT>
+				<PARAM NAME='font' VALUE='Arial'>
+				<PARAM NAME='moldata' VALUE='"DI04010c5f00c500f600ad0000000100f600b30000000200f100aa0000000300fb00aa0000000400f100b60000000500fb00b60000000600ec00a80000000700fb00a500000008010000ad0000000900f100bb0000000a00fb00bb0000000b010000b30000000c00ec00a20000000d00e700aa0000000e010100a40000000f010400a80000001000ec00be0000001100f600be00000012010000be0000001300f1009f0000001400e7009f0000001500e200a80000001600ec00c40000001700e700bb00000018010500bb00000019010000c40000001a00f6009d0000001b00e200a20000001c00e7009a0000001d00dd00aa0000001e00e700c60000001f00e200be0000002000e700b600000021010a00be00000022010500b60000002300fb009f0000002400f600970000002500dd009f0000002600de00b00000002700e700cc0000002800e200c40000002900dd00bb0000002a010f00bb0000002b010a00c40000002c0100009d0000002d00f800a40000002e00fb00940000002f00e200ce0000003000ec00ce00000031011400be00000032010f00b60000003301000097000000340105009f0000003500fb008f0000003600dd00cc0000003700f100cc00000038011900bb00000039010500940000003a010a009d0000003b0100008d0000003c00d800ce0000003d00f600ce0000003e00f100c60000003f011d00be00000040011900b600000041010f00a000000042010a00970000004300d800d40000004400d400cc00000045012200bb00000046011d00c300000047011d00b300000048011400b30000004900d400d60000004a00dd00d60000004b012200b60000004c012700b30000004d012c00b60000004e012d00bb0000004f013200b300000050013300bc00000051013500b700000052013500c100000053013b00c300000054013200c600000055013b00c800000056013600ca00000057014000cb00000058014500c800000059014000d00000005a014a00cb0000005b014a00d00000005c014f00d30000005d014f00d80000005e014a00db0000005f015400db00000060008000e600000061008000ec00000062007b00e300000063008500e300000064007b00ee00000065008500ee00000066007600e100000067008500de00000068008a00e600000069007b00f40000006a008500f40000006b008a00eb0000006c007600db0000006d007100e30000006e008b00dd0000006f008e00e100000070007600f700000071008000f700000072008a00f700000073007b00d800000074007100d800000075006c00e100000076007600fc00000077007100f400000078008f00f400000079008a00fc0000007a008000d50000007b006c00db0000007c007100d30000007d006700e30000007e007100ff0000007f006c00f700000080007100ee00000081009300f700000082008f00ee00000083008500d800000084008000d000000085006700d800000086006800e9000000870071010400000088006c00fc00000089006700f40000008a009800f40000008b009300fc0000008c008a00d60000008d008200dd0000008e008500cd0000008f006c0107000000900076010700000091009d00f700000092009800ee00000093008a00d000000094008f00d800000095008500c8000000960067010400000097007b01040000009800a200f400000099008f00cd0000009a009300d60000009b008a00c60000009c006201070000009d008001070000009e007b00ff0000009f00a700f7000000a000a200ee000000a1009800d8000000a2009400d0000000a30062010d000000a4005d0104000000a500ac00f4000000a600a700fc000000a700a700eb000000a8009d00eb000000a9005d0110000000aa00670110000000ab00ac00ee000000ac00b100eb000000ad00b600ee000000ae00b700f4000000af00bb00ec000000b000bc00f5000000b100bf00f0000000b200bf00fa000000b300c400fb000000b400bc00ff000000b500c50101000000b600c00103000000b700ca0104000000b800cf0101000000b900ca0109000000ba00d40104000000bb00d40109000000bc00d8010c000000bd00d80111000000be00d40114000000bf00dd0114000000c0012a010e000000c1012a0108000000c2012a0113000000c30124010e000000c40130010e000000c5
+DI0402147900c900f200a6000000000001000100f200ac000000000001000200ed00a3000000000001000300f700a3000000000001000400ed00af000000000001000500f700af000000000001000600e800a1000000000001000700f7009e000000000001000800fc00a6000000000001000900ed00b4000000000001000a00f700b4000000000001000b00fc00ac000000000001000c00e8009b000000000001000d00e300a3000000000001000e00fd009d000000000001000f010000a1000000000001001000e800b7000000000001001100f200b7000000000001001200fc00b7000000000001001300ed0098000000000001001400e30098000000000001001500de00a1000000000001001600e800bd000000000001001700e300b40000000000010018010100b4000000000001001900fc00bd000000000001001a00f20096000000000001001b00de009b000000000001001c00e30093000000000001001d00d900a3000000000001001e00e300bf000000000001001f00de00b7000000000001002000e300af0000000000010021010600b70000000000010022010100af000000000001002300f70098000000000001002400f20090000000000001002500d90098000000000001002600da00a9000000000001002700e300c5000000000001002800de00bd000000000001002900d900b4000000000001002a010b00b4000000000001002b010600bd000000000001002c00fc0096000000000001002d00f4009d000000000001002e00f7008d000000000001002f00de00c7000000000001003000e800c70000000000010031011000b70000000000010032010b00af000000000001003300fc0090000000000001003401010098000000000001003500f70088000000000001003600d900c5000000000001003700ed00c50000000000010038011500b400000000000100390101008d000000000001003a01060096000000000001003b00fc0086000000000001003c00d400c7000000000001003d00f200c7000000000001003e00ed00bf000000000001003f011900b70000000000010040011500af0000000000010041010b0099000000000001004201060090000000000001004300d400cd000000000001004400d000c50000000000010045011e00b40000000000010046011900bc0000000000010047011900ac0000000000010048011000ac000000000001004900d000cf000000000001004a00d900cf000000000001004b011e00af000000000001004c012300ac000000000001004d012800af000000000001004e012900b4000000000001004f012e00ac0000000000010050012f00b50000000000010051013100b00000000000010052013100ba0000000000010053013700bc0000000000010054012e00bf0000000000010055013700c10000000000010056013200c30000000000010057013c00c40000000000010058014100c10000000000010059013c00c9000000000001005a014600c4000000000001005b014600c9000000000001005c014b00cc000000000001005d014b00d1000000000001005e014c00e0000000000002005e014600d4000000000001005f015000d40000000000010060007c00df0000000000010061007c00e50000000000010062007700dc0000000000010063008100dc0000000000010064007700e70000000000010065008100e70000000000010066007200da0000000000010067008100d70000000000010068008600df0000000000010069007700ed000000000001006a008100ed000000000001006b008600e4000000000001006c007200d4000000000001006d006d00dc000000000001006e008700d6000000000001006f008a00da0000000000010070007200f00000000000010071007c00f00000000000010072008600f00000000000010073007700d10000000000010074006d00d10000000000010075006800da0000000000010076007200f50000000000010077006d00ed0000000000010078008b00ed0000000000010079008600f5000000000001007a007c00ce000000000001007b006800d4000000000001007c006d00cc000000000001007d006300dc000000000001007e006d00f8000000000001007f006800f00000000000010080006d00e70000000000010081008f00f00000000000010082008b00e70000000000010083008100d10000000000010084007c00c90000000000010085006300d10000000000010086006400e20000000000010087006d00fd0000000000010088006800f50000000000010089006300ed000000000001008a009400ed000000000001008b008f00f5000000000001008c008600cf000000000001008d007e00d6000000000001008e008100c6000000000001008f006801000000000000010090007201000000000000010091009900f00000000000010092009400e70000000000010093008600c90000000000010094008b00d10000000000010095008100c10000000000010096006300fd0000000000010097007700fd0000000000010098009e00ed0000000000010099008b00c6000000000001009a008f00cf000000000001009b008600bf000000000001009c005e0100000000000001009d007c0100000000000001009e007700f8000000000001009f00a300f000000000000100a0009e00e700000000000100a1009400d100000000000100a2009000c900000000000100a3005e010600000000000100a4005900fd00000000000100a500a800ed00000000000100a600a300f500000000000100a700a300e400000000000100a8009900e400000000000100a90059010900000000000100aa0063010900000000000100ab00a800e700000000000100ac00ad00e400000000000100ad00b200e700000000000100ae00b300ed00000000000100af00b700e500000000000100b000b800ee00000000000100b100bb00e900000000000100b200bb00f300000000000100b300c000f400000000000100b400b800f800000000000100b500c100fa00000000000100b600bc00fc00000000000100b700c600fd00000000000100b800cb00fa00000000000100b900c6010200000000000100ba00d000fd00000000000100bb00d0010200000000000100bc00d4010500000000000100bd00d4010a00000000000100be00d5011900000000000200be00d0010d00000000000100bf00d9010d00000000000100c00126010700000000000100c10126010100000000000100c20126010c00000000000100c30120010700000000000100c40128011100000000000200c4012c010700000000000100c50134011100000000000200c5C!C!O!C!N!C!C!C!N!C!N!O!C!O!N!C!C!O!C!O!C!C!N!C!C!C!C!C!O!C!C!C!C!C!O!C!O!O!O!C!N!N!C!C!C!O!C!N!C!N!O!C!O!C!C!C!C!O!C!O!C!N!O!C!C!N!O!C!N!N!O!C!O!N!O!C!C!C!N!S!C!C!C!S!N!C!C!C!N!O!C!C!C!S!+!C!C!C!C!O!C!N!C!C!C!N!C!N!O!C!O!N!C!C!O!C!O!C!C!N!C!C!C!C!C!O!C!C!C!C!C!O!C!O!O!O!C!N!N!C!C!C!O!C!N!C!N!O!C!O!C!C!C!C!O!C!O!C!N!O!C!C!N!O!C!N!N!O!C!O!N!O!C!C!C!N!S!C!C!C!S!N!C!C!C!N!O!C!C!C!S!+!C!C!S!O!O!O!-!O!-!
+DI040314df00de00fb009401000097000300c6013300bc013500b7000300c7012f00ba013100b7000300c7013b00c8013600ca000300c8013900c4013600c6000300c800f600ad00f600b3000300c900f600ad00f100aa000400ca00f600ad00fb00aa000300cb00f600b300fb00b6000300cd00fb00aa00fb00a5000300cf00ff00a900ff00a6000300cf00fb00aa010000ad000300d000f100b600f100bb000300d100fb00b600fb00bb000300d200fa00b500ff00b2000300d300fc00b7010100b4000300d300ec00a800ec00a2000300d400ec00a800e700aa000300d500fb00a5010100a4000300d6010000ad010400a8000300d700fe00aa010000a7000300d700f100bb00ec00be000300d800f200ba00f700bd000300d900f000bc00f500bf000300d9010000be00fb00bb000400da00ec00a200e7009f000300dc00e700aa00e200a8000300dd00ec00be00ec00c4000300de00ec00be00e700bb000300df00e900c100e600be000300df010000be010500bb000300e0010000be010000c4000300e100e7009f00e200a2000300e300e200a800dd00aa000400e500ec00c400e700c6000300e600ea00c000e700c2000300e600e700bb00e200be000300e700e700bb00e700b6000300e8010500bb010a00be000300e9010500bb010500b6000400ea00f6009d00fb009f000300eb00f6009d00f60097000300ec00e200a200dd009f000400ed00dd00aa00de00b0000300ee00e700c600e700cc000300ef00e700c600e200c4000300f000e200be00dd00bb000300f1010a00be010f00bb000300f2010a00be010a00c4000400f300fb009f0100009d000300f400f6009700fb0094000300f600e700cc00ec00ce000300f8010f00bb011400be000300f9010d00bb010d00b6000300fa011100bb011100b6000300fa0100009d01000097000300fb0100009d0105009f000400fc00e200ce00dd00cc000300fe00ec00ce00f100cc000300ff0100009701050094000401010105009f010a009d0003010200fb008f0100008d0003010300dd00cc00d800ce0003010400f100cc00f600ce0003010500ef00cc00ef00c60003010600f300cc00f300c600030106011900bb011d00be00030107011900bb011900b600030108010a009d010f00a0000301090108009d010800970003010a010c009d010c00970003010a00d800ce00d800d40003010b00d800ce00d400cc0004010c011d00be012200bb0003010d011f00be011f00c30003010e011b00be011b00c30003010e011900b6011d00b30003010f00d800d400d400d60003011100d900d300de00d50003011200d700d500dc00d700030112012200bb012200b600030113012200b6012700b300030114012700b3012c00b600030115012c00b6012d00bb00030116013000b7013100ba00030116012c00b6013200b300030117012d00bb013300bc00030118013200b3013500b700030119013300bc013500c10003011a013500c1013b00c30003011b013500c1013200c60003011c013800c4013500c70003011c013b00c3013b00c80003011d013200c6013600ca0003011e013b00c8014000cb0003011f014000cb014500c800030120014200cb014200d000030121013e00cb013e00d000030121014500c8014a00cb00030122014a00cb014a00d000030123014a00d0014f00d300030124014f00d3014f00d800030125008000e6008000ec00030126008000e6007b00e300040127008000e6008500e300030128008000ec008500ee0003012a008500e3008500de0003012c008900e2008900df0003012c008500e3008a00e60003012d007b00ee007b00f40003012e008500ee008500f40003012f008400ed008900ea00030130008600ef008b00ec00030130007600e1007600db00030131007600e1007100e300030132008500de008b00dd00030133008a00e6008e00e100030134008800e3008a00e000030134007b00f4007600f700030135007c00f3008100f600030136007a00f5007f00f800030136008a00f7008500f400040137007600db007100d800030139007100e3006c00e10003013a007600f7007600fc0003013b007600f7007100f40003013c007300fa007000f70003013c008a00f7008f00f40003013d008a00f7008a00fc0003013e007100d8006c00db00030140006c00e1006700e300040142007600fc007100ff00030143007300f9007000fc00030143007100f4006c00f700030144007100f4007100ee00030145008f00f4009300f700030146008f00f4008f00ee00040147008000d5008500d800030148008000d5008000d000030149006c00db006700d80004014a006700e3006800e90003014b007100ff007101040003014c007100ff006c00fc0003014d006c00f7006700f40003014e009300f7009800f40003014f009300f7009300fc00040150008500d8008a00d600030151008000d0008500cd00030153007101040076010700030155009800f4009d00f700030156009600f4009600ee00030157009a00f4009a00ee00030157008a00d6008a00d000030158008a00d6008f00d800040159006c0107006701040003015b00760107007b01040003015c008a00d0008f00cd0004015e008f00d8009300d60003015f008500c8008a00c600030160006701040062010700030161007b0104008001070003016200790104007900ff00030163007d0104007d00ff0003016300a200f400a700f70003016400a200f400a200ee00030165009300d6009800d800030166009100d6009200d000030167009500d6009600d000030167006201070062010d0003016800620107005d01040004016900a700f700ac00f40003016a00a900f700a900fc0003016b00a500f700a500fc0003016b00a200ee00a700eb0003016c0062010d005d01100003016e0063010c0068010f0003016f0061010e006601110003016f00ac00f400ac00ee0003017000ac00ee00b100eb0003017100b100eb00b600ee0003017200b600ee00b700f40003017300ba00ef00bb00f30003017300b600ee00bb00ec0003017400b700f400bc00f50003017500bb00ec00bf00f00003017600bc00f500bf00fa0003017700bf00fa00c400fb0003017800bf00fa00bc00ff0003017900c200fd00bf01000003017900c400fb00c501010003017a00bc00ff00c001030003017b00c5010100ca01040003017c00ca010400cf01010003017d00cc010400cc01090003017e00c8010400c801090003017e00cf010100d401040003017f00d4010400d401090003018000d4010900d8010c0003018100d8010c00d801110003018200d8011100d401140003018300d8011100dd011400030184008b00dd008e00e100030185006c00e1006c00db00030186006c00f7006c00fc00030187007000f8007000fb00030187008500cd008a00d00003018800bc00f500bf00f00003018900b900f200bc00ef0003018900c5010100c001030003018a00c300fd00c000ff0003018a014f00d8014a00db0003018b014f00d8015400db0003018c010100a4010400a80003018d00e200a800e200a20003018e00e200be00e200c40003018f00e600bf00e600c30003018f0128010e0128010800030190012c010e012c010800030190012c010e012c0113000301910128010e0128011300030191012a010e0124010e00030192012a010e0130010e00030193
+DI04040392001400f600b3,00f100b6,00f000b5:10001:20003:300cc!00ec00a8,00f100a9,00f000aa:10001:20003:300ce!00ec00a2,00f1009f,00f0009e:10001:20003:300db!00f6009d,00f1009f,00f0009e:10001:20003:300e2!00e7009f,00e7009c,00e7009c:10001:20003:300e4!00fb009f,00f800a4,00f700a3:10001:20003:300f5!00e700cc,00e200ce,00e100cd:10001:20003:300f7!00fb0094,00fb0091,00fb0091:10001:20003:300fd!011900bb,011400be,011300bd:10001:20003:30100!011900b6,011400b2,011300b3:10001:20003:30110!008000ec,007b00ee,007a00ed:10001:20003:30129!007600e1,007b00e2,007a00e3:10001:20003:3012b!007600db,007b00d8,007a00d7:10001:20003:30138!008000d5,007b00d8,007a00d7:10001:20003:3013f!007100d8,007100d5,007100d5:10001:20003:30141!008500d8,008200dd,008100dc:10001:20003:30152!00710104,006c0107,006b0106:10001:20003:30154!008500cd,008500ca,008500ca:10001:20003:3015a!00a200f4,009d00f7,009c00f6:10001:20003:3015d!00a200ee,009d00ea,009c00eb:10001:20003:3016d
+DI040600270004010001020001000101000201
+DI040712f3019301000103000101000103000201000103000301000103000401000103000501000103000601000103000701000103000801000103000901000103000a01000103000b01000103000c01000103000d01000103000e01000103000f01000103001001000103001101000103001201000103001301000103001401000103001501000103001601000103001701000103001801000103001901000103001a01000103001b01000103001c01000103001d01000103001e01000103001f01000103002001000103002101000103002201000103002301000103002401000103002501000103002601000103002701000103002801000103002901000103002a01000103002b01000103002c01000103002d01000103002e01000103002f01000103003001000103003101000103003201000103003301000103003401000103003501000103003601000103003701000103003801000103003901000103003a01000103003b01000103003c01000103003d01000103003e01000103003f01000103004001000103004101000103004201000103004301000103004401000103004501000103004601000103004701000103004801000103004901000103004a01000103004b01000103004c01000103004d01000103004e01000103004f01000103005001000103005101000103005201000103005301000103005401000103005501000103005601000103005701000103005801000103005901000103005a01000103005b01000103005c01000103005d01000103005e01000103005f01000103006001000203006101000203006201000203006301000203006401000203006501000203006601000203006701000203006801000203006901000203006a01000203006b01000203006c01000203006d01000203006e01000203006f01000203007001000203007101000203007201000203007301000203007401000203007501000203007601000203007701000203007801000203007901000203007a01000203007b01000203007c01000203007d01000203007e01000203007f01000203008001000203008101000203008201000203008301000203008401000203008501000203008601000203008701000203008801000203008901000203008a01000203008b01000203008c01000203008d01000203008e01000203008f01000203009001000203009101000203009201000203009301000203009401000203009501000203009601000203009701000203009801000203009901000203009a01000203009b01000203009c01000203009d01000203009e01000203009f0100020300a00100020300a10100020300a20100020300a30100020300a40100020300a50100020300a60100020300a70100020300a80100020300a90100020300aa0100020300ab0100020300ac0100020300ad0100020300ae0100020300af0100020300b00100020300b10100020300b20100020300b30100020300b40100020300b50100020300b60100020300b70100020300b80100020300b90100020300ba0100020300bb0100020300bc0100020300bd0100020300be0100020300bf0100020300c00100030300c10100030300c20100030300c30100030300c40100030300c501000104003801000104005601000104005c01000104000101000104000201000104000301000104000401000104000501000104000601000104000701000104000801000104000901000104000a01000104000b01000104000c01000104000d01000104000e01000104000f01000104001001000104001101000104001201000104001301000104001401000104001501000104001701000104001801000104001901000104001a01000104001b01000104001c01000104001d01000104001e01000104002001000104002101000104002201000104002301000104002401000104002501000104002601000104002701000104002801000104002901000104002a01000104002b01000104002d01000104002e01000104002f01000104003001000104003101000104003201000104003301000104003401000104003501000104003601000104003701000104003901000104003a01000104003b01000104003c01000104003d01000104003e01000104003f01000104004001000104004101000104004201000104004301000104004401000104004501000104004601000104004701000104004801000104004901000104004a01000104004b01000104004c01000104004d01000104004e01000104004f01000104005001000104005101000104005201000104005301000104005401000104005501000104005701000104005801000104005901000104005a01000104005b01000104005d01000104005e01000104005f01000104006001000104006101000104006201000104006301000204006601000204006701000204006801000204006901000204006a01000204006b01000204006c01000204006d01000204006e01000204006f01000204007001000204007101000204007201000204007301000204007401000204007501000204007601000204007701000204007801000204007901000204007a01000204007c01000204007d01000204007e01000204007f01000204008001000204008101000204008201000204008301000204008501000204008601000204008701000204008801000204008901000204008a01000204008b01000204008c01000204008d01000204008e01000204008f01000204009001000204009201000204009301000204009401000204009501000204009601000204009701000204009801000204009901000204009a01000204009b01000204009c01000204009d01000204009f0100020400a00100020400a10100020400a20100020400a30100020400a40100020400a50100020400a60100020400a70100020400a80100020400a90100020400aa0100020400ab0100020400ac0100020400ad0100020400ae0100020400af0100020400b00100020400b10100020400b20100020400b30100020400b40100020400b50100020400b60100020400b70100020400b80100020400b90100020400ba0100020400bb0100020400bd0100020400be0100020400bf0100020400c00100020400c10100020400c30100020400c40100020400c50100020400c60100020400c70100020400c80100020400c90100020400ca01000204007b01000204008401000204009101000204009e0100020400bc0100020400c201000104006401000104006501000104001601000104001f01000104002c0100030400cb0100030400cc0100030400cd0100030400ce
+DI0501003e0002001f1:ANSI_VAR_FONT!2:ANSI_VAR_FONT01070d02050a
+DI050200230002ffffffff01ffff000001
+DI0503001900010000000000
+
+"'>
+				<PARAM NAME='fontcolor' VALUE='000000'>
+				<PARAM NAME='ratio' VALUE='1'>
+				<PARAM NAME='fontsize' VALUE='14'>
+				<PARAM NAME='forecolor' VALUE='000000'>
+				<PARAM NAME='backcolor' VALUE='ffffff'>
+				<PARAM NAME='DisplayMode' VALUE='2'>
+				</APPLET>
+			
+		
+		</td>
+		<TD align=center><a href=Tox_Effect.asp?cmpseq=36486 target=_blank>除致死量外无其他报道;肺部、胸部或者呼吸毒性;皮肤和附件毒性;肾、输尿管和膀胱毒性;生殖毒性;胃肠道毒性;行为改变;眼毒性;营养和代谢系统毒性;致癌性</a></TD>
+		</tr>		
+
+		<tr height=40px>
+		<td bgcolor=#edf0f5 align=center width=60px>56</td>
+		<TD title="查看物质的毒性数据"><!--<A onclick="OpenDetail(36883,33396371,148103875)" href="#" >-->
+		<A href="tox_detail2.asp?CmpSeq=36883&casno=33396371&srn=148103875">
+		14-beta-Bufa-4,20,22-trienolide, 3-beta-((6-deoxy-4-O-methyl-alpha-L-mannopyranosyl)oxy)- 14-hydroxy-</A></TD>		
+		<TD>33396-37-1</TD>
+		<TD  align=center >
+		
+			
+			<APPLET code=mol.class id=Applet2 name=mol style='HEIGHT:180px; WIDTH: 200px' VIEWASTEXT>
+				<PARAM NAME='font' VALUE='Arial'>
+				<PARAM NAME='moldata' VALUE='"DI04010c5f00c500f600ad0000000100f600b30000000200f100aa0000000300fb00aa0000000400f100b60000000500fb00b60000000600ec00a80000000700fb00a500000008010000ad0000000900f100bb0000000a00fb00bb0000000b010000b30000000c00ec00a20000000d00e700aa0000000e010100a40000000f010400a80000001000ec00be0000001100f600be00000012010000be0000001300f1009f0000001400e7009f0000001500e200a80000001600ec00c40000001700e700bb00000018010500bb00000019010000c40000001a00f6009d0000001b00e200a20000001c00e7009a0000001d00dd00aa0000001e00e700c60000001f00e200be0000002000e700b600000021010a00be00000022010500b60000002300fb009f0000002400f600970000002500dd009f0000002600de00b00000002700e700cc0000002800e200c40000002900dd00bb0000002a010f00bb0000002b010a00c40000002c0100009d0000002d00f800a40000002e00fb00940000002f00e200ce0000003000ec00ce00000031011400be00000032010f00b60000003301000097000000340105009f0000003500fb008f0000003600dd00cc0000003700f100cc00000038011900bb00000039010500940000003a010a009d0000003b0100008d0000003c00d800ce0000003d00f600ce0000003e00f100c60000003f011d00be00000040011900b600000041010f00a000000042010a00970000004300d800d40000004400d400cc00000045012200bb00000046011d00c300000047011d00b300000048011400b30000004900d400d60000004a00dd00d60000004b012200b60000004c012700b30000004d012c00b60000004e012d00bb0000004f013200b300000050013300bc00000051013500b700000052013500c100000053013b00c300000054013200c600000055013b00c800000056013600ca00000057014000cb00000058014500c800000059014000d00000005a014a00cb0000005b014a00d00000005c014f00d30000005d014f00d80000005e014a00db0000005f015400db00000060008000e600000061008000ec00000062007b00e300000063008500e300000064007b00ee00000065008500ee00000066007600e100000067008500de00000068008a00e600000069007b00f40000006a008500f40000006b008a00eb0000006c007600db0000006d007100e30000006e008b00dd0000006f008e00e100000070007600f700000071008000f700000072008a00f700000073007b00d800000074007100d800000075006c00e100000076007600fc00000077007100f400000078008f00f400000079008a00fc0000007a008000d50000007b006c00db0000007c007100d30000007d006700e30000007e007100ff0000007f006c00f700000080007100ee00000081009300f700000082008f00ee00000083008500d800000084008000d000000085006700d800000086006800e9000000870071010400000088006c00fc00000089006700f40000008a009800f40000008b009300fc0000008c008a00d60000008d008200dd0000008e008500cd0000008f006c0107000000900076010700000091009d00f700000092009800ee00000093008a00d000000094008f00d800000095008500c8000000960067010400000097007b01040000009800a200f400000099008f00cd0000009a009300d60000009b008a00c60000009c006201070000009d008001070000009e007b00ff0000009f00a700f7000000a000a200ee000000a1009800d8000000a2009400d0000000a30062010d000000a4005d0104000000a500ac00f4000000a600a700fc000000a700a700eb000000a8009d00eb000000a9005d0110000000aa00670110000000ab00ac00ee000000ac00b100eb000000ad00b600ee000000ae00b700f4000000af00bb00ec000000b000bc00f5000000b100bf00f0000000b200bf00fa000000b300c400fb000000b400bc00ff000000b500c50101000000b600c00103000000b700ca0104000000b800cf0101000000b900ca0109000000ba00d40104000000bb00d40109000000bc00d8010c000000bd00d80111000000be00d40114000000bf00dd0114000000c0012a010e000000c1012a0108000000c2012a0113000000c30124010e000000c40130010e000000c5
+DI0402147900c900f200a6000000000001000100f200ac000000000001000200ed00a3000000000001000300f700a3000000000001000400ed00af000000000001000500f700af000000000001000600e800a1000000000001000700f7009e000000000001000800fc00a6000000000001000900ed00b4000000000001000a00f700b4000000000001000b00fc00ac000000000001000c00e8009b000000000001000d00e300a3000000000001000e00fd009d000000000001000f010000a1000000000001001000e800b7000000000001001100f200b7000000000001001200fc00b7000000000001001300ed0098000000000001001400e30098000000000001001500de00a1000000000001001600e800bd000000000001001700e300b40000000000010018010100b4000000000001001900fc00bd000000000001001a00f20096000000000001001b00de009b000000000001001c00e30093000000000001001d00d900a3000000000001001e00e300bf000000000001001f00de00b7000000000001002000e300af0000000000010021010600b70000000000010022010100af000000000001002300f70098000000000001002400f20090000000000001002500d90098000000000001002600da00a9000000000001002700e300c5000000000001002800de00bd000000000001002900d900b4000000000001002a010b00b4000000000001002b010600bd000000000001002c00fc0096000000000001002d00f4009d000000000001002e00f7008d000000000001002f00de00c7000000000001003000e800c70000000000010031011000b70000000000010032010b00af000000000001003300fc0090000000000001003401010098000000000001003500f70088000000000001003600d900c5000000000001003700ed00c50000000000010038011500b400000000000100390101008d000000000001003a01060096000000000001003b00fc0086000000000001003c00d400c7000000000001003d00f200c7000000000001003e00ed00bf000000000001003f011900b70000000000010040011500af0000000000010041010b0099000000000001004201060090000000000001004300d400cd000000000001004400d000c50000000000010045011e00b40000000000010046011900bc0000000000010047011900ac0000000000010048011000ac000000000001004900d000cf000000000001004a00d900cf000000000001004b011e00af000000000001004c012300ac000000000001004d012800af000000000001004e012900b4000000000001004f012e00ac0000000000010050012f00b50000000000010051013100b00000000000010052013100ba0000000000010053013700bc0000000000010054012e00bf0000000000010055013700c10000000000010056013200c30000000000010057013c00c40000000000010058014100c10000000000010059013c00c9000000000001005a014600c4000000000001005b014600c9000000000001005c014b00cc000000000001005d014b00d1000000000001005e014c00e0000000000002005e014600d4000000000001005f015000d40000000000010060007c00df0000000000010061007c00e50000000000010062007700dc0000000000010063008100dc0000000000010064007700e70000000000010065008100e70000000000010066007200da0000000000010067008100d70000000000010068008600df0000000000010069007700ed000000000001006a008100ed000000000001006b008600e4000000000001006c007200d4000000000001006d006d00dc000000000001006e008700d6000000000001006f008a00da0000000000010070007200f00000000000010071007c00f00000000000010072008600f00000000000010073007700d10000000000010074006d00d10000000000010075006800da0000000000010076007200f50000000000010077006d00ed0000000000010078008b00ed0000000000010079008600f5000000000001007a007c00ce000000000001007b006800d4000000000001007c006d00cc000000000001007d006300dc000000000001007e006d00f8000000000001007f006800f00000000000010080006d00e70000000000010081008f00f00000000000010082008b00e70000000000010083008100d10000000000010084007c00c90000000000010085006300d10000000000010086006400e20000000000010087006d00fd0000000000010088006800f50000000000010089006300ed000000000001008a009400ed000000000001008b008f00f5000000000001008c008600cf000000000001008d007e00d6000000000001008e008100c6000000000001008f006801000000000000010090007201000000000000010091009900f00000000000010092009400e70000000000010093008600c90000000000010094008b00d10000000000010095008100c10000000000010096006300fd0000000000010097007700fd0000000000010098009e00ed0000000000010099008b00c6000000000001009a008f00cf000000000001009b008600bf000000000001009c005e0100000000000001009d007c0100000000000001009e007700f8000000000001009f00a300f000000000000100a0009e00e700000000000100a1009400d100000000000100a2009000c900000000000100a3005e010600000000000100a4005900fd00000000000100a500a800ed00000000000100a600a300f500000000000100a700a300e400000000000100a8009900e400000000000100a90059010900000000000100aa0063010900000000000100ab00a800e700000000000100ac00ad00e400000000000100ad00b200e700000000000100ae00b300ed00000000000100af00b700e500000000000100b000b800ee00000000000100b100bb00e900000000000100b200bb00f300000000000100b300c000f400000000000100b400b800f800000000000100b500c100fa00000000000100b600bc00fc00000000000100b700c600fd00000000000100b800cb00fa00000000000100b900c6010200000000000100ba00d000fd00000000000100bb00d0010200000000000100bc00d4010500000000000100bd00d4010a00000000000100be00d5011900000000000200be00d0010d00000000000100bf00d9010d00000000000100c00126010700000000000100c10126010100000000000100c20126010c00000000000100c30120010700000000000100c40128011100000000000200c4012c010700000000000100c50134011100000000000200c5C!C!O!C!N!C!C!C!N!C!N!O!C!O!N!C!C!O!C!O!C!C!N!C!C!C!C!C!O!C!C!C!C!C!O!C!O!O!O!C!N!N!C!C!C!O!C!N!C!N!O!C!O!C!C!C!C!O!C!O!C!N!O!C!C!N!O!C!N!N!O!C!O!N!O!C!C!C!N!S!C!C!C!S!N!C!C!C!N!O!C!C!C!S!+!C!C!C!C!O!C!N!C!C!C!N!C!N!O!C!O!N!C!C!O!C!O!C!C!N!C!C!C!C!C!O!C!C!C!C!C!O!C!O!O!O!C!N!N!C!C!C!O!C!N!C!N!O!C!O!C!C!C!C!O!C!O!C!N!O!C!C!N!O!C!N!N!O!C!O!N!O!C!C!C!N!S!C!C!C!S!N!C!C!C!N!O!C!C!C!S!+!C!C!S!O!O!O!-!O!-!
+DI040314df00de00fb009401000097000300c6013300bc013500b7000300c7012f00ba013100b7000300c7013b00c8013600ca000300c8013900c4013600c6000300c800f600ad00f600b3000300c900f600ad00f100aa000400ca00f600ad00fb00aa000300cb00f600b300fb00b6000300cd00fb00aa00fb00a5000300cf00ff00a900ff00a6000300cf00fb00aa010000ad000300d000f100b600f100bb000300d100fb00b600fb00bb000300d200fa00b500ff00b2000300d300fc00b7010100b4000300d300ec00a800ec00a2000300d400ec00a800e700aa000300d500fb00a5010100a4000300d6010000ad010400a8000300d700fe00aa010000a7000300d700f100bb00ec00be000300d800f200ba00f700bd000300d900f000bc00f500bf000300d9010000be00fb00bb000400da00ec00a200e7009f000300dc00e700aa00e200a8000300dd00ec00be00ec00c4000300de00ec00be00e700bb000300df00e900c100e600be000300df010000be010500bb000300e0010000be010000c4000300e100e7009f00e200a2000300e300e200a800dd00aa000400e500ec00c400e700c6000300e600ea00c000e700c2000300e600e700bb00e200be000300e700e700bb00e700b6000300e8010500bb010a00be000300e9010500bb010500b6000400ea00f6009d00fb009f000300eb00f6009d00f60097000300ec00e200a200dd009f000400ed00dd00aa00de00b0000300ee00e700c600e700cc000300ef00e700c600e200c4000300f000e200be00dd00bb000300f1010a00be010f00bb000300f2010a00be010a00c4000400f300fb009f0100009d000300f400f6009700fb0094000300f600e700cc00ec00ce000300f8010f00bb011400be000300f9010d00bb010d00b6000300fa011100bb011100b6000300fa0100009d01000097000300fb0100009d0105009f000400fc00e200ce00dd00cc000300fe00ec00ce00f100cc000300ff0100009701050094000401010105009f010a009d0003010200fb008f0100008d0003010300dd00cc00d800ce0003010400f100cc00f600ce0003010500ef00cc00ef00c60003010600f300cc00f300c600030106011900bb011d00be00030107011900bb011900b600030108010a009d010f00a0000301090108009d010800970003010a010c009d010c00970003010a00d800ce00d800d40003010b00d800ce00d400cc0004010c011d00be012200bb0003010d011f00be011f00c30003010e011b00be011b00c30003010e011900b6011d00b30003010f00d800d400d400d60003011100d900d300de00d50003011200d700d500dc00d700030112012200bb012200b600030113012200b6012700b300030114012700b3012c00b600030115012c00b6012d00bb00030116013000b7013100ba00030116012c00b6013200b300030117012d00bb013300bc00030118013200b3013500b700030119013300bc013500c10003011a013500c1013b00c30003011b013500c1013200c60003011c013800c4013500c70003011c013b00c3013b00c80003011d013200c6013600ca0003011e013b00c8014000cb0003011f014000cb014500c800030120014200cb014200d000030121013e00cb013e00d000030121014500c8014a00cb00030122014a00cb014a00d000030123014a00d0014f00d300030124014f00d3014f00d800030125008000e6008000ec00030126008000e6007b00e300040127008000e6008500e300030128008000ec008500ee0003012a008500e3008500de0003012c008900e2008900df0003012c008500e3008a00e60003012d007b00ee007b00f40003012e008500ee008500f40003012f008400ed008900ea00030130008600ef008b00ec00030130007600e1007600db00030131007600e1007100e300030132008500de008b00dd00030133008a00e6008e00e100030134008800e3008a00e000030134007b00f4007600f700030135007c00f3008100f600030136007a00f5007f00f800030136008a00f7008500f400040137007600db007100d800030139007100e3006c00e10003013a007600f7007600fc0003013b007600f7007100f40003013c007300fa007000f70003013c008a00f7008f00f40003013d008a00f7008a00fc0003013e007100d8006c00db00030140006c00e1006700e300040142007600fc007100ff00030143007300f9007000fc00030143007100f4006c00f700030144007100f4007100ee00030145008f00f4009300f700030146008f00f4008f00ee00040147008000d5008500d800030148008000d5008000d000030149006c00db006700d80004014a006700e3006800e90003014b007100ff007101040003014c007100ff006c00fc0003014d006c00f7006700f40003014e009300f7009800f40003014f009300f7009300fc00040150008500d8008a00d600030151008000d0008500cd00030153007101040076010700030155009800f4009d00f700030156009600f4009600ee00030157009a00f4009a00ee00030157008a00d6008a00d000030158008a00d6008f00d800040159006c0107006701040003015b00760107007b01040003015c008a00d0008f00cd0004015e008f00d8009300d60003015f008500c8008a00c600030160006701040062010700030161007b0104008001070003016200790104007900ff00030163007d0104007d00ff0003016300a200f400a700f70003016400a200f400a200ee00030165009300d6009800d800030166009100d6009200d000030167009500d6009600d000030167006201070062010d0003016800620107005d01040004016900a700f700ac00f40003016a00a900f700a900fc0003016b00a500f700a500fc0003016b00a200ee00a700eb0003016c0062010d005d01100003016e0063010c0068010f0003016f0061010e006601110003016f00ac00f400ac00ee0003017000ac00ee00b100eb0003017100b100eb00b600ee0003017200b600ee00b700f40003017300ba00ef00bb00f30003017300b600ee00bb00ec0003017400b700f400bc00f50003017500bb00ec00bf00f00003017600bc00f500bf00fa0003017700bf00fa00c400fb0003017800bf00fa00bc00ff0003017900c200fd00bf01000003017900c400fb00c501010003017a00bc00ff00c001030003017b00c5010100ca01040003017c00ca010400cf01010003017d00cc010400cc01090003017e00c8010400c801090003017e00cf010100d401040003017f00d4010400d401090003018000d4010900d8010c0003018100d8010c00d801110003018200d8011100d401140003018300d8011100dd011400030184008b00dd008e00e100030185006c00e1006c00db00030186006c00f7006c00fc00030187007000f8007000fb00030187008500cd008a00d00003018800bc00f500bf00f00003018900b900f200bc00ef0003018900c5010100c001030003018a00c300fd00c000ff0003018a014f00d8014a00db0003018b014f00d8015400db0003018c010100a4010400a80003018d00e200a800e200a20003018e00e200be00e200c40003018f00e600bf00e600c30003018f0128010e0128010800030190012c010e012c010800030190012c010e012c0113000301910128010e0128011300030191012a010e0124010e00030192012a010e0130010e00030193
+DI04040392001400f600b3,00f100b6,00f000b5:10001:20003:300cc!00ec00a8,00f100a9,00f000aa:10001:20003:300ce!00ec00a2,00f1009f,00f0009e:10001:20003:300db!00f6009d,00f1009f,00f0009e:10001:20003:300e2!00e7009f,00e7009c,00e7009c:10001:20003:300e4!00fb009f,00f800a4,00f700a3:10001:20003:300f5!00e700cc,00e200ce,00e100cd:10001:20003:300f7!00fb0094,00fb0091,00fb0091:10001:20003:300fd!011900bb,011400be,011300bd:10001:20003:30100!011900b6,011400b2,011300b3:10001:20003:30110!008000ec,007b00ee,007a00ed:10001:20003:30129!007600e1,007b00e2,007a00e3:10001:20003:3012b!007600db,007b00d8,007a00d7:10001:20003:30138!008000d5,007b00d8,007a00d7:10001:20003:3013f!007100d8,007100d5,007100d5:10001:20003:30141!008500d8,008200dd,008100dc:10001:20003:30152!00710104,006c0107,006b0106:10001:20003:30154!008500cd,008500ca,008500ca:10001:20003:3015a!00a200f4,009d00f7,009c00f6:10001:20003:3015d!00a200ee,009d00ea,009c00eb:10001:20003:3016d
+DI040600270004010001020001000101000201
+DI040712f3019301000103000101000103000201000103000301000103000401000103000501000103000601000103000701000103000801000103000901000103000a01000103000b01000103000c01000103000d01000103000e01000103000f01000103001001000103001101000103001201000103001301000103001401000103001501000103001601000103001701000103001801000103001901000103001a01000103001b01000103001c01000103001d01000103001e01000103001f01000103002001000103002101000103002201000103002301000103002401000103002501000103002601000103002701000103002801000103002901000103002a01000103002b01000103002c01000103002d01000103002e01000103002f01000103003001000103003101000103003201000103003301000103003401000103003501000103003601000103003701000103003801000103003901000103003a01000103003b01000103003c01000103003d01000103003e01000103003f01000103004001000103004101000103004201000103004301000103004401000103004501000103004601000103004701000103004801000103004901000103004a01000103004b01000103004c01000103004d01000103004e01000103004f01000103005001000103005101000103005201000103005301000103005401000103005501000103005601000103005701000103005801000103005901000103005a01000103005b01000103005c01000103005d01000103005e01000103005f01000103006001000203006101000203006201000203006301000203006401000203006501000203006601000203006701000203006801000203006901000203006a01000203006b01000203006c01000203006d01000203006e01000203006f01000203007001000203007101000203007201000203007301000203007401000203007501000203007601000203007701000203007801000203007901000203007a01000203007b01000203007c01000203007d01000203007e01000203007f01000203008001000203008101000203008201000203008301000203008401000203008501000203008601000203008701000203008801000203008901000203008a01000203008b01000203008c01000203008d01000203008e01000203008f01000203009001000203009101000203009201000203009301000203009401000203009501000203009601000203009701000203009801000203009901000203009a01000203009b01000203009c01000203009d01000203009e01000203009f0100020300a00100020300a10100020300a20100020300a30100020300a40100020300a50100020300a60100020300a70100020300a80100020300a90100020300aa0100020300ab0100020300ac0100020300ad0100020300ae0100020300af0100020300b00100020300b10100020300b20100020300b30100020300b40100020300b50100020300b60100020300b70100020300b80100020300b90100020300ba0100020300bb0100020300bc0100020300bd0100020300be0100020300bf0100020300c00100030300c10100030300c20100030300c30100030300c40100030300c501000104003801000104005601000104005c01000104000101000104000201000104000301000104000401000104000501000104000601000104000701000104000801000104000901000104000a01000104000b01000104000c01000104000d01000104000e01000104000f01000104001001000104001101000104001201000104001301000104001401000104001501000104001701000104001801000104001901000104001a01000104001b01000104001c01000104001d01000104001e01000104002001000104002101000104002201000104002301000104002401000104002501000104002601000104002701000104002801000104002901000104002a01000104002b01000104002d01000104002e01000104002f01000104003001000104003101000104003201000104003301000104003401000104003501000104003601000104003701000104003901000104003a01000104003b01000104003c01000104003d01000104003e01000104003f01000104004001000104004101000104004201000104004301000104004401000104004501000104004601000104004701000104004801000104004901000104004a01000104004b01000104004c01000104004d01000104004e01000104004f01000104005001000104005101000104005201000104005301000104005401000104005501000104005701000104005801000104005901000104005a01000104005b01000104005d01000104005e01000104005f01000104006001000104006101000104006201000104006301000204006601000204006701000204006801000204006901000204006a01000204006b01000204006c01000204006d01000204006e01000204006f01000204007001000204007101000204007201000204007301000204007401000204007501000204007601000204007701000204007801000204007901000204007a01000204007c01000204007d01000204007e01000204007f01000204008001000204008101000204008201000204008301000204008501000204008601000204008701000204008801000204008901000204008a01000204008b01000204008c01000204008d01000204008e01000204008f01000204009001000204009201000204009301000204009401000204009501000204009601000204009701000204009801000204009901000204009a01000204009b01000204009c01000204009d01000204009f0100020400a00100020400a10100020400a20100020400a30100020400a40100020400a50100020400a60100020400a70100020400a80100020400a90100020400aa0100020400ab0100020400ac0100020400ad0100020400ae0100020400af0100020400b00100020400b10100020400b20100020400b30100020400b40100020400b50100020400b60100020400b70100020400b80100020400b90100020400ba0100020400bb0100020400bd0100020400be0100020400bf0100020400c00100020400c10100020400c30100020400c40100020400c50100020400c60100020400c70100020400c80100020400c90100020400ca01000204007b01000204008401000204009101000204009e0100020400bc0100020400c201000104006401000104006501000104001601000104001f01000104002c0100030400cb0100030400cc0100030400cd0100030400ce
+DI0501003e0002001f1:ANSI_VAR_FONT!2:ANSI_VAR_FONT01070d02050a
+DI050200230002ffffffff01ffff000001
+DI0503001900010000000000
+
+"'>
+				<PARAM NAME='fontcolor' VALUE='000000'>
+				<PARAM NAME='ratio' VALUE='1'>
+				<PARAM NAME='fontsize' VALUE='14'>
+				<PARAM NAME='forecolor' VALUE='000000'>
+				<PARAM NAME='backcolor' VALUE='ffffff'>
+				<PARAM NAME='DisplayMode' VALUE='2'>
+				</APPLET>
+			
+		
+		</td>
+		<TD align=center><a href=Tox_Effect.asp?cmpseq=36883 target=_blank>除致死量外无其他报道;慢性病相关毒性;生殖毒性;心脏毒性;行为改变;营养和代谢系统毒性</a></TD>
+		</tr>		
+
+		<tr height=40px>
+		<td bgcolor=#edf0f5 align=center width=60px>57</td>
+		<TD title="查看物质的毒性数据"><!--<A onclick="OpenDetail(36932,87683,27800113)" href="#" >-->
+		<A href="tox_detail2.asp?CmpSeq=36932&casno=87683&srn=27800113">
+		1,3-Butadiene, hexachloro-</A></TD>		
+		<TD>87-68-3</TD>
+		<TD  align=center >
+		
+			
+			<APPLET code=mol.class id=Applet2 name=mol style='HEIGHT:180px; WIDTH: 200px' VIEWASTEXT>
+				<PARAM NAME='font' VALUE='Arial'>
+				<PARAM NAME='moldata' VALUE='"DI040100af000a007400a700000001008b00b50000000200a200a70000000300b800b50000000400b800cf0000000500cf00a70000000600a2008d00000007008b00cf000000080074008d00000009005d00b50000000a
+DI04020119000a007000a00000000000010001008700ae0000000000010002009e00a0000000000001000300b400ae000000000001000400b400c8000000000001000500cb00a00000000000010006009e00860000000000010007008700c80000000000010008007000860000000000010009005900ae000000000001000aC!C!C!C!Cl!Cl!Cl!Cl!Cl!Cl!
+DI04030117000b007400a7008b00b50002000b007400ae008500b80002000b008b00b500a200a70002000c00a200a700b800b50002000d00a800a500b800af0002000d00b800b500b800cf0002000e00b800b500cf00a70002000f00a200a700a2008d00020010008b00b5008b00cf00020011007400a70074008d00020012007400a7005d00b500020013
+DI0406001b0002010000000101
+DI040700f3001301000103000101000103000201000103000301000103000401000103000501000103000601000103000701000103000801000103000901000103000a010001040001010001040004010001040006010001040008010001040009010001040007010001040005010001040002010001040003
+DI050100220001000f1:ANSI_VAR_FONT
+DI050200230002ffffffff01ffff000001
+DI0503001900010000000000
+
+"'>
+				<PARAM NAME='fontcolor' VALUE='000000'>
+				<PARAM NAME='ratio' VALUE='1'>
+				<PARAM NAME='fontsize' VALUE='14'>
+				<PARAM NAME='forecolor' VALUE='000000'>
+				<PARAM NAME='backcolor' VALUE='ffffff'>
+				<PARAM NAME='DisplayMode' VALUE='2'>
+				</APPLET>
+			
+		
+		</td>
+		<TD align=center><a href=Tox_Effect.asp?cmpseq=36932 target=_blank>除致死量外无其他报道;大脑毒性;肝毒性;慢性病相关毒性;免疫系统毒性;内分泌毒性;肾、输尿管和膀胱毒性;生化毒性;生殖毒性;心脏毒性;行为改变;血液毒性;营养和代谢系统毒性;致癌性</a></TD>
+		</tr>		
+
+		<tr height=40px>
+		<td bgcolor=#edf0f5 align=center width=60px>58</td>
+		<TD title="查看物质的毒性数据"><!--<A onclick="OpenDetail(37103,924163,60142378)" href="#" >-->
+		<A href="tox_detail2.asp?CmpSeq=37103&casno=924163&srn=60142378">
+		1-Butanamine, N-butyl-N-nitroso-</A></TD>		
+		<TD>924-16-3</TD>
+		<TD  align=center >
+		
+			
+			<APPLET code=mol.class id=Applet2 name=mol style='HEIGHT:180px; WIDTH: 200px' VIEWASTEXT>
+				<PARAM NAME='font' VALUE='Arial'>
+				<PARAM NAME='moldata' VALUE='"DI040100bf000b00a2009a0000000100b8008d0000000200cf009a0000000300e6008d0000000400a200b50000000500b800c20000000600cf00b500000007008b00c200000008007400b5000000090074009a0000000a005d008d0000000b
+DI0402012d000b009e0093000000000001000100b40086000000000001000200cb0093000000000001000300e200860000000000010004009e00ae000000000001000500b400bb000000000001000600cb00ae0000000000010007008700bb0000000000010008007000ae000000000001000900700093000000000001000a00590086000000000001000bC!C!C!C!N!N!O!C!C!C!C!
+DI04030117000b00a2009a00b8008d0002000c00b8008d00cf009a0002000d00cf009a00e6008d0002000e00a2009a00a200b50002000f00b700c000ce00b30002001000b900c400d000b70002001000a200b500b800c200020011008b00c2007400b500020012007400b50074009a000200130074009a005d008d0002001400a200b5008b00c200020015
+DI0406001b0002010000000101
+DI0407010b001501000103000101000103000201000103000301000103000401000103000501000103000601000103000701000103000801000103000901000103000a01000103000b01000104000101000104000301000104000401000104000201000104000701000104000501000104000801000104000901000104000a010001040006
+DI050100220001000f1:ANSI_VAR_FONT
+DI050200230002ffffffff01ffff000001
+DI0503001900010000000000
+
+"'>
+				<PARAM NAME='fontcolor' VALUE='000000'>
+				<PARAM NAME='ratio' VALUE='1'>
+				<PARAM NAME='fontsize' VALUE='14'>
+				<PARAM NAME='forecolor' VALUE='000000'>
+				<PARAM NAME='backcolor' VALUE='ffffff'>
+				<PARAM NAME='DisplayMode' VALUE='2'>
+				</APPLET>
+			
+		
+		</td>
+		<TD align=center><a href=Tox_Effect.asp?cmpseq=37103 target=_blank>除致死量外无其他报道;肺部、胸部或者呼吸毒性;肝毒性;内分泌毒性;皮肤和附件毒性;肾、输尿管和膀胱毒性;生殖毒性;胃肠道毒性;心脏毒性;嗅觉毒性;血液毒性;致癌性</a></TD>
+		</tr>		
+
+		<tr height=40px>
+		<td bgcolor=#edf0f5 align=center width=60px>59</td>
+		<TD title="查看物质的毒性数据"><!--<A onclick="OpenDetail(38039,77509,1696)" href="#" >-->
+		<A href="tox_detail2.asp?CmpSeq=38039&casno=77509&srn=1696">
+		2-Butanol, 4-(dimethylamino)-3-methyl-1,2-diphenyl-, propionate (ester)</A></TD>		
+		<TD>77-50-9</TD>
+		<TD  align=center >
+		
+			
+			<APPLET code=mol.class id=Applet2 name=mol style='HEIGHT:180px; WIDTH: 200px' VIEWASTEXT>
+				<PARAM NAME='font' VALUE='Arial'>
+				<PARAM NAME='moldata' VALUE='"DI0401019f001900ee00ea00000001010700e200000002010d00c80000000300e801040000000400db00cb00000005008500be00000006009200a8000000070085009100000008006a009100000009005d00a80000000a006a00bf0000000b00b900dc0000000c009600dc0000000d00b700c20000000e00cd00b30000000f00cb00990000001000b4008d00000011009e009c00000012009f00b60000001300b700f60000001400a001020000001500cd010500000016009e011d00000017008701290000001800b5012b00000019
+DI04020299001900ea00e30000000000010001010300db0000000000010002010900c1000000000001000300e400fd000000000001000400d700c40000000000010005008100b70000000000010006008e00a100000000000100070081008a00000000000100080066008a0000000000010009005900a1000000000001000a006600b8000000000001000b00b500d5000000000001000c009200d5000000000001000d00b300bb000000000001000e00c900ac000000000001000f00c70092000000000001001000b000860000000000010011009a00950000000000010012009b00af000000000001001300b300ef0000000000010014009c00fb000000000001001500c900fe0000000000010016009a0116000000000001001700830122000000000001001800b101240000000000010019C!C!C!O!O!C!C!C!C!C!C!C!C!C!C!C!C!C!C!C!C!C!N!C!C!
+DI04030327002100ee00ea010700e20002001a010700e2010d00c80002001b00f000ea00ea01040002001c00ec00ea00e601040002001c00ee00ea00db00cb0002001d008500be009200a80002001e009200a8008500910002001f008b00a8008200970002001f00850091006a009100020020006a0091005d00a800020021006d0097006400a800020021005d00a8006a00bf00020022008500be006a00bf00020023008100b9006e00ba0002002300b900dc009600dc00020024008500be009600dc0002002500b700c200cd00b30002002600cd00b300cb00990002002700c800af00c6009d0002002700cb009900b4008d0002002800b4008d009e009c0002002900b4009300a4009e00020029009e009c009f00b60002002a00b700c2009f00b60002002b00b500bb00a500b30002002b00b900dc00b700c20002002c00b700f600a001020002002d00b700f600cd01050002002e009e011d008701290002002f009e011d00b5012b0002003000a00102009e011d0002003100b900dc00b700f60002003200db00cb00b900dc00020033
+DI0406001b0002010000000101
+DI04070273003301000103000101000103000201000103000301000103000401000103000501000103000601000103000701000103000801000103000901000103000a01000103000b01000103000c01000103000d01000103000e01000103000f01000103001001000103001101000103001201000103001301000103001401000103001501000103001601000103001701000103001801000103001901000104000101000104000401000104000201000104000301000104000601000104000901000104000a01000104000b01000104000c01000104000701000104000d01000104000801000104001001000104001201000104001301000104001401000104001501000104001101000104000e01000104001601000104001701000104001901000104001a01000104001801000104000f010001040005
+DI050100220001000f1:ANSI_VAR_FONT
+DI050200230002ffffffff01ffff000001
+DI0503001900010000000000
+
+"'>
+				<PARAM NAME='fontcolor' VALUE='000000'>
+				<PARAM NAME='ratio' VALUE='1'>
+				<PARAM NAME='fontsize' VALUE='14'>
+				<PARAM NAME='forecolor' VALUE='000000'>
+				<PARAM NAME='backcolor' VALUE='ffffff'>
+				<PARAM NAME='DisplayMode' VALUE='2'>
+				</APPLET>
+			
+		
+		</td>
+		<TD align=center><a href=Tox_Effect.asp?cmpseq=38039 target=_blank>除致死量外无其他报道;肺部、胸部或者呼吸毒性;肝毒性;肾、输尿管和膀胱毒性;生殖毒性</a></TD>
+		</tr>		
+
+		<tr height=40px>
+		<td bgcolor=#edf0f5 align=center width=60px>60</td>
+		<TD title="查看物质的毒性数据"><!--<A onclick="OpenDetail(38042,72050783,1696)" href="#" >-->
+		<A href="tox_detail2.asp?CmpSeq=38042&casno=72050783&srn=1696">
+		2-Butanol, 4-(dimethylamino)-3-methyl-1,2-diphenyl-, propionate (ester), napsylate</A></TD>		
+		<TD>72050-78-3</TD>
+		<TD  align=center >
+		
+			
+			<APPLET code=mol.class id=Applet2 name=mol style='HEIGHT:180px; WIDTH: 200px' VIEWASTEXT>
+				<PARAM NAME='font' VALUE='Arial'>
+				<PARAM NAME='moldata' VALUE='"DI0401019f001900ee00ea00000001010700e200000002010d00c80000000300e801040000000400db00cb00000005008500be00000006009200a8000000070085009100000008006a009100000009005d00a80000000a006a00bf0000000b00b900dc0000000c009600dc0000000d00b700c20000000e00cd00b30000000f00cb00990000001000b4008d00000011009e009c00000012009f00b60000001300b700f60000001400a001020000001500cd010500000016009e011d00000017008701290000001800b5012b00000019
+DI04020299001900ea00e30000000000010001010300db0000000000010002010900c1000000000001000300e400fd000000000001000400d700c40000000000010005008100b70000000000010006008e00a100000000000100070081008a00000000000100080066008a0000000000010009005900a1000000000001000a006600b8000000000001000b00b500d5000000000001000c009200d5000000000001000d00b300bb000000000001000e00c900ac000000000001000f00c70092000000000001001000b000860000000000010011009a00950000000000010012009b00af000000000001001300b300ef0000000000010014009c00fb000000000001001500c900fe0000000000010016009a0116000000000001001700830122000000000001001800b101240000000000010019C!C!C!O!O!C!C!C!C!C!C!C!C!C!C!C!C!C!C!C!C!C!N!C!C!
+DI04030327002100ee00ea010700e20002001a010700e2010d00c80002001b00f000ea00ea01040002001c00ec00ea00e601040002001c00ee00ea00db00cb0002001d008500be009200a80002001e009200a8008500910002001f008b00a8008200970002001f00850091006a009100020020006a0091005d00a800020021006d0097006400a800020021005d00a8006a00bf00020022008500be006a00bf00020023008100b9006e00ba0002002300b900dc009600dc00020024008500be009600dc0002002500b700c200cd00b30002002600cd00b300cb00990002002700c800af00c6009d0002002700cb009900b4008d0002002800b4008d009e009c0002002900b4009300a4009e00020029009e009c009f00b60002002a00b700c2009f00b60002002b00b500bb00a500b30002002b00b900dc00b700c20002002c00b700f600a001020002002d00b700f600cd01050002002e009e011d008701290002002f009e011d00b5012b0002003000a00102009e011d0002003100b900dc00b700f60002003200db00cb00b900dc00020033
+DI0406001b0002010000000101
+DI04070273003301000103000101000103000201000103000301000103000401000103000501000103000601000103000701000103000801000103000901000103000a01000103000b01000103000c01000103000d01000103000e01000103000f01000103001001000103001101000103001201000103001301000103001401000103001501000103001601000103001701000103001801000103001901000104000101000104000401000104000201000104000301000104000601000104000901000104000a01000104000b01000104000c01000104000701000104000d01000104000801000104001001000104001201000104001301000104001401000104001501000104001101000104000e01000104001601000104001701000104001901000104001a01000104001801000104000f010001040005
+DI050100220001000f1:ANSI_VAR_FONT
+DI050200230002ffffffff01ffff000001
+DI0503001900010000000000
+
+"'>
+				<PARAM NAME='fontcolor' VALUE='000000'>
+				<PARAM NAME='ratio' VALUE='1'>
+				<PARAM NAME='fontsize' VALUE='14'>
+				<PARAM NAME='forecolor' VALUE='000000'>
+				<PARAM NAME='backcolor' VALUE='ffffff'>
+				<PARAM NAME='DisplayMode' VALUE='2'>
+				</APPLET>
+			
+		
+		</td>
+		<TD align=center><a href=Tox_Effect.asp?cmpseq=38042 target=_blank>皮肤和附件毒性;生殖毒性</a></TD>
+		</tr>		
+
+</table>
+
+
+<form name="formPage" method="post" action="Tox_eff_result2.asp">
+<input type="hidden" name="toxeff" value="生殖毒性">
+<input type="hidden" name="LX" value="对新生儿的影响——断奶或哺乳期指数(如。每个活产儿,在断奶第四天)">
+<input type="hidden" name="SpeciesObs" value="">
+<input type="hidden" name="page" value="">
+<input type="hidden" name="Flag">
+<!--Form method=Post action="list_all.asp"  name=formPage id=formPage LANGUAGE=javascript onsubmit="return formPage_onsubmit()"-->
+<INPUT TYPE="HIDDEN" NAME="pageno" VALUE="">
+<!--
+<INPUT TYPE="HIDDEN" NAME="text6" VALUE="">
+<INPUT TYPE="HIDDEN" NAME="select6" VALUE="">
+<INPUT TYPE="HIDDEN" NAME="queryMethod" VALUE="">
+-->
+<TABLE Align=center border=0>
+<TR>
+
+		<td>
+			<a href="#" onclick="ScrollPage(1)">第一页</a>
+		</td>
+		<td>
+			<a href=# onclick="ScrollPage('5')">上一页</a>
+		</td>
+
+		<td>
+			<a href=# onclick="ScrollPage('7')">下一页</a></td>
+		<td>
+			<a href=# onclick="ScrollPage('34')">最后一页</a>
+		</td>
+
+<td>当前页码:6/34，10条纪录/页</td>
+</TR>
+</TABLE>
+
+</FORM>
