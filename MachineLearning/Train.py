@@ -14,10 +14,10 @@ def train():
     global_step = tf.Variable(0,False)
     cross_entropy = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=t,labels=tf.argmax(label,1))
     cross_entropy_mean = tf.reduce_mean(cross_entropy)
-    loss = cross_entropy_mean# + tf.add_n(tf.get_collection('losses'))
+    loss = cross_entropy_mean + tf.add_n(tf.get_collection('losses'))
 
     train_step = tf.train.AdamOptimizer().minimize(loss,global_step)
-
+    #
     correct_prediction = tf.equal(tf.argmax(y,1),tf.argmax(label,1))
     accuracy = tf.reduce_mean(tf.cast(correct_prediction,tf.float32))
     auc_value,auc_op = tf.metrics.auc(tf.argmax(label,1),tf.argmax(y,1))
