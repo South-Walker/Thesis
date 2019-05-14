@@ -22,16 +22,16 @@ def inference(inputTensor1,inputTensor2,keepRate):
         biases = tf.get_variable("biases",[layer1Node],
                                  initializer=tf.constant_initializer(0.0))
         layer1 = tf.concat(
-            [tf.nn.relu(tf.matmul(inputTensor1,weights) + biases) , inputTensor2],1)
+            [tf.nn.relu(tf.matmul(inputTensor1,weights,name="Layer1") + biases) , inputTensor2],1)
     with tf.variable_scope('layer2'):
         weights = getWeightVariable([layer1Node + input2Node,layer2Node])
         biases = tf.get_variable("biases",[layer2Node],
                                  initializer=tf.constant_initializer(0.0))
         layer2 = tf.matmul(layer1,weights) + biases
-        layer2_drop = tf.nn.dropout(layer2,keepRate)
+        layer2_drop = tf.nn.dropout(layer2,keepRate,name="Layer2")
     with tf.variable_scope('layer3'):
         weights = getWeightVariable([layer2Node,outputNode])
         biases = tf.get_variable("biases",[outputNode],
                                  initializer=tf.constant_initializer(0.0))
-        layer3 = tf.matmul(layer2,weights) + biases
+        layer3 = tf.matmul(layer2,weights,name="Layer3") + biases
     return layer3

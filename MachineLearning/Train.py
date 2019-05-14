@@ -3,30 +3,31 @@ import GetDataSet
 import Inference
 
 def train():
-    x1 = tf.placeholder(tf.float32,[None,Inference.input1Node],name='x1-input')
-    x2 = tf.placeholder(tf.float32,[None,Inference.input2Node],name='x2-input')
-    keeprate = tf.placeholder(tf.float32)
-    label = tf.placeholder(tf.float32,[None,Inference.outputNode],name='label-input')
-    one = tf.ones_like(label)
-    zero = tf.zeros_like(label)
+    x1 = tf.placeholder(tf.float32,[None,Inference.input1Node],name='FP-input')
+    x2 = tf.placeholder(tf.float32,[None,Inference.input2Node],name='Des-input')
+    keeprate = tf.placeholder(tf.float32,name='keeprate')
+    label = tf.placeholder(tf.float32,[None,Inference.outputNode],name='Label-input')
+    one = tf.ones_like(label,name='ones')
+    zero = tf.zeros_like(label,name='zeros')
     t = Inference.inference(x1,x2,keeprate)
     y = tf.where(t < 0.5,zero,one)
     global_step = tf.Variable(0,False)
     cross_entropy = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=t,labels=tf.argmax(label,1))
-    cross_entropy_mean = tf.reduce_mean(cross_entropy)
-    loss = cross_entropy_mean + tf.add_n(tf.get_collection('losses'))
-
-    train_step = tf.train.AdamOptimizer().minimize(loss,global_step)
+    cross_entropy_mean = tf.reduce_mean(cross_entropy,name='MeanCrossEntropy')
+    loss = cross_entropy_mean + tf.add_n(tf.get_collection('losses'),name='Regularizer')
+    
+    train_step = tf.train.AdamOptimizer().minimize(loss,global_step,name='TrainStep')
     #
-    correct_prediction = tf.equal(tf.argmax(y,1),tf.argmax(label,1))
-    accuracy = tf.reduce_mean(tf.cast(correct_prediction,tf.float32))
-    auc_value,auc_op = tf.metrics.auc(tf.argmax(label,1),tf.argmax(y,1))
+    correct_prediction = tf.equal(tf.argmax(y,1),tf.argmax(label,1),name='CorrectNum')
+    accuracy = tf.reduce_mean(tf.cast(correct_prediction,tf.float32),name='Acc')
+    auc_value,auc_op = tf.metrics.auc(tf.argmax(label,1),tf.argmax(y,1),name="Auc")
     traindata,trainlabel,traindesc = GetDataSet.getNextBatch(True,False)
     testdata,testlabel,testdesc = GetDataSet.getNextBatch(False,False)
     with tf.Session() as sess:
+        writer = tf.summary.FileWriter("logs/", sess.graph)
         tf.global_variables_initializer().run()
         tf.local_variables_initializer().run()
-        for i in range(6000):
+        for i in range(3000):
 
             x1s,labels,x2s = GetDataSet.getNextBatch()
             sess.run(train_step,
@@ -44,8 +45,7 @@ def train():
                 testloss.append(b)
                 auc.append(sess.run(auc_value,
                                     feed_dict={x1:testdata,x2:testdesc,label:testlabel,keeprate:1}))
-
-
+        writer.close()
 trainloss = []
 trainacc = []
 testloss = []
