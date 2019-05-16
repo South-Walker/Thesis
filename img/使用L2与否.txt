@@ -1,0 +1,57 @@
+function createfigure(X1, YMatrix1, YMatrix2)
+%CREATEFIGURE(X1, YMATRIX1, YMATRIX2)
+%  X1:  x 数据的矢量
+%  YMATRIX1:  y 数据的矩阵
+%  YMATRIX2:  y 数据的矩阵
+
+%  由 MATLAB 于 16-May-2019 19:07:44 自动生成
+
+% 创建 figure
+figure1 = figure;
+
+% 创建 subplot
+subplot1 = subplot(1,2,1,'Parent',figure1);
+hold(subplot1,'on');
+
+% 使用 plot 的矩阵输入创建多行
+plot1 = plot(X1,YMatrix1,'Parent',subplot1);
+set(plot1(1),'DisplayName','测试集Loss值');
+set(plot1(2),'DisplayName','训练集Loss值');
+
+% 创建 title
+title({'使用正则化前'});
+
+% 创建 ylabel
+ylabel({'测试集Loss值'});
+
+box(subplot1,'on');
+% 设置其余坐标轴属性
+set(subplot1,'XColor',[0 0 0],'YColor',...
+    [0 0.447058823529412 0.741176470588235],'ZColor',[1 0.4 0]);
+% 创建 legend
+legend(subplot1,'show');
+
+% 创建 subplot
+subplot2 = subplot(1,2,2,'Parent',figure1);
+hold(subplot2,'on');
+
+% 使用 plot 的矩阵输入创建多行
+plot2 = plot(X1,YMatrix2,'Parent',subplot2);
+set(plot2(1),'DisplayName','测试集Loss值');
+set(plot2(2),'DisplayName','训练集Loss值');
+
+% 创建 title
+title({'使用正则化后'});
+
+% 创建 ylabel
+ylabel({'训练集Loss值'});
+
+% 取消以下行的注释以保留坐标轴的 Y 范围
+% ylim(subplot2,[0 3]);
+box(subplot2,'on');
+% 设置其余坐标轴属性
+set(subplot2,'XColor',[0 0 0],'YAxisLocation','right','YColor',...
+    [0.850980392156863 0.325490196078431 0.0980392156862745],'ZColor',[0 0 0]);
+% 创建 legend
+legend(subplot2,'show');
+

@@ -13,6 +13,26 @@ xlabel('迭代次数')
 ylabel(hAx(1),'测试集Loss值') 
 ylabel(hAx(2),'训练集Loss值')
 
+L2trainloss = trainlosst'
+L2testloss = testlosst'
+subplot(1,2,1)
+plot(x,withoutL2testloss)
+hold on
+subplot(1,2,1)
+plot(x,withoutL2trainloss)
+subplot(1,2,2)
+plot(x,L2testloss)
+hold on
+subplot(1,2,2)
+plot(x,L2trainloss)
+
+
+[hAx,hLine1,hLine2] = plotyy(x,withoutL2testloss,x,withoutL2trainloss);
+ title('测试集和训练集Loss值与迭代次数的关系图') 
+xlabel('迭代次数') 
+ylabel(hAx(1),'测试集Loss值') 
+ylabel(hAx(2),'训练集Loss值')
+
 auc = auct'
 trainacc = trainacct'
 testacc = testacct'
@@ -22,6 +42,6 @@ testloss = testlosst'
  title('Auc值和训练集Loss值与迭代次数的关系图') 
 xlabel('迭代次数') 
 ylabel(hAx(1),'Auc值') 
-ylabel(hAx(2),'测试集Loss值')
+ylabel(hAx(2),'训练集Loss值')
 ylabel(hAx(2),'测试集Loss值')
 ylabel(hAx(2),'测试集Loss值')
