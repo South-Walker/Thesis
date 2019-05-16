@@ -35,3 +35,16 @@ def inference(inputTensor1,inputTensor2,keepRate):
                                  initializer=tf.constant_initializer(0.0))
         layer3 = tf.matmul(layer2,weights,name="Layer3") + biases
     return layer3
+
+def fakerinference(inputTensor1):
+    with tf.variable_scope('layer1'):
+        weights = getWeightVariable([input1Node,500])
+        biases = tf.get_variable("biases",[500],
+                                 initializer=tf.constant_initializer(0.0))
+        layer1 = tf.nn.relu(tf.matmul(inputTensor1,weights,name="Layer1") + biases)
+    with tf.variable_scope('layer2'):
+        weights = getWeightVariable([500,2])
+        biases = tf.get_variable("biases",[2],
+                                 initializer=tf.constant_initializer(0.0))
+        layer2 = tf.matmul(layer1,weights) + biases
+    return layer2

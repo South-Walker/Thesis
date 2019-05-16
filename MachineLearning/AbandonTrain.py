@@ -8,8 +8,6 @@ projectDir = r'C:\Users\lenovo\Desktop\毕业论文\result\des\projects\temp'
 #project0-0\FP' 
 GetDataSet.getDataSet(projectDir)
 
-LearningRateBase = 0.8
-LearningRateDecay = 0.99
 
 def train():
     x1 = tf.placeholder(tf.float32,[None,Inference.input1Node],name='x1-input')
@@ -23,7 +21,7 @@ def train():
     global_step = tf.Variable(0,False)
     cross_entropy = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=t,labels=tf.argmax(label,1))
     cross_entropy_mean = tf.reduce_mean(cross_entropy)
-    loss = cross_entropy_mean + tf.add_n(tf.get_collection('losses'))
+    loss = cross_entropy_mean# + tf.add_n(tf.get_collection('losses'))
     learning_rate = tf.train.exponential_decay(LearningRateBase,global_step,30,LearningRateDecay)
 
     train_step = tf.train.AdamOptimizer().minimize(loss,global_step)

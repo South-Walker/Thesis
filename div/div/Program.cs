@@ -213,8 +213,10 @@ namespace div
         }
         static void Main(string[] args)
         {
-            div("fakernontox");
-            div("fakertox0");
+            toTab("fakertox0-train1-FP", "fakernontox-train1-FP", "train-SubFP.tab");
+            toTab("fakertox0-test1-FP", "fakernontox-test1-FP", "test-SubFP.tab");
+            //div("fakernontox");
+            //div("fakertox0");
         }
     }
 }

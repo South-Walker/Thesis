@@ -4,7 +4,7 @@
  title('Auc值和训练集Loss值与迭代次数的关系图') 
 xlabel('迭代次数') 
 ylabel(hAx(1),'Auc值') 
-ylabel(hAx(2),'测试集Loss值')
+ylabel(hAx(2),'训练集Loss值')
 2.LOSS-LOSS的双纵坐标
 用以说明过拟合
 [hAx,hLine1,hLine2] = plotyy(x,y1,x,y2);%x：迭代次数，y1：auc，y2：loss
@@ -12,3 +12,16 @@ ylabel(hAx(2),'测试集Loss值')
 xlabel('迭代次数') 
 ylabel(hAx(1),'测试集Loss值') 
 ylabel(hAx(2),'训练集Loss值')
+
+auc = auct'
+trainacc = trainacct'
+testacc = testacct'
+trainloss = trainlosst'
+testloss = testlosst'
+[hAx,hLine1,hLine2] = plotyy(x,auc,x,trainloss);%x：迭代次数，y1：auc，y2：loss
+ title('Auc值和训练集Loss值与迭代次数的关系图') 
+xlabel('迭代次数') 
+ylabel(hAx(1),'Auc值') 
+ylabel(hAx(2),'测试集Loss值')
+ylabel(hAx(2),'测试集Loss值')
+ylabel(hAx(2),'测试集Loss值')

@@ -27,7 +27,7 @@ def train():
         writer = tf.summary.FileWriter("logs/", sess.graph)
         tf.global_variables_initializer().run()
         tf.local_variables_initializer().run()
-        for i in range(3000):
+        for i in range(5000):
 
             x1s,labels,x2s = GetDataSet.getNextBatch()
             sess.run(train_step,
