@@ -147,7 +147,6 @@ namespace div
             int index = 1;
             string line;
             FingerPrinter now;
-            bool value;
             for (int t = 0; t < time; t++)
             {
                 using (FileStream fs = new FileStream(dir + dataset, FileMode.Open, FileAccess.Read))
@@ -213,10 +212,87 @@ namespace div
         }
         static void Main(string[] args)
         {
-            toTab("fakertox0-train1-FP", "fakernontox-train1-FP", "train-SubFP.tab");
-            toTab("fakertox0-test1-FP", "fakernontox-test1-FP", "test-SubFP.tab");
+            //toTab("fakertox0-train1-FP", "fakernontox-train1-FP", "train-SubFP.tab");
+            //toTab("fakertox0-test1-FP", "fakernontox-test1-FP", "test-SubFP.tab");
             //div("fakernontox");
             //div("fakertox0");
+
+            string file = @"C:\Users\lenovo\Desktop\Thesis\nontox";
+            string outputfilename = @"C:\Users\lenovo\Desktop\Thesis\nontoxpoint.csv";
+            int index = 1;
+            string line;
+            FingerPrinter now;
+            List<FingerPrinter> fps = new List<FingerPrinter>();
+            using (FileStream fs = new FileStream(file, FileMode.Open, FileAccess.Read))
+            {
+                StreamReader sr = new StreamReader(fs);
+                line = sr.ReadLine();
+                var adata = line.Split(',');
+                for (int i = 0; i < adata.Length; i++)
+                {
+                    if (adata[i] == "MW")
+                    {
+                        Console.WriteLine("mw:" + i.ToString());
+                    }
+                    else if (adata[i]=="ALogP")
+                    {
+                        Console.WriteLine("alogp:" + i.ToString());
+                    }
+                }
+                while (!string.IsNullOrEmpty(
+                    (line = sr.ReadLine())))
+                {
+                    var data = line.Split(',');
+                    if (data.Length != 4132)
+                        throw new Exception();
+                    now = new FingerPrinter();
+                    #region fill fp
+                    now.name = data[0];
+                    for (int i = 0; i < FingerPrinter.FPcount.Length; i++)
+                    {
+                        for (int j = 0; j < FingerPrinter.FPcount[i]; j++)
+                        {
+                            now.AllFP[i][j] = data[index];
+                            if(index==2)
+                            {
+                                Console.WriteLine(data[index]);
+                            }
+                            index++;
+                        }
+                    }
+                    #endregion
+                    fps.Add(now);
+                    index = 1;
+                }
+                List<string> ss = new List<string>();
+                List<string> ss2 = new List<string>();
+                string snow = "", snow2 = "";
+                using (FileStream fs2 = new FileStream(outputfilename,FileMode.Create,FileAccess.Write))
+                {
+                    StreamWriter sw = new StreamWriter(fs2);
+                    for (int i = 0; i < fps.Count; i++)
+                    {
+                        snow = fps[i].AllFP[0][719];
+                        snow2 = fps[i].AllFP[0][1];
+                        if ((!string.IsNullOrEmpty(snow)) && (!string.IsNullOrEmpty(snow2)))
+                        {
+                            ss.Add(snow);
+                            ss2.Add(snow2);
+                        }
+                    }
+                    for (int i = 0; i < ss.Count; i++)
+                    {
+                        sw.Write(ss[i] + ",");
+                    }
+                    sw.Write("\n");
+                    for (int i = 0; i < ss.Count; i++)
+                    {
+                        sw.Write(ss2[i] + ",");
+                    }
+                    sw.Write("\n");
+                    sw.Flush();
+                }
+            }
         }
     }
 }

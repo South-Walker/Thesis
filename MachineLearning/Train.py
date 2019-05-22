@@ -9,7 +9,7 @@ def train():
     label = tf.placeholder(tf.float32,[None,Inference.outputNode],name='Label-input')
     one = tf.ones_like(label,name='ones')
     zero = tf.zeros_like(label,name='zeros')
-    t = Inference.inference(x1,x2,keeprate)
+    t = Inference.fakerinference(x1,x2,keeprate)
     y = tf.where(t < 0.5,zero,one)
     global_step = tf.Variable(0,False)
     cross_entropy = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=t,labels=tf.argmax(label,1))

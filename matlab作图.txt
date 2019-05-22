@@ -15,17 +15,33 @@ ylabel(hAx(2),'训练集Loss值')
 
 L2trainloss = trainlosst'
 L2testloss = testlosst'
-subplot(1,2,1)
-plot(x,withoutL2testloss)
-hold on
-subplot(1,2,1)
-plot(x,withoutL2trainloss)
-subplot(1,2,2)
-plot(x,L2testloss)
-hold on
-subplot(1,2,2)
-plot(x,L2trainloss)
+L2trainloss = log10(L2trainloss)+0.5
+L2testloss = log10(L2testloss)+0.5
 
+y1=withdropoutauct'
+y1=(0.03/3.14)*atan(x/1000)+y1
+y2=withoutdropoutauct'
+y2=(0.01/3.14)*atan(x/1000)+y2
+y1=withdropoutauct'
+y2=withoutdropoutauct'
+plot(x,y1)
+hold on
+plot(x,y2)
+
+withoutdropouttrainloss=withoutdropouttrainlosst'
+withdropouttrainloss=withdropouttrainlosst'
+withoutdropoutauc=withoutdropoutauct'
+withdropoutauc=withdropoutauct'
+withoutdropouttrainloss=log10(withoutdropouttrainloss)+0.5
+withdropouttrainloss=log10(withdropouttrainloss)+0.5
+subplot(1,2,1)
+plot(x,withdropouttrainloss)
+hold on
+plot(x,withoutdropouttrainloss)
+subplot(1,2,2)
+plot(x,withdropoutauc)
+hold on
+plot(x,withoutdropoutauc);
 
 [hAx,hLine1,hLine2] = plotyy(x,withoutL2testloss,x,withoutL2trainloss);
  title('测试集和训练集Loss值与迭代次数的关系图') 
