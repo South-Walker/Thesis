@@ -15,7 +15,7 @@ testDataLabel = []
 trainDataPosition = 0
 testDataPosition = 0
 
-def getNextBatch(isTrain=True,usingBatch=True,Batch=100):
+def getNextBatch(isTrain=True,usingBatch=True,Batch=50):
     global trainDataPosition
     global testDataPosition
     if not usingBatch:

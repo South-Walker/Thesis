@@ -60,3 +60,16 @@ xlabel('迭代次数')
 ylabel(hAx(1),'Auc值') 
 ylabel(hAx(2),'训练集Loss值')
 ylabel(hAx(2),'测试集Loss值')
+
+withoutl2trainloss=withoutl2trainlosst'
+withoutl2testloss=withoutl2testlosst'
+withl2testloss=log10(withl2testlosst')+0.5
+withl2trainloss=log10(withl2trainlosst')+0.5
+subplot(1,2,1)
+plot(x,withoutl2testloss)
+hold on
+plot(x,withoutl2trainloss)
+subplot(1,2,2)
+plot(x,withl2testloss)
+hold on
+plot(x,withl2trainloss)

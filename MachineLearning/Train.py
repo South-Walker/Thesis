@@ -20,7 +20,7 @@ def train():
     #
     correct_prediction = tf.equal(tf.argmax(y,1),tf.argmax(label,1),name='CorrectNum')
     accuracy = tf.reduce_mean(tf.cast(correct_prediction,tf.float32),name='Acc')
-    auc_value,auc_op = tf.metrics.auc(tf.argmax(label,1),tf.argmax(y,1),name="Auc")
+    auc_value,auc_op = tf.metrics.auc(label,y,name="Auc")
     traindata,trainlabel,traindesc = GetDataSet.getNextBatch(True,False)
     testdata,testlabel,testdesc = GetDataSet.getNextBatch(False,False)
     with tf.Session() as sess:
@@ -45,6 +45,7 @@ def train():
                 testloss.append(b)
                 auc.append(sess.run(auc_value,
                                     feed_dict={x1:testdata,x2:testdesc,label:testlabel,keeprate:1}))
+                print(auc[-1])
         writer.close()
 trainloss = []
 trainacc = []
@@ -52,7 +53,7 @@ testloss = []
 testacc = []
 auc = []
 
-projectDir = r'C:\Users\lenovo\Desktop\毕业论文\result\des\projects\project0-4\FP'
+projectDir = r'C:\Users\lenovo\Desktop\毕业论文\result\des\projects\project0-0\FP'
 GetDataSet.getDataSet(projectDir)
 train()
 projectDir = r'C:\Users\lenovo\Desktop\毕业论文\result\des\projects'
